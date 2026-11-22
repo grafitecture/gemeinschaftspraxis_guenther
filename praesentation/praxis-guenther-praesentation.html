@@ -399,12 +399,11 @@ ul, ol { margin: 0; padding: 0; }
 .copy { justify-self: start; font: inherit; font-size: var(--step-m1); color: var(--blue-deep); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
 
 /* ---------- Notfall: kompaktes Band ganz unten, nach dem Fuß ----------
-   Farbe --sos: tiefes Petrol – Nachbar des Praxisblaus im Farbkreis (analoge Harmonie), kühl wie das Praxisgrau.
-   Weiß darauf 7,3 : 1. */
-.sos { --sos: #0e5f6e; background: var(--sos); color: #fff; padding-block: var(--space-l); font-size: var(--step-m1); }
+   Farbe --sos: Signalrot (Notfall) – Weiß darauf 5,9 : 1. */
+.sos { --sos: #c8102e; background: var(--sos); color: #fff; padding-block: var(--space-l); font-size: var(--step-m1); }
 .sos h2 { color: #fff; font-size: var(--step-1); }
 .sos h3 { color: #fff; font-size: var(--step-m1); font-weight: 600; }
-.sos p { color: rgba(255,255,255,.86); line-height: 1.5; }
+.sos p { color: rgba(255,255,255,.94); line-height: 1.5; }
 .sos a { color: #fff; }
 .sos a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .sos__intro p { margin-top: .3rem; max-width: 26ch; }
@@ -412,7 +411,7 @@ ul, ol { margin: 0; padding: 0; }
 .sos__item { border-top: 1px solid rgba(255,255,255,.28); padding-top: var(--space-xs); }
 .sos__item p + p { margin-top: .4rem; }
 .sos__num { display: block; font-size: var(--step-2); font-weight: 600; line-height: 1.1; color: #fff; text-decoration: none; margin-block: .15rem .3rem; font-variant-numeric: tabular-nums; }
-.sos__num:hover { color: var(--blue-tint); }
+.sos__num:hover { color: #fff; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
 @media (min-width: 360px) and (max-width: 899px) {
   .sos__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sos__intro, .sos__item:last-child { grid-column: 1 / -1; }
@@ -780,9 +779,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { .menu-btn__bars i { transition: none; } }
 @media (max-width: 559px) { .sos__item p { hyphens: auto; overflow-wrap: break-word; } }
 
-/* Entwurfszeile (nur im Online-Vorschaulink): klein im Petrol des Notfall-Bands, damit das Band unten abschließt */
-.draft-line { background: #0e5f6e; color: rgba(255,255,255,.62); border-top: 1px solid rgba(255,255,255,.16); font-size: .7rem; padding-block: .6rem calc(.6rem + env(safe-area-inset-bottom)); }
-.draft-line b, .draft-line strong { color: rgba(255,255,255,.75); font-weight: 500; }
+/* Entwurfszeile (nur im Online-Vorschaulink): klein im Rot des Notfall-Bands, damit das Band unten abschließt */
+.draft-line { background: #c8102e; color: rgba(255,255,255,.78); border-top: 1px solid rgba(255,255,255,.16); font-size: .7rem; padding-block: .6rem calc(.6rem + env(safe-area-inset-bottom)); }
+.draft-line b, .draft-line strong { color: #fff; font-weight: 500; }
 
 /* Praxisfotos ohne Bildunterschriften: Leitbild füllt die volle Höhe des Mosaiks */
 .mosaic .shot--lead { grid-template-rows: minmax(0, 1fr); }
