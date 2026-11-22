@@ -134,7 +134,7 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ---------- Kopf ---------- */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid transparent; transition: border-color .2s; }
-.site-header.is-scrolled { border-bottom-color: var(--line); }
+.site-header.is-scrolled { border-bottom-color: transparent; } /* keine Linie unter der Kopfzeile */
 .site-header__in { display: flex; align-items: center; gap: var(--space-m); min-height: var(--head-now); }
 .nav { margin-left: auto; }
 .nav__list { list-style: none; display: flex; gap: clamp(.9rem, 1.6vw, 1.9rem); }
