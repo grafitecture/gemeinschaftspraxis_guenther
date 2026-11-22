@@ -53,7 +53,7 @@
   --max: 82rem;
   --measure: 64ch;
   --pill: 2px;           /* Ecken: minimaler Radius */
-  --r: 2px;
+  --r: 8px;             /* Bilder und Flächen: leichte Rundung (Buttons bleiben bei --pill) */
   --ease: cubic-bezier(.2, .7, .2, 1);
   --header-h: 4.75rem;
   --hs: 0;                /* 0 = Seitenanfang (großes Logo), 1 = Endgröße; per JS beim Scrollen */
@@ -90,7 +90,7 @@ a { color: var(--blue-deep); text-decoration-thickness: 1px; text-underline-offs
 a:hover { color: var(--blue); }
 strong { font-weight: 600; }
 ul, ol { margin: 0; padding: 0; }
-:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: var(--r); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .num { font-variant-numeric: tabular-nums lining-nums; }
 .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: var(--night); color: #fff; padding: .75rem 1rem; border-radius: var(--r); }
@@ -808,3 +808,6 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .tasks .task p { font-size: var(--step-m1); line-height: 1.55; max-width: 36ch; }
 .tasks .task__act { justify-self: start; font-size: var(--step-m1); margin-top: .1rem; }
 #anliegen .head { margin-bottom: var(--space-l); }
+
+/* Kleine Elemente behalten die knappe Ecke */
+.now .news .is-important time, .lang a, mark { border-radius: var(--pill); }
