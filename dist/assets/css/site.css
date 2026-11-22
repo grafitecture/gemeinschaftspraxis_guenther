@@ -808,11 +808,3 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .tasks .task p { font-size: var(--step-m1); line-height: 1.55; max-width: 36ch; }
 .tasks .task__act { justify-self: start; font-size: var(--step-m1); margin-top: .1rem; }
 #anliegen .head { margin-bottom: var(--space-l); }
-
-/* Logo im Kopf: beim Öffnen groß und dicht über der Hero-Überschrift (--lift, per JS gemessen);
-   beim Scrollen wandert es mit der Seite nach oben und skaliert auf seine Endgröße in der Kopfzeile. */
-.wm--head .wm__logo { transform: translateY(var(--lift, 0px)); }
-.site-header:has(.nav.is-open) .wm--head .wm__logo { transform: none; }
-
-/* Startseite: solange das Logo in die Kopfzeile fährt, steht die Seite still (--pin, per JS) */
-.has-pin main, .has-pin .site-footer, .has-pin .sos, .has-pin .draft-line { transform: translateY(var(--pin, 0px)); }
