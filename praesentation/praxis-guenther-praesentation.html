@@ -826,6 +826,10 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .tasks .task p { font-size: var(--step-m1); line-height: 1.55; max-width: 36ch; }
 .tasks .task__act { justify-self: start; font-size: var(--step-m1); margin-top: .1rem; }
 #anliegen .head { margin-bottom: var(--space-l); }
+
+/* Hero: Überschrift beim Öffnen dicht unter dem großen Logo; beim Scrollen skaliert das Logo auf seine Endgröße */
+.hero { padding-top: var(--space-m); }
+@media (min-width: 1024px) { .hero__grid { align-items: start; } }
 </style>
 <script type="application/ld+json">[
  {
