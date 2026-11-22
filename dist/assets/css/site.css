@@ -811,3 +811,6 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 
 /* Kleine Elemente behalten die knappe Ecke */
 .now .news .is-important time, .lang a, mark { border-radius: var(--pill); }
+
+/* Fuß: Überschriften („Sprechzeiten“, „Praxis“) im Dunkelblau wie die Arztnamen */
+.site-footer h2 { color: var(--blue-deep); }
