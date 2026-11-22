@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="83 56 316 194" role="img" aria-label="Drei Parkbuchten mit P-Markierung"><style>
+.x-l{stroke:#0080C9;stroke-width:1.15;stroke-linejoin:round;stroke-linecap:round}
+.x-t{fill:#FFFFFF}
+.x-r{fill:#EDF4F9}
+.x-f{fill:#F7FAFC}
+.x-n{fill:none}
+.x-w{fill:#FFFFFF}
+.x-glass{fill:#DCEBF5}
+.x-acc{fill:#0080C9}
+.x-accs{fill:#0080C9;stroke:#0080C9}
+.x-sage{fill:#EEF0F1;stroke:#9BA2A7}
+.x-sagef{fill:#9BA2A7;stroke:#9BA2A7}
+.x-g{stroke:#9BA2A7;stroke-width:.6;stroke-dasharray:2 4;fill:none;opacity:.8}
+.x-gs{stroke:#9BA2A7;stroke-width:.6;fill:none;opacity:.7}
+.x-lbl{font-family:'Fira Sans',system-ui,sans-serif;fill:#006BA8;font-weight:500}
+.x-lbll{font-family:'Fira Sans',system-ui,sans-serif;fill:#006BA8;font-weight:300}
+.x-mark{fill:#0080C9;opacity:.12}
+</style><polygon class="x-mark" points="210.0,70.0 268.5,103.8 156.0,168.8 97.4,135.0" /><path class="x-l x-n" d="M210.0,70.0 L97.4,135.0"/><path class="x-l x-n" d="M268.5,103.8 L156.0,168.8"/><polygon class="x-mark" points="268.5,103.8 327.1,137.6 214.5,202.6 156.0,168.8" /><path class="x-l x-n" d="M268.5,103.8 L156.0,168.8"/><path class="x-l x-n" d="M327.1,137.6 L214.5,202.6"/><polygon class="x-mark" points="327.1,137.6 385.6,171.4 273.0,236.4 214.5,202.6" /><path class="x-l x-n" d="M327.1,137.6 L214.5,202.6"/><path class="x-l x-n" d="M385.6,171.4 L273.0,236.4"/><text class="x-lbl" font-size="49.4" text-anchor="start" transform="matrix(0.8660 0.5000 -0.8660 0.5000 145.8 126.0)">P</text><text class="x-lbl" font-size="49.4" text-anchor="start" transform="matrix(0.8660 0.5000 -0.8660 0.5000 262.9 193.6)">P</text><polygon class="x-l x-f" points="171.7,163.6 212.3,187.0 212.3,170.9 171.7,147.5" /><polygon class="x-l x-r" points="309.1,131.1 212.3,187.0 212.3,170.9 309.1,115.0" /><polygon class="x-l x-t" points="268.5,91.6 309.1,115.0 212.3,170.9 171.7,147.5" /><polygon class="x-l x-glass" points="289.3,124.3 233.0,156.8 242.2,133.8 276.0,114.3" /><polygon class="x-l x-glass" points="196.0,135.5 233.0,156.8 242.2,133.8 211.6,116.1" /><polygon class="x-l x-t" points="245.4,96.6 276.0,114.3 242.2,133.8 211.6,116.1" /><line class="x-l" x1="261.1" y1="140.6" x2="258.0" y2="124.7"/><circle class="x-l x-w" r="8.84" cx="0" cy="0" transform="matrix(0.8660 -0.5000 0 1 289.9 138.5)"/><circle class="x-l x-w" r="8.84" cx="0" cy="0" transform="matrix(0.8660 -0.5000 0 1 232.5 171.7)"/></svg>

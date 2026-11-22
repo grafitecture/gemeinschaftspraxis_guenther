@@ -1,0 +1,241 @@
+[
+ {
+  "id": "termine",
+  "title": "Randevu ve muayene saatleri",
+  "items": [
+   {
+    "id": "faq-zeiten",
+    "q": "Muayenehane ne zaman açık?",
+    "a": "<p>Pazartesi, salı ve perşembe saat 9–11 ve 16–18 arası, çarşamba saat 9–11 arası ve cuma saat 9–13 arası.</p><p>Kan alma pazartesiden cumaya saat 8 ile 9 arasında yapılır.</p>"
+   },
+   {
+    "id": "faq-termin",
+    "q": "Randevuya ihtiyacım var mı?",
+    "a": "<p>Muayene, check-up ve sonuç görüşmeleri için evet – aşılar için hayır.</p><p>Akut şikâyetleriniz varsa lütfen önceden arayın. Böylece bekleme süreniz kısalır veya gerekirse acil bir ev ziyareti ayarlarız.</p>"
+   },
+   {
+    "id": "faq-terminweg",
+    "q": "Nasıl randevu alırım?",
+    "a": "<p>Muayene saatlerinde 06204 37 04 numaralı telefondan bizi arayın veya web sitemiz üzerinden randevu talebi gönderin. Size geri dönüş yaparız.</p>"
+   },
+   {
+    "id": "faq-sprache",
+    "q": "Türkçe muayene olabilir miyim?",
+    "a": "<p>Muayenede hangi dillerde hizmet verebildiğimizi lütfen telefonla sorun. Size tercümanlık yapacak bir yakınınızı da yanınızda getirebilirsiniz.</p><p>Bu web sitesi Almanca, İngilizce ve Türkçe olarak sunulmaktadır.</p>"
+   },
+   {
+    "id": "faq-erstbesuch",
+    "q": "İlk ziyaretime neler getirmeliyim?",
+    "a": "<p>Sağlık sigortası kartınızı, kullandığınız ilaçların listesini veya ilaç planınızı, mevcut tetkik sonuçlarınızı ve doktor raporlarınızı, ayrıca aşı kartınızı.</p>"
+   },
+   {
+    "id": "faq-neu",
+    "q": "Yeni hasta kabul ediyor musunuz?",
+    "a": "<p>Lütfen bizi arayın. Sizi kabul edip edemeyeceğimizi ve ne zaman kabul edebileceğimizi birlikte netleştiririz.</p>"
+   },
+   {
+    "id": "faq-urlaub",
+    "q": "Muayenehane tatil nedeniyle ne zaman kapalı?",
+    "a": "<p>Muayenehane 28–31 Aralık 2026 tarihleri arasında kapalıdır. Bizim yerimize bakan muayenehaneyi telesekreterimiz size bildirir. Güncel kapanış tarihleri her zaman ana sayfanın üst kısmında yer alır.</p>"
+   }
+  ]
+ },
+ {
+  "id": "rezepte",
+  "title": "Reçete, sevk, hastalık raporu",
+  "items": [
+   {
+    "id": "faq-rezept",
+    "q": "Tekrar reçeteyi nasıl isterim?",
+    "a": "<p>06204 37 04 numaralı telefondan veya web sitemizdeki „Tekrar reçete isteyin“ formuyla.</p><p>Bu yolla yalnızca size daha önce yazdığımız ilaçlar için tekrar reçete düzenleriz. İçinde bulunduğumuz çeyrek yılda henüz bize gelmediyseniz, önce sağlık sigortası kartınıza ihtiyacımız var.</p>"
+   },
+   {
+    "id": "faq-rezeptzeit",
+    "q": "E-reçetemi ne zaman alabilirim?",
+    "a": "<p>Birkaç saat sonra, en geç yarım gün içinde. E-reçete o zaman eczanede hazır olur.</p>"
+   },
+   {
+    "id": "faq-erezept",
+    "q": "E-reçetemi eczaneden nasıl alırım?",
+    "a": "<p>En kolay yol sağlık sigortası kartınızdır: Eczane kartı okuyucuya takar ve reçeteyi çağırır – bunun için PIN gerekmez.</p><p>Alternatif olarak gematik’in e-reçete uygulamasını, sağlık sigortanızın ya da bir eczanenin uygulamasını veya bizden alacağınız kâğıt çıktıyı kullanabilirsiniz.</p>"
+   },
+   {
+    "id": "faq-karte",
+    "q": "Sigorta kartımı neden her çeyrek yılda istiyorsunuz?",
+    "a": "<p>Kartınız içinde bulunduğumuz çeyrek yılda okutulmadan reçete ve hizmetleri sağlık sigortanıza faturalandıramayız. Bu nedenle telefonla gelen reçete taleplerini ancak kartınız o çeyrek yılda bizde okutulduktan sonra işleme alırız.</p>"
+   },
+   {
+    "id": "faq-ueberweisung",
+    "q": "Uzman hekime sevk alabilir miyim?",
+    "a": "<p>Evet, tıbben gerekliyse. Bize sorun – isterseniz uzman hekimler ve hastanelerle tedavinizin devamını da koordine ederiz.</p>"
+   },
+   {
+    "id": "faq-eau",
+    "q": "İşverenim hastalık raporumu nasıl alır?",
+    "a": "<p>Elektronik olarak: İş göremezlik belgesini sağlık sigortanıza iletiriz, işvereniniz belgeyi oradan alır. Kendi dosyanız için size bir çıktı veririz.</p>"
+   }
+  ]
+ },
+ {
+  "id": "labor",
+  "title": "Kan alma ve sonuçlar",
+  "items": [
+   {
+    "id": "faq-blut",
+    "q": "Kan alma ne zaman?",
+    "a": "<p>Pazartesiden cumaya saat 8–9 arası.</p>"
+   },
+   {
+    "id": "faq-nuechtern",
+    "q": "Kan alma için aç karnına mı gelmeliyim?",
+    "a": "<p>Kan şekeri ve kan yağı değerleri için evet.</p><p>Aç karnına demek: Bir önceki akşam yemeğinden sonra bir şey yememek. Su içebilirsiniz. Sabah ilaçlarınızı alıp almayacağınızı önceden sizinle konuşuruz.</p>"
+   },
+   {
+    "id": "faq-ergebnis",
+    "q": "Laboratuvar sonuçlarım ne zaman çıkar?",
+    "a": "<p>Genellikle ertesi gün. Sonuçları konuşmak için size bir randevu verilir.</p>"
+   }
+  ]
+ },
+ {
+  "id": "impfen",
+  "title": "Aşılar",
+  "items": [
+   {
+    "id": "faq-impftermin",
+    "q": "Aşı için randevu gerekir mi?",
+    "a": "<p>Hayır. Muayene saatlerinde gelmeniz yeterli.</p>"
+   },
+   {
+    "id": "faq-impfen60",
+    "q": "STIKO 60 yaştan itibaren hangi aşıları öneriyor?",
+    "a": "<p>Yıllık grip aşısı, pnömokok aşısı ve zona aşısı.</p><p>75 yaştan itibaren tek doz RSV aşısı ve yıllık Covid-19 aşısı eklenir. Ağır kronik hastalığı olanlara veya bakımevinde yaşayanlara STIKO, RSV aşısını 60 yaştan itibaren öneriyor. (Kaynak: STIKO önerileri 2026)</p>"
+   },
+   {
+    "id": "faq-impfmehr",
+    "q": "Aynı gün birden fazla aşı olabilir miyim?",
+    "a": "<p>Evet. STIKO’ya göre grip, Covid-19, RSV ve pnömokok aşıları – sizin için önerildiyse – aynı randevuda yapılabilir.</p>"
+   },
+   {
+    "id": "faq-impftag",
+    "q": "Aşı günü nelere dikkat etmeliyim?",
+    "a": "<p>Akut bir enfeksiyonunuz yokken ve aç karnına olmadan gelin. Aşıdan sonra lütfen spor yapmayın. Aşı kartınızı getirin.</p>"
+   },
+   {
+    "id": "faq-reise",
+    "q": "Seyahat aşıları konusunda danışmanlık veriyor musunuz?",
+    "a": "<p>Evet. Lütfen seyahatten yeterince önce, ideal olarak altı ila sekiz hafta önce gelin – bazı aşılar birkaç randevu gerektirir.</p>"
+   }
+  ]
+ },
+ {
+  "id": "vorsorge",
+  "title": "Check-up ve erken teşhis",
+  "items": [
+   {
+    "id": "faq-checkup",
+    "q": "Sağlık sigortası hangi koruyucu muayeneleri öder?",
+    "a": "<p>Diğerlerinin yanı sıra şu muayeneleri:</p><ul><li>Sağlık check-up’ı: 18–34 yaş arasında bir kez, 35 yaşından itibaren üç yılda bir</li><li>Cilt kanseri taraması: 35 yaşından itibaren iki yılda bir</li><li>Erkekler için kanser taraması: 45 yaşından itibaren her yıl</li><li>Gençlik sağlık muayenesi J1: 12–14 yaş arasında</li></ul><p>Diğer hizmetleri hekim önerisiyle veya ücretli hizmet olarak sunuyoruz.</p>"
+   },
+   {
+    "id": "faq-j1",
+    "q": "J1 nedir ve ne kadar sürer?",
+    "a": "<p>J1, 12–14 yaş arası gençler için sağlık muayenesidir. Yaklaşık yarım saat ayırın ve randevuyu lütfen zamanında alın.</p>"
+   },
+   {
+    "id": "faq-lungenkrebs",
+    "q": "Yeni akciğer kanseri taraması kimler için?",
+    "a": "<p>Halen veya geçmişte yoğun sigara içmiş 50–75 yaş arası kişiler için. Nisan 2026’dan beri yasal sağlık sigortası bunun için yılda bir kez düşük dozlu bilgisayarlı tomografi ödüyor.</p><p>Bize danışın: Muayenenin sizin için uygun olup olmadığını birlikte netleştirir, yararlarını ve risklerini konuşuruz.</p>"
+   }
+  ]
+ },
+ {
+  "id": "digital",
+  "title": "ePA ve dijital sağlık",
+  "items": [
+   {
+    "id": "faq-epa",
+    "q": "Elektronik hasta dosyama (ePA) neler ekliyorsunuz?",
+    "a": "<p>Ekim 2025’ten beri muayenehaneler ePA’yı kullanmakla yükümlüdür. İtiraz etmediyseniz tetkik sonuçları, doktor raporları ve laboratuvar değerleri gibi önemli belgeleri ekleriz.</p><p>Sağlık sigortanızın ePA uygulamasında nelerin kayıtlı olduğunu kendiniz görebilir, tek tek belgeleri gizleyebilir veya silebilirsiniz.</p>"
+   },
+   {
+    "id": "faq-epa-nein",
+    "q": "ePA’ya itiraz edebilir miyim?",
+    "a": "<p>Evet. ePA sizin için isteğe bağlıdır. İtirazınızı – dosyanın tamamı veya tek tek işlevler için – sağlık sigortanıza iletin.</p>"
+   },
+   {
+    "id": "faq-primaer",
+    "q": "Gelecekte her zaman önce aile hekimine mi gitmem gerekecek?",
+    "a": "<p>Henüz değil. Federal hükümet, aile hekimliğinin ilk başvuru noktası olacağı bir birinci basamak sağlık sistemi planlıyor. Bir kanun tasarısı duyuruldu; en erken başlangıç olarak 2028 yılı belirtiliyor.</p><p>O zamana kadar doktorunuzu serbestçe seçebilirsiniz. Bir değişiklik olur olmaz sizi burada bilgilendiririz.</p>"
+   }
+  ]
+ },
+ {
+  "id": "notfall",
+  "title": "Acil durum ve nöbetçi doktor",
+  "items": [
+   {
+    "id": "faq-bereitschaft",
+    "q": "Muayene saatleri dışında kime ulaşabilirim?",
+    "a": "<p>116 117 numaralı nöbetçi doktor hizmetine – Almanya genelinde ve ücretsiz. Hangi nöbetçi muayenehanenin açık olduğunu buradan öğrenirsiniz.</p><p>Bölgemiz için bu, Heppenheim’daki Bergstraße nöbetçi doktor merkezidir: Viernheimer Straße 2a.</p>"
+   },
+   {
+    "id": "faq-112",
+    "q": "112 acil numarasını ne zaman aramalıyım?",
+    "a": "<p>Hayati tehlike durumunda, örneğin:</p><ul><li>şiddetli göğüs ağrısı veya nefes darlığı</li><li>felç, ağız kenarında sarkma veya konuşma bozukluğu gibi inme belirtileri</li><li>bilinç kaybı</li><li>şiddetli kanama</li></ul>"
+   }
+  ]
+ },
+ {
+  "id": "weg",
+  "title": "Ulaşım ve park",
+  "items": [
+   {
+    "id": "faq-parken",
+    "q": "Nereye park edebilirim?",
+    "a": "<p>Doğrudan muayenehanenin önüne – ücretsiz. Bürgerhaus’ta da ücretsiz park yerleri var, giriş Saarlandstraße üzerinden.</p>"
+   },
+   {
+    "id": "faq-bus",
+    "q": "Muayenehaneye otobüsle nasıl gelirim?",
+    "a": "<p>Şehir otobüsüyle Bürgerhaus durağına kadar gelin. Oradan Kreuzstraße 13’e yalnızca birkaç dakikalık yürüme mesafesi var.</p>"
+   },
+   {
+    "id": "faq-hilfe",
+    "q": "Yürümekte zorlanıyorum. Muayenehaneye nasıl gelebilirim?",
+    "a": "<p>Önceden bizi arayın – yolunuzu nasıl kolaylaştırabileceğimizi konuşalım. Muayenehaneye hiç gelemiyorsanız ev ziyareti mümkündür.</p>"
+   }
+  ]
+ },
+ {
+  "id": "leistungen",
+  "title": "Hizmetler ve ücretler",
+  "items": [
+   {
+    "id": "faq-hausbesuch",
+    "q": "Ev ziyareti yapıyor musunuz?",
+    "a": "<p>Evet, sağlık durumunuz nedeniyle muayenehaneye gelemiyorsanız – telefonla anlaşarak. Huzurevi ve bakımevlerindeki hastalarımızı da takip ediyoruz.</p>"
+   },
+   {
+    "id": "faq-dmp",
+    "q": "DMP programları nedir?",
+    "a": "<p>Sağlık sigortalarının kronik hastalıklar için yapılandırılmış tedavi programlarıdır. Koroner kalp hastalığı, diyabet, KOAH ve astım programlarına katılıyoruz. Bu programlarda belirli standartlara göre düzenli kontroller yapılır.</p>"
+   },
+   {
+    "id": "faq-akupunktur",
+    "q": "Akupunktur yapıyor musunuz – ücretini kim ödüyor?",
+    "a": "<p>Evet, örneğin migren, boyun ağrısı, alerji, baş dönmesi veya kulak çınlamasında.</p><p>Yasal sağlık sigortaları akupunkturu yalnızca en az altı aydır süren kronik bel ağrısı veya diz kireçlenmesinde öder. Diğer durumlarda ücreti hasta öder. Masrafları önceden sizinle netleştiririz.</p>"
+   },
+   {
+    "id": "faq-privat",
+    "q": "Özel sigortalı hastalara da bakıyor musunuz?",
+    "a": "<p>Evet. Yasal ve özel sigortalı hastaların yanı sıra ücretini kendisi ödeyen hastalara da bakıyoruz.</p>"
+   },
+   {
+    "id": "faq-ausbildung",
+    "q": "Meslek eğitimi veriyor musunuz?",
+    "a": "<p>Evet, tıbbi asistan (Medizinische Fachangestellte, MFA) yetiştiriyoruz. Hazırlık stajı mümkündür. Başvurunuzu posta ile veya willkommen@gemeinschaftspraxis-guenther.de adresine e-posta ile gönderin.</p>"
+   }
+  ]
+ }
+]

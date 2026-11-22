@@ -1,0 +1,387 @@
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1 id="hero-h"><span class="l1">Ihre Hausarztpraxis</span><br>in Viernheim.</h1>
+      <p class="hero__lead">Dr. Evelyne Günther und Dr. Andreas Günther, Fachärzte für Innere Medizin. Seit 1970 in der Kreuzstraße&nbsp;13 – mit kostenlosen Parkplätzen direkt vor der Tür.</p>
+      <div class="hero__panel">
+        <div class="btn-row" data-cta-swap>
+          <a class="btn btn--primary" data-cta="call" href="tel:{{TEL}}">{{icon:phone}}<span>Anrufen: <span class="num">{{PHONE}}</span></span></a>
+          <a class="btn" data-cta="book" href="#anliegen" data-open="termin">{{icon:calendar}}Termin online anfragen</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__art">
+      {{gcon}}
+      <figure class="hero__photo"><img src="assets/img/foto-hero.webp" width="1200" height="1500" alt="Die Praxis in der Abenddämmerung: graue Fassade mit dem leuchtenden blauen G und hell erleuchtetem Eingang" fetchpriority="high"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="now" id="aktuell" aria-labelledby="aktuell-h">
+  <div class="wrap">
+    <div class="now__title"><h2 id="aktuell-h">Aktuell</h2></div>
+    <div class="now__grid">
+      <article class="feature" id="impfen" aria-labelledby="impfen-h">
+        <p class="feature__date">Impfsaison 2026/27</p>
+        <h3 id="impfen-h">Die Grippe&shy;impfstoffe sind da. Impfen ohne Termin.</h3>
+        <p>Kommen Sie einfach während der Sprechzeiten vorbei. Grippe, Corona, RSV und Pneumokokken können laut STIKO auch am selben Tag geimpft werden – wenn sie für Sie empfohlen sind.</p>
+        <div class="vacc" data-vacc>
+          <p class="vacc__q" id="vacc-q">Welche Impfungen empfiehlt die STIKO für Sie?</p>
+          <div class="chips" role="group" aria-labelledby="vacc-q">
+            <button class="chip" type="button" data-age="u60" aria-pressed="false">unter 60</button>
+            <button class="chip" type="button" data-age="60" aria-pressed="true">60 bis 74</button>
+            <button class="chip" type="button" data-age="75" aria-pressed="false">ab 75</button>
+          </div>
+          <label class="check"><input type="checkbox" data-risk> Ich habe eine chronische Erkrankung oder lebe in einer Pflegeeinrichtung.</label>
+          <ul class="vacc__out" data-vacc-out aria-live="polite">
+            <li><b>Grippe</b><span>jährlich, am besten jetzt</span></li>
+            <li><b>Pneumokokken</b><span>Standardimpfung</span></li>
+            <li><b>Gürtelrose</b><span>2 Impfungen</span></li>
+            <li class="is-grey"><b>Tetanus und Diphtherie</b><span>alle 10 Jahre auffrischen</span></li>
+          </ul>
+          <p class="vacc__note">Stand: STIKO-Empfehlungen 2026. Die Übersicht ersetzt keine Beratung – bringen Sie Ihren Impfpass mit, wir prüfen ihn gern.</p>
+        </div>
+      </article>
+      <div>
+        <ul class="news">
+          <li class="is-important">
+            <a href="#sprechzeiten">
+              <time datetime="2026-12-28">28. bis 31. Dezember</time>
+              <h3>Praxis zwischen den Jahren geschlossen</h3>
+              <p>Die Vertretung nennt Ihnen unser Anrufbeantworter. Im neuen Jahr sind wir wie gewohnt für Sie da.</p>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html#faq-lungenkrebs">
+              <time datetime="2026-04-01">Neu seit April 2026</time>
+              <h3>Lungenkrebs-Früherkennung für starke Raucher</h3>
+              <p>Für aktive und ehemalige starke Raucherinnen und Raucher von 50 bis 75 zahlt die Kasse jetzt eine jährliche Niedrigdosis-CT. Wir beraten Sie, ob das für Sie infrage kommt.</p>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html#faq-epa">
+              <time datetime="2025-10-01">Seit Oktober 2025</time>
+              <h3>Ihre elektronische Patientenakte</h3>
+              <p>Was wir in Ihre ePA einstellen – und wie Sie selbst entscheiden, wer was sieht.</p>
+            </a>
+          </li>
+          <li>
+            <a href="#ausbildung">
+              <time datetime="2027">Ausbildung 2027</time>
+              <h3>Wir bilden aus: Medizinische Fachangestellte (w/m/d)</h3>
+              <p>Ein Praktikum vorab ist möglich. Bewerben Sie sich per Post oder E-Mail.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="anliegen" aria-labelledby="anliegen-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="anliegen-h">Was können wir für Sie tun?</h2>
+      <p class="lead">Die häufigsten Anliegen – jeweils mit dem schnellsten Weg.</p>
+    </div>
+    <ul class="tasks">
+      <li class="task">
+        <span class="task__icon">{{icon:calendar}}</span>
+        <h3>Termin vereinbaren</h3>
+        <p>Für Untersuchungen, Vorsorge und Befundbesprechungen. Rufen Sie an oder senden Sie uns eine Anfrage – wir melden uns.</p>
+        <div class="task__act"><a class="btn" href="#anliegen" data-open="termin">Termin anfragen</a></div>
+      </li>
+      <li class="task task--urgent">
+        <span class="task__icon">{{icon:alert}}</span>
+        <h3>Akute Beschwerden</h3>
+        <p>Bitte rufen Sie vorher an. So verkürzt sich Ihre Wartezeit – oder wir organisieren einen Notfallbesuch.</p>
+        <div class="task__act"><a class="btn" href="tel:{{TEL}}">{{icon:phone}}<span class="num">{{PHONE}}</span></a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:pill}}</span>
+        <h3>Folgerezept</h3>
+        <p>Für Medikamente, die wir Ihnen bereits verordnet haben. Das E-Rezept können Sie nach einigen Stunden, spätestens nach einem halben Tag in der Apotheke einlösen.</p>
+        <div class="task__act"><a class="btn" href="#anliegen" data-open="rezept">Rezept bestellen</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:drop}}</span>
+        <h3>Blutabnahme</h3>
+        <p>Montag bis Freitag von 8 bis 9 Uhr. Für Blutzucker und Blutfette kommen Sie bitte nüchtern. Die Ergebnisse liegen meist am nächsten Tag vor.</p>
+        <div class="task__act"><a class="textlink" href="faq.html#faq-nuechtern">Was heißt nüchtern?</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:syringe}}</span>
+        <h3>Impfung</h3>
+        <p>Ohne Termin während der Sprechzeiten. Kommen Sie bitte ohne Infekt und nicht nüchtern – und verzichten Sie danach auf Sport.</p>
+        <div class="task__act"><a class="textlink" href="#impfen">Zum Impf-Check</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:home}}</span>
+        <h3>Hausbesuch</h3>
+        <p>Wenn Sie gesundheitlich nicht in die Praxis kommen können, besuchen wir Sie nach telefonischer Absprache zu Hause oder im Pflegeheim.</p>
+        <div class="task__act"><a class="textlink" href="tel:{{TEL}}">Anrufen</a></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--mist" id="sprechzeiten" aria-labelledby="zeiten-h">
+  <div class="wrap hours">
+    <div class="head" style="margin-bottom:0">
+      <h2 id="zeiten-h">Sprechzeiten</h2>
+      <p class="lead">Zur Impfung ohne Termin, zur Untersuchung mit Termin. Blutabnahme an jedem Werktag ab 8 Uhr.</p>
+    </div>
+    <div>
+      <table class="times">
+        <thead><tr><th scope="col"><span class="sr-only">Tag</span></th><th scope="col">Vormittag</th><th scope="col">Nachmittag</th></tr></thead>
+        <tbody>
+          <tr data-dow="1"><th scope="row">Montag</th><td class="num">9–11 Uhr</td><td class="num">16–18 Uhr</td></tr>
+          <tr data-dow="2"><th scope="row">Dienstag</th><td class="num">9–11 Uhr</td><td class="num">16–18 Uhr</td></tr>
+          <tr data-dow="3"><th scope="row">Mittwoch</th><td class="num">9–11 Uhr</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">geschlossen</span></td></tr>
+          <tr data-dow="4"><th scope="row">Donnerstag</th><td class="num">9–11 Uhr</td><td class="num">16–18 Uhr</td></tr>
+          <tr data-dow="5"><th scope="row">Freitag</th><td class="num">9–13 Uhr</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">geschlossen</span></td></tr>
+          <tr class="is-off" data-dow="6 0"><th scope="row">Samstag und Sonntag</th><td colspan="2">geschlossen</td></tr>
+        </tbody>
+      </table>
+      <p class="times__lab"><b>Blutabnahme</b> Montag bis Freitag 8–9 Uhr</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="aerzte" aria-labelledby="aerzte-h" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="aerzte-h">Ihre Ärztin und Ihr Arzt</h2>
+      <p class="lead">Beide sind Fachärzte für Innere Medizin und kommen aus der Klinik – aus der Kardiologie und aus der Gastroenterologie. Diese Erfahrung bringen sie in die hausärztliche Versorgung ein.</p>
+    </div>
+    <div class="docs">
+      <article class="doc" aria-labelledby="doc-e">
+        <a class="doc__img" href="dr-evelyne-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:evelyne}}</a>
+        <h3 id="doc-e">Dr. med. Evelyne Günther</h3>
+        <p class="doc__role">Fachärztin für Innere Medizin. Hypertensiologin DHL, Akupunktur, Palliativmedizin.</p>
+        <ul class="dots">
+          <li>Herz, Kreislauf und Bluthochdruck</li>
+          <li>Akupunktur und Traditionelle Chinesische Medizin</li>
+          <li>Begleitung schwer kranker Menschen</li>
+        </ul>
+        <p><a class="btn" href="dr-evelyne-guenther.html">Dr. Evelyne Günther kennenlernen</a></p>
+      </article>
+      <article class="doc" aria-labelledby="doc-a">
+        <a class="doc__img" href="dr-andreas-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:andreas}}</a>
+        <h3 id="doc-a">Dr. med. Andreas Günther</h3>
+        <p class="doc__role">Facharzt für Innere Medizin und Gastroenterologie. Notfallmedizin.</p>
+        <ul class="dots dots--grey">
+          <li>Magen, Darm, Leber und Ultraschall</li>
+          <li>Diabetes und Stoffwechsel</li>
+          <li>Notfallmedizin</li>
+        </ul>
+        <p><a class="btn" href="dr-andreas-guenther.html">Dr. Andreas Günther kennenlernen</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    {{team:staff}}
+  </div>
+</section>
+
+<section class="section section--mist" id="leistungen" aria-labelledby="leistungen-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="leistungen-h">Leistungen</h2>
+      <p class="lead">Hausärztlich und internistisch: von der Untersuchung bis zur Therapie. Und wenn Sie Fachärzte oder eine Klinik brauchen, koordinieren wir Ihre weitere Behandlung.</p>
+    </div>
+    <div class="offers">
+      <section class="offer" aria-labelledby="o1">
+        <h3 id="o1">Untersuchung und Diagnostik</h3>
+        <p>Vieles klären wir direkt in der Praxis.</p>
+        <ul>
+          <li>Ultraschall von Bauch- und Brustorganen, Schilddrüse und Halsschlagader</li>
+          <li>Ruhe-, Belastungs- und Langzeit-EKG</li>
+          <li>Langzeit-Blutdruckmessung</li>
+          <li>Lungenfunktionstest</li>
+          <li>Labordiagnostik</li>
+          <li>Demenz-Screening, z. B. Mini-Mental-Test</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o2">
+        <h3 id="o2">Vorsorge und Früherkennung</h3>
+        <p>Früh erkennen, was sich gut behandeln lässt.</p>
+        <ul>
+          <li>Gesundheits-Check-up, ab 35 alle drei Jahre</li>
+          <li>Hautkrebs-Screening, ab 35 alle zwei Jahre</li>
+          <li>Krebsfrüherkennung für Männer ab 45</li>
+          <li>Jugendgesundheitsuntersuchung J1 (12 bis 14 Jahre)</li>
+          <li>Jugendarbeitsschutzuntersuchung</li>
+          <li>Sporttauglichkeit, z. B. für Tauchen und Marathon</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o3">
+        <h3 id="o3">Chronische Erkrankungen</h3>
+        <p>Langfristig begleitet, regelmäßig kontrolliert.</p>
+        <ul>
+          <li>Behandlungsprogramme (DMP) bei koronarer Herzkrankheit, Diabetes, COPD und Asthma</li>
+          <li>Ernährungs- und Diätberatung</li>
+          <li>Infusionstherapie und Aufbaukuren</li>
+          <li>Abstimmung mit Fachärzten und Kliniken</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o4">
+        <h3 id="o4">Impfen und Reisen</h3>
+        <p>Geschützt durch das Jahr – und in den Urlaub.</p>
+        <ul>
+          <li>Impfungen nach STIKO-Empfehlung, ohne Termin</li>
+          <li>Reiseimpfberatung</li>
+          <li>Impfpass-Check, auf Wunsch mit Erinnerung</li>
+        </ul>
+      </section>
+      <section class="offer offer--grey" aria-labelledby="o5">
+        <h3 id="o5">Akupunktur und TCM</h3>
+        <p>Ergänzend zur Schulmedizin.</p>
+        <ul>
+          <li>Akupunktur bei Schmerzsyndromen wie Migräne oder Beschwerden der Halswirbelsäule</li>
+          <li>Akupunktur bei Allergien, Schwindel und Tinnitus</li>
+          <li>Weitere Verfahren der Traditionellen Chinesischen Medizin</li>
+          <li>Eigenblutbehandlung</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o6">
+        <h3 id="o6">Zu Hause, im Heim und mehr</h3>
+        <p>Wenn der Weg in die Praxis nicht geht.</p>
+        <ul>
+          <li>Hausbesuche nach Absprache</li>
+          <li>Betreuung in Alten- und Pflegeheimen</li>
+          <li>Kleine Chirurgie, Wundversorgung, Nachsorge nach Operationen</li>
+          <li>Gutachten, z. B. für Rente, Schwerbehinderung und Reha</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="praxis" aria-labelledby="praxis-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="praxis-h">Die Praxis</h2>
+      <p class="lead">Wir möchten Ihre erste Anlaufstelle für alle Gesundheitsfragen sein – langfristig und partnerschaftlich. Dabei sehen wir den ganzen Menschen, mit Familie, Beruf und Lebensumständen. Besonders am Herzen liegt uns die Vorsorge.</p>
+    </div>
+    <div class="mosaic">
+      <figure class="shot shot--lead"><img src="assets/img/foto-empfang.webp" width="1200" height="1600" loading="lazy" alt="Der Empfang mit dunklem Tresen, runden Deckenleuchten und Blumen"></figure>
+      <figure class="shot"><img src="assets/img/foto-anmeldung.webp" width="1050" height="1400" loading="lazy" alt="Blick über den Empfangstresen zu den Arbeitsplätzen"></figure>
+      <figure class="shot"><img src="assets/img/foto-raum.webp" width="1050" height="1400" loading="lazy" alt="Neuer Raum mit hellem Sideboard und indirektem Licht"></figure>
+      <figure class="shot"><img src="assets/img/foto-raum-2.webp" width="1050" height="1400" loading="lazy" alt="Raum mit Spiegelband und schwebendem Sideboard"></figure>
+      <figure class="shot"><img src="assets/img/foto-sitz.webp" width="1050" height="1400" loading="lazy" alt="Weißer Sessel vor heller Ziegelwand im Licht eines Bodenstrahlers"></figure>
+    </div>
+    <div class="shots shots--out">
+      <figure class="shot"><img src="assets/img/foto-g.webp" width="1050" height="1400" loading="lazy" alt="Das blaue G als Relief an der Fassade"></figure>
+      <figure class="shot"><img src="assets/img/foto-strasse.webp" width="1050" height="1400" loading="lazy" alt="Die Praxis Kreuzstraße 13 von der Straße mit Blumenbeet"></figure>
+      <figure class="shot"><img src="assets/img/foto-abend.webp" width="1050" height="1400" loading="lazy" alt="Fassade in der Dämmerung mit hinterleuchtetem G"></figure>
+    </div>
+    <div class="shots shots--garden">
+      <figure class="shot"><img src="assets/img/foto-garten.webp" width="1050" height="1400" loading="lazy" alt="Der Garten hinter der Praxis mit Rasen, Kiesweg, Kugelahornen und weißen Sesseln"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-sessel.webp" width="1050" height="1400" loading="lazy" alt="Weißer Sessel unter einem Kugelahorn vor heller Wand"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-baum.webp" width="1050" height="1400" loading="lazy" alt="Zwei weiße Sessel vor Kugelahorn und blühender Hecke"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-rasen.webp" width="1050" height="1400" loading="lazy" alt="Rasenfläche vor der grauen Fassade mit Balkon"></figure>
+    </div>
+    <div class="facts">
+      <div style="display:grid;gap:var(--space-s);align-content:start">
+        <h3 class="sub-h">Seit 1970 in der Kreuzstraße 13</h3>
+        <p class="muted">Zuletzt 2019 und 2023 umgebaut: neuer Empfang, neue Räume, neuer Eingang und eine neue Fassade.</p>
+      </div>
+      <ol class="timeline" aria-label="Geschichte der Praxis">
+        <li><time datetime="1970">1970</time><p>Dr. Bernhard Kleine-Allekotte eröffnet in der Kreuzstraße 13 eine Praxis für Lungenheilkunde und Innere Medizin.</p></li>
+        <li><time datetime="1982">1982</time><p>Dr. Michael Günther übernimmt und führt die Praxis mehr als 32 Jahre als internistische Hausarztpraxis.</p></li>
+        <li><time datetime="2014-01">Jan. 2014</time><p>Dr. Evelyne Günther lässt sich nieder und gründet mit Dr. Michael Günther eine Gemeinschaftspraxis.</p></li>
+        <li><time datetime="2014-07">Juli 2014</time><p>Dr. Andreas Günther übernimmt den Kassensitz seines Vaters. Seitdem führen Dr. Evelyne und Dr. Andreas Günther die Praxis gemeinsam.</p></li>
+        <li><time datetime="2019">2019</time><p>Umbau der Praxis: neuer Empfang, neues Wartezimmer, neue Flure.</p></li>
+        <li><time datetime="2023">2023</time><p>Neue Räume, neuer Eingang und neue Fassade mit dem blauen G.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section insta" id="instagram" aria-labelledby="insta-h" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="insta__head">
+      <div class="insta__profile">
+        <span class="avatar" aria-hidden="true">{{gmark}}</span>
+        <div><h2 id="insta-h" style="font-size:var(--step-2)">Neues auf Instagram</h2><p class="muted">@gemeinschaftspraxisguenther</p></div>
+      </div>
+      <a class="btn" href="{{INSTA}}" rel="noopener">{{icon:insta}}Auf Instagram folgen</a>
+    </div>
+    <div class="insta__grid">
+      <a class="post post--blue" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Der Grippeimpfstoff ist da">
+        <div class="post__in"><span class="post__mark" aria-hidden="true">{{gmark}}</span><p class="post__big">Der Grippe&shy;impfstoff ist da.</p><p class="post__s">Ohne Termin während der Sprechzeiten.</p></div>
+        <span class="post__cap">Ab sofort impfen wir gegen die saisonale Grippe. Bringen Sie Ihren Impfpass mit – wir schauen gleich, ob noch etwas fehlt.</span>
+      </a>
+      <a class="post post--photo" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Unser G leuchtet">
+        <div class="post__in"><img src="assets/img/insta-g.webp" width="900" height="900" loading="lazy" alt=""><p class="post__s">Abends leuchtet unser G. So finden Sie uns auch im Dunkeln.</p></div>
+        <span class="post__cap">Kreuzstraße 13, Viernheim. Parken direkt vor der Tür, kostenlos.</span>
+      </a>
+      <a class="post" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Impfungen ab 60">
+        <div class="post__in"><span class="post__k">STIKO 2026</span><p class="post__mid">Ab 60 empfohlen</p>
+          <ul class="post__list"><li><span>Grippe</span><span>jährlich</span></li><li><span>Pneumokokken</span><span>Standard</span></li><li><span>Gürtelrose</span><span>2 Dosen</span></li></ul>
+          <p class="post__s">Ab 75 zusätzlich RSV und Corona.</p></div>
+        <span class="post__cap">Welche Impfung brauche ich? Unser Impf-Check auf der Website zeigt es Ihnen in zwei Klicks.</span>
+      </a>
+      <a class="post post--grey" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Blutabnahme 8 bis 9 Uhr">
+        <div class="post__in"><span class="post__k">Labor</span><span class="post__clock" aria-hidden="true"></span><p class="post__mid">Blutabnahme 8–9&nbsp;Uhr</p><p class="post__s">Montag bis Freitag. Für Zucker und Blutfette nüchtern kommen.</p></div>
+        <span class="post__cap">Nüchtern heißt: am Vorabend nach dem Abendessen nichts mehr essen. Wasser ist erlaubt.</span>
+      </a>
+      <a class="post post--photo" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Unser Empfang">
+        <div class="post__in"><img src="assets/img/insta-empfang.webp" width="900" height="900" loading="lazy" alt=""><p class="post__s">Unser Empfang. Hier beginnt Ihr Besuch.</p></div>
+        <span class="post__cap">Bitte denken Sie an Ihre Gesundheitskarte – einmal im Quartal lesen wir sie ein.</span>
+      </a>
+      <a class="post post--mist" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Lungenkrebs-Früherkennung">
+        <div class="post__in"><span class="post__k">Neu seit April</span><p class="post__mid">Lungenkrebs-Früh&shy;erkennung</p><p class="post__s">Für starke Raucherinnen und Raucher von 50 bis 75. Fragen Sie uns.</p></div>
+        <span class="post__cap">Die Kasse zahlt jetzt eine jährliche Niedrigdosis-CT für Risikogruppen. Ob Sie dazugehören, klären wir im Gespräch.</span>
+      </a>
+      <a class="post" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Parken direkt vor der Tür">
+        <div class="post__in"><span class="post__k">Anfahrt</span><span class="post__art" aria-hidden="true">{{svg:motiv-parken.svg}}</span><p class="post__mid">Parken? Direkt vor der Tür.</p><p class="post__s">Kostenlos. Kreuzstraße 13.</p></div>
+        <span class="post__cap">Kein Suchen, kein Ticket: Vor der Praxis parken Sie kostenlos.</span>
+      </a>
+      <a class="post post--ink" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Blutdruck richtig messen">
+        <div class="post__in"><span class="post__k">Blutdruck-Tipp</span><p class="post__mid">Richtig messen</p>
+          <ol class="post__steps"><li>5 Minuten ruhig sitzen</li><li>Manschette auf Herzhöhe</li><li>Zweimal messen, Wert notieren</li></ol></div>
+        <span class="post__cap">Bringen Sie Ihr Messprotokoll zum nächsten Termin mit – das hilft uns bei der Einstellung.</span>
+      </a>
+      <a class="post post--blue" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Praxisurlaub">
+        <div class="post__in"><span class="post__k">Zwischen den Jahren</span><p class="post__mid">Praxisurlaub 28.–31.12.</p><p class="post__s">Die Vertretung nennt Ihnen unser Anrufbeantworter.</p></div>
+        <span class="post__cap">Wir wünschen Ihnen schöne Feiertage!</span>
+      </a>
+    </div>
+    <p class="draft-note">Beispiel-Feed (Entwurf). Im Livebetrieb erscheinen hier die echten Beiträge – datenschutzfreundlich erst nach einem Klick geladen.</p>
+  </div>
+</section>
+
+<section class="section section--tight section--mist" id="fragen" aria-labelledby="fragen-h">
+  <div class="wrap hours">
+    <div class="head" style="margin-bottom:0">
+      <h2 id="fragen-h">Häufige Fragen</h2>
+      <p class="lead">Kurz und klar beantwortet – von der Blutabnahme bis zur ePA.</p>
+      <p><a class="btn btn--primary" href="faq.html">Alle Fragen und Antworten</a></p>
+    </div>
+    <ul class="news">
+      <li><a href="faq.html#faq-termin"><h3>Brauche ich einen Termin?</h3></a></li>
+      <li><a href="faq.html#faq-rezept"><h3>Wie bestelle ich ein Folgerezept?</h3></a></li>
+      <li><a href="faq.html#faq-erezept"><h3>Wie löse ich ein E-Rezept ein?</h3></a></li>
+      <li><a href="faq.html#faq-bereitschaft"><h3>Wen erreiche ich außerhalb der Sprechzeiten?</h3></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--deep" id="ausbildung" aria-labelledby="ausbildung-h">
+  <div class="wrap">
+    <div class="band band--deep">
+      <div style="display:grid;gap:var(--space-s)">
+        <h2 id="ausbildung-h">Wir bilden aus.</h2>
+        <p class="lead" style="font-size:var(--step-0)">Ausbildungsplatz zur Medizinischen Fachangestellten (w/m/d). Gern mit vorbereitendem Betriebspraktikum. Schicken Sie uns Ihre Bewerbung per Post oder per E-Mail.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:{{MAIL}}?subject=Bewerbung%20Ausbildung%20MFA">{{icon:mail}}Jetzt bewerben</a>
+    </div>
+  </div>
+</section>
+
+

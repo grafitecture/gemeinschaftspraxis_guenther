@@ -1,0 +1,221 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@type": [
+   "MedicalClinic",
+   "MedicalBusiness"
+  ],
+  "@id": "https://www.gemeinschaftspraxis-guenther.de/#praxis",
+  "name": "Gemeinschaftspraxis Günther",
+  "alternateName": [
+   "Gemeinschaftspraxis Dres. Andreas Günther und Evelyne Günther",
+   "Hausarztpraxis Günther Viernheim"
+  ],
+  "description": "Hausärztliche und internistische Gemeinschaftspraxis in Viernheim mit Dr. med. Evelyne Günther und Dr. med. Andreas Günther, Fachärzte für Innere Medizin. Kostenlose Parkplätze direkt vor der Praxis.",
+  "url": "https://www.gemeinschaftspraxis-guenther.de/",
+  "telephone": "+49 6204 3704",
+  "faxNumber": "+49 6204 1723",
+  "email": "willkommen@gemeinschaftspraxis-guenther.de",
+  "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Kreuzstraße 13",
+   "postalCode": "68519",
+   "addressLocality": "Viernheim",
+   "addressRegion": "Hessen",
+   "addressCountry": "DE"
+  },
+  "areaServed": [
+   "Viernheim",
+   "Kreis Bergstraße",
+   "Rhein-Neckar"
+  ],
+  "medicalSpecialty": [
+   "PrimaryCare",
+   "Cardiovascular",
+   "Gastroenterologic"
+  ],
+  "foundingDate": "1970",
+  "logo": "https://www.gemeinschaftspraxis-guenther.de/assets/img/favicon.svg",
+  "image": "https://www.gemeinschaftspraxis-guenther.de/assets/img/og-bild.png",
+  "sameAs": [
+   "https://www.instagram.com/gemeinschaftspraxisguenther/"
+  ],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Kreuzstra%C3%9Fe+13%2C+68519+Viernheim",
+  "openingHoursSpecification": [
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Monday",
+     "Tuesday",
+     "Thursday"
+    ],
+    "opens": "09:00",
+    "closes": "11:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Monday",
+     "Tuesday",
+     "Thursday"
+    ],
+    "opens": "16:00",
+    "closes": "18:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Wednesday"
+    ],
+    "opens": "09:00",
+    "closes": "11:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "13:00"
+   }
+  ],
+  "specialOpeningHoursSpecification": [
+   {
+    "@type": "OpeningHoursSpecification",
+    "validFrom": "2026-12-28",
+    "validThrough": "2026-12-31",
+    "opens": "00:00",
+    "closes": "00:00"
+   }
+  ],
+  "amenityFeature": [
+   {
+    "@type": "LocationFeatureSpecification",
+    "name": "Kostenlose Parkplätze direkt vor der Praxis",
+    "value": true
+   },
+   {
+    "@type": "LocationFeatureSpecification",
+    "name": "Bushaltestelle Bürgerhaus in der Nähe",
+    "value": true
+   }
+  ],
+  "paymentAccepted": "Gesetzliche Krankenversicherung, Private Krankenversicherung, Selbstzahler",
+  "availableService": [
+   {
+    "@type": "MedicalProcedure",
+    "name": "Ultraschall (Bauch, Brustorgane, Schilddrüse, Halsschlagader)"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Ruhe-, Belastungs- und Langzeit-EKG"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Langzeit-Blutdruckmessung"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Gesundheits-Check-up"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Hautkrebs-Screening"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Jugendgesundheitsuntersuchung J1"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Lungenfunktionstest"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Impfungen und Reiseimpfberatung"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Labordiagnostik"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Hausbesuche"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "DMP für KHK, Diabetes, COPD und Asthma"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Akupunktur"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Ernährungsberatung"
+   },
+   {
+    "@type": "MedicalProcedure",
+    "name": "Kleine Chirurgie und Wundversorgung"
+   }
+  ],
+  "member": [
+   {
+    "@type": "Person",
+    "@id": "https://www.gemeinschaftspraxis-guenther.de/dr-evelyne-guenther#person",
+    "name": "Dr. med. Evelyne Günther",
+    "honorificPrefix": "Dr. med.",
+    "givenName": "Evelyne",
+    "familyName": "Günther",
+    "jobTitle": "Fachärztin für Innere Medizin",
+    "knowsAbout": [
+     "Innere Medizin",
+     "Bluthochdruck (Hypertensiologie DHL)",
+     "Akupunktur",
+     "Traditionelle Chinesische Medizin",
+     "Palliativmedizin",
+     "Kardiologie"
+    ],
+    "url": "https://www.gemeinschaftspraxis-guenther.de/dr-evelyne-guenther",
+    "worksFor": {
+     "@id": "https://www.gemeinschaftspraxis-guenther.de/#praxis"
+    }
+   },
+   {
+    "@type": "Person",
+    "@id": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther#person",
+    "name": "Dr. med. Andreas Günther",
+    "honorificPrefix": "Dr. med.",
+    "givenName": "Andreas",
+    "familyName": "Günther",
+    "jobTitle": "Facharzt für Innere Medizin und Gastroenterologie",
+    "knowsAbout": [
+     "Innere Medizin",
+     "Gastroenterologie",
+     "Diabetologie",
+     "Notfallmedizin",
+     "Ultraschall"
+    ],
+    "url": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther",
+    "worksFor": {
+     "@id": "https://www.gemeinschaftspraxis-guenther.de/#praxis"
+    }
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.gemeinschaftspraxis-guenther.de/#website",
+  "url": "https://www.gemeinschaftspraxis-guenther.de/",
+  "name": "Gemeinschaftspraxis Günther",
+  "inLanguage": [
+   "de-DE",
+   "en",
+   "tr"
+  ],
+  "publisher": {
+   "@id": "https://www.gemeinschaftspraxis-guenther.de/#praxis"
+  }
+ }
+]

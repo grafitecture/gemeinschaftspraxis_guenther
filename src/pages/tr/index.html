@@ -1,0 +1,388 @@
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1 id="hero-h"><span class="l1">Viernheim’da</span><br>aile hekiminiz.</h1>
+      <p class="hero__lead">Dr. Evelyne Günther ve Dr. Andreas Günther, iç hastalıkları uzmanları. 1970’ten beri Kreuzstraße&nbsp;13 adresinde – kapının hemen önünde ücretsiz park yerleriyle.</p>
+      <div class="hero__panel">
+        <div class="btn-row" data-cta-swap>
+          <a class="btn btn--primary" data-cta="call" href="tel:{{TEL}}">{{icon:phone}}<span>Arayın: <span class="num">{{PHONE}}</span></span></a>
+          <a class="btn" data-cta="book" href="#anliegen" data-open="termin">{{icon:calendar}}Online randevu talebi</a>
+        </div>
+        <p class="small muted">Hangi dillerde hizmet verebildiğimizi lütfen telefonla sorun. Tercümanlık yapacak bir yakınınızı da yanınızda getirebilirsiniz.</p>
+      </div>
+    </div>
+    <div class="hero__art">
+      {{gcon}}
+      <figure class="hero__photo"><img src="assets/img/foto-hero.webp" width="1200" height="1500" alt="Akşam alacasında muayenehane: ışıklı mavi G harfli gri cephe ve aydınlık giriş" fetchpriority="high"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="now" id="aktuell" aria-labelledby="aktuell-h">
+  <div class="wrap">
+    <div class="now__title"><h2 id="aktuell-h">Güncel</h2></div>
+    <div class="now__grid">
+      <article class="feature" id="impfen" aria-labelledby="impfen-h">
+        <p class="feature__date">2026/27 aşı sezonu</p>
+        <h3 id="impfen-h">Grip aşıları geldi. Randevu gerekmez.</h3>
+        <p>Muayene saatlerinde gelmeniz yeterli. Almanya Daimi Aşı Komisyonu STIKO’ya göre grip, Covid-19, RSV ve pnömokok aşıları – sizin için önerildiyse – aynı gün yapılabilir.</p>
+        <div class="vacc" data-vacc>
+          <p class="vacc__q" id="vacc-q">STIKO sizin için hangi aşıları öneriyor?</p>
+          <div class="chips" role="group" aria-labelledby="vacc-q">
+            <button class="chip" type="button" data-age="u60" aria-pressed="false">60 yaş altı</button>
+            <button class="chip" type="button" data-age="60" aria-pressed="true">60–74 yaş</button>
+            <button class="chip" type="button" data-age="75" aria-pressed="false">75 yaş ve üstü</button>
+          </div>
+          <label class="check"><input type="checkbox" data-risk> Kronik bir hastalığım var veya bir bakımevinde yaşıyorum.</label>
+          <ul class="vacc__out" data-vacc-out aria-live="polite">
+            <li><b>Grip</b><span>her yıl, en iyisi şimdi</span></li>
+            <li><b>Pnömokok</b><span>standart aşı</span></li>
+            <li><b>Zona</b><span>2 doz</span></li>
+            <li class="is-grey"><b>Tetanoz ve difteri</b><span>10 yılda bir rapel</span></li>
+          </ul>
+          <p class="vacc__note">Kaynak: STIKO önerileri 2026. Bu özet doktor görüşmesinin yerini tutmaz – aşı kartınızı (Impfpass) getirin, memnuniyetle kontrol ederiz.</p>
+        </div>
+      </article>
+      <div>
+        <ul class="news">
+          <li class="is-important">
+            <a href="#sprechzeiten">
+              <time datetime="2026-12-28">28–31 Aralık</time>
+              <h3>Yılbaşı arasında muayenehane kapalı</h3>
+              <p>Bizim yerimize bakan muayenehaneyi telesekreterimiz size bildirir. Yeni yılda her zamanki gibi hizmetinizdeyiz.</p>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html#faq-lungenkrebs">
+              <time datetime="2026-04-01">Nisan 2026’dan beri yeni</time>
+              <h3>Yoğun sigara içenler için akciğer kanseri taraması</h3>
+              <p>Halen veya geçmişte yoğun sigara içmiş 50–75 yaş arası kişiler için yasal sağlık sigortası artık yılda bir kez düşük dozlu bilgisayarlı tomografi (BT) ödüyor. Sizin için uygun olup olmadığını birlikte değerlendiririz.</p>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html#faq-epa">
+              <time datetime="2025-10-01">Ekim 2025’ten beri</time>
+              <h3>Elektronik hasta dosyanız (ePA)</h3>
+              <p>Dosyanıza neler eklediğimiz – ve kimin neyi göreceğine nasıl kendiniz karar verdiğiniz.</p>
+            </a>
+          </li>
+          <li>
+            <a href="#ausbildung">
+              <time datetime="2027">2027 meslek eğitimi</time>
+              <h3>Tıbbi asistan (MFA) yetiştiriyoruz</h3>
+              <p>Önceden staj yapmak mümkündür. Başvurunuzu posta veya e-posta ile gönderin.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="anliegen" aria-labelledby="anliegen-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="anliegen-h">Size nasıl yardımcı olabiliriz?</h2>
+      <p class="lead">En sık gelen talepler – her biri için en hızlı yol.</p>
+    </div>
+    <ul class="tasks">
+      <li class="task">
+        <span class="task__icon">{{icon:calendar}}</span>
+        <h3>Randevu almak</h3>
+        <p>Muayene, check-up ve sonuç görüşmeleri için. Bizi arayın veya talep gönderin – size geri dönüş yaparız.</p>
+        <div class="task__act"><a class="btn" href="#anliegen" data-open="termin">Randevu talebi</a></div>
+      </li>
+      <li class="task task--urgent">
+        <span class="task__icon">{{icon:alert}}</span>
+        <h3>Akut şikâyetler</h3>
+        <p>Lütfen gelmeden önce arayın. Böylece bekleme süreniz kısalır – gerekirse acil bir ev ziyareti ayarlarız.</p>
+        <div class="task__act"><a class="btn" href="tel:{{TEL}}">{{icon:phone}}<span class="num">{{PHONE}}</span></a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:pill}}</span>
+        <h3>Tekrar reçete</h3>
+        <p>Size daha önce yazdığımız ilaçlar için. E-reçetenizi birkaç saat sonra, en geç yarım gün içinde eczaneden alabilirsiniz.</p>
+        <div class="task__act"><a class="btn" href="#anliegen" data-open="rezept">Reçete isteyin</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:drop}}</span>
+        <h3>Kan alma</h3>
+        <p>Pazartesiden cumaya saat 8–9 arası. Kan şekeri ve kan yağları için lütfen aç karnına gelin. Sonuçlar genellikle ertesi gün hazırdır.</p>
+        <div class="task__act"><a class="textlink" href="faq.html#faq-nuechtern">Aç karnına ne demek?</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:syringe}}</span>
+        <h3>Aşı</h3>
+        <p>Muayene saatlerinde randevusuz. Lütfen enfeksiyonunuz yokken ve aç karnına olmadan gelin – aşıdan sonra spor yapmayın.</p>
+        <div class="task__act"><a class="textlink" href="#impfen">Aşı kontrolüne git</a></div>
+      </li>
+      <li class="task">
+        <span class="task__icon">{{icon:home}}</span>
+        <h3>Ev ziyareti</h3>
+        <p>Sağlık durumunuz nedeniyle muayenehaneye gelemiyorsanız, telefonla anlaştıktan sonra sizi evinizde veya bakımevinde ziyaret ederiz.</p>
+        <div class="task__act"><a class="textlink" href="tel:{{TEL}}">Bizi arayın</a></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--mist" id="sprechzeiten" aria-labelledby="zeiten-h">
+  <div class="wrap hours">
+    <div class="head" style="margin-bottom:0">
+      <h2 id="zeiten-h">Muayene saatleri</h2>
+      <p class="lead">Aşı için randevu gerekmez, muayene için randevu gerekir. Kan alma her iş günü saat 8.00’de başlar.</p>
+    </div>
+    <div>
+      <table class="times">
+        <thead><tr><th scope="col"><span class="sr-only">Gün</span></th><th scope="col">Öğleden önce</th><th scope="col">Öğleden sonra</th></tr></thead>
+        <tbody>
+          <tr data-dow="1"><th scope="row">Pazartesi</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="2"><th scope="row">Salı</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="3"><th scope="row">Çarşamba</th><td class="num">9–11</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
+          <tr data-dow="4"><th scope="row">Perşembe</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="5"><th scope="row">Cuma</th><td class="num">9–13</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
+          <tr class="is-off" data-dow="6 0"><th scope="row">Cumartesi ve Pazar</th><td colspan="2">kapalı</td></tr>
+        </tbody>
+      </table>
+      <p class="times__lab"><b>Kan alma</b> Pazartesi–Cuma 8–9</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="aerzte" aria-labelledby="aerzte-h" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="aerzte-h">Doktorlarınız</h2>
+      <p class="lead">İkisi de iç hastalıkları uzmanıdır ve uzun yıllar hastanede çalışmıştır – kardiyoloji ve gastroenteroloji alanlarında. Bu deneyimi aile hekimliğine taşıyorlar.</p>
+    </div>
+    <div class="docs">
+      <article class="doc" aria-labelledby="doc-e">
+        <a class="doc__img" href="dr-evelyne-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:evelyne}}</a>
+        <h3 id="doc-e">Dr. med. Evelyne Günther</h3>
+        <p class="doc__role">İç hastalıkları uzmanı. Hipertansiyon uzmanı (DHL), akupunktur, palyatif tıp.</p>
+        <ul class="dots">
+          <li>Kalp, dolaşım ve yüksek tansiyon</li>
+          <li>Akupunktur ve Geleneksel Çin Tıbbı</li>
+          <li>Ağır hastalara bakım ve destek</li>
+        </ul>
+        <p><a class="btn" href="dr-evelyne-guenther.html">Dr. Evelyne Günther’i tanıyın</a></p>
+      </article>
+      <article class="doc" aria-labelledby="doc-a">
+        <a class="doc__img" href="dr-andreas-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:andreas}}</a>
+        <h3 id="doc-a">Dr. med. Andreas Günther</h3>
+        <p class="doc__role">İç hastalıkları ve gastroenteroloji uzmanı. Acil tıp.</p>
+        <ul class="dots dots--grey">
+          <li>Mide, bağırsak, karaciğer ve ultrason</li>
+          <li>Diyabet ve metabolizma</li>
+          <li>Acil tıp</li>
+        </ul>
+        <p><a class="btn" href="dr-andreas-guenther.html">Dr. Andreas Günther’i tanıyın</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    {{team:staff}}
+  </div>
+</section>
+
+<section class="section section--mist" id="leistungen" aria-labelledby="leistungen-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="leistungen-h">Hizmetlerimiz</h2>
+      <p class="lead">Aile hekimliği ve iç hastalıkları: muayeneden tedaviye. Uzman hekime veya hastaneye ihtiyacınız olursa, tedavinizin devamını biz koordine ederiz.</p>
+    </div>
+    <div class="offers">
+      <section class="offer" aria-labelledby="o1">
+        <h3 id="o1">Muayene ve teşhis</h3>
+        <p>Pek çok şeyi doğrudan muayenehanede netleştiririz.</p>
+        <ul>
+          <li>Karın ve göğüs organları, tiroid ve şah damarı ultrasonu</li>
+          <li>İstirahat, efor ve 24 saatlik (Holter) EKG</li>
+          <li>24 saatlik tansiyon ölçümü</li>
+          <li>Solunum fonksiyon testi</li>
+          <li>Laboratuvar tetkikleri</li>
+          <li>Demans taraması, örneğin Mini Mental Test</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o2">
+        <h3 id="o2">Check-up ve erken teşhis</h3>
+        <p>İyi tedavi edilebilecek hastalıkları erken fark etmek.</p>
+        <ul>
+          <li>Sağlık check-up’ı, 35 yaşından itibaren üç yılda bir</li>
+          <li>Cilt kanseri taraması, 35 yaşından itibaren iki yılda bir</li>
+          <li>Erkekler için kanser taraması, 45 yaşından itibaren</li>
+          <li>Gençlik sağlık muayenesi J1 (12–14 yaş)</li>
+          <li>Genç çalışanlar için iş sağlığı muayenesi</li>
+          <li>Spora uygunluk muayenesi, örneğin dalış ve maraton için</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o3">
+        <h3 id="o3">Kronik hastalıklar</h3>
+        <p>Uzun vadeli takip, düzenli kontrol.</p>
+        <ul>
+          <li>Koroner kalp hastalığı, diyabet, KOAH ve astım için tedavi programları (DMP)</li>
+          <li>Beslenme ve diyet danışmanlığı</li>
+          <li>İnfüzyon (serum) tedavisi ve güçlendirici kürler</li>
+          <li>Uzman hekimler ve hastanelerle koordinasyon</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o4">
+        <h3 id="o4">Aşı ve seyahat</h3>
+        <p>Yıl boyunca ve tatilde korunmak için.</p>
+        <ul>
+          <li>STIKO önerilerine göre aşılar, randevusuz</li>
+          <li>Seyahat aşıları danışmanlığı</li>
+          <li>Aşı kartı kontrolü, isteğe bağlı hatırlatma ile</li>
+        </ul>
+      </section>
+      <section class="offer offer--grey" aria-labelledby="o5">
+        <h3 id="o5">Akupunktur ve Geleneksel Çin Tıbbı</h3>
+        <p>Modern tıbbı tamamlayıcı olarak.</p>
+        <ul>
+          <li>Migren veya boyun ağrısı gibi ağrı sendromlarında akupunktur</li>
+          <li>Alerji, baş dönmesi ve kulak çınlamasında akupunktur</li>
+          <li>Geleneksel Çin Tıbbı’nın diğer yöntemleri</li>
+          <li>Otohemoterapi (kişinin kendi kanıyla tedavi)</li>
+        </ul>
+      </section>
+      <section class="offer" aria-labelledby="o6">
+        <h3 id="o6">Evde, bakımevinde ve daha fazlası</h3>
+        <p>Muayenehaneye gelmek mümkün olmadığında.</p>
+        <ul>
+          <li>Anlaşarak ev ziyaretleri</li>
+          <li>Huzurevi ve bakımevlerinde hasta takibi</li>
+          <li>Küçük cerrahi, yara bakımı, ameliyat sonrası takip</li>
+          <li>Raporlar, örneğin emeklilik, engellilik ve rehabilitasyon için</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="praxis" aria-labelledby="praxis-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="praxis-h">Muayenehane</h2>
+      <p class="lead">Tüm sağlık sorularınızda ilk başvuru noktanız olmak istiyoruz – uzun vadeli ve iş birliği içinde. İnsanı ailesi, işi ve yaşam koşullarıyla bir bütün olarak görüyoruz. Koruyucu hekimlik bizim için özellikle önemli.</p>
+    </div>
+    <div class="mosaic">
+      <figure class="shot shot--lead"><img src="assets/img/foto-empfang.webp" width="1200" height="1600" loading="lazy" alt="Koyu bankolu, yuvarlak tavan lambalı ve çiçekli resepsiyon"></figure>
+      <figure class="shot"><img src="assets/img/foto-anmeldung.webp" width="1050" height="1400" loading="lazy" alt="Resepsiyon bankosunun üzerinden çalışma alanlarına bakış"></figure>
+      <figure class="shot"><img src="assets/img/foto-raum.webp" width="1050" height="1400" loading="lazy" alt="Açık renk dolaplı ve dolaylı aydınlatmalı yeni oda"></figure>
+      <figure class="shot"><img src="assets/img/foto-raum-2.webp" width="1050" height="1400" loading="lazy" alt="Ayna şeritli ve asma dolaplı oda"></figure>
+      <figure class="shot"><img src="assets/img/foto-sitz.webp" width="1050" height="1400" loading="lazy" alt="Zemin spotunun aydınlattığı açık renk tuğla duvarın önünde beyaz koltuk"></figure>
+    </div>
+    <div class="shots shots--out">
+      <figure class="shot"><img src="assets/img/foto-g.webp" width="1050" height="1400" loading="lazy" alt="Cephede kabartma mavi G"></figure>
+      <figure class="shot"><img src="assets/img/foto-strasse.webp" width="1050" height="1400" loading="lazy" alt="Çiçek tarhıyla birlikte sokaktan Kreuzstraße 13"></figure>
+      <figure class="shot"><img src="assets/img/foto-abend.webp" width="1050" height="1400" loading="lazy" alt="Akşam alacasında arkadan aydınlatılmış G ile cephe"></figure>
+    </div>
+    <div class="shots shots--garden">
+      <figure class="shot"><img src="assets/img/foto-garten.webp" width="1050" height="1400" loading="lazy" alt="Muayenehanenin arkasındaki bahçe: çim, çakıl yol, top akçaağaçlar ve beyaz koltuklar"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-sessel.webp" width="1050" height="1400" loading="lazy" alt="Açık renk duvar önünde top akçaağacın altında beyaz koltuk"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-baum.webp" width="1050" height="1400" loading="lazy" alt="Top akçaağaç ve çiçekli çit önünde iki beyaz koltuk"></figure>
+      <figure class="shot"><img src="assets/img/foto-garten-rasen.webp" width="1050" height="1400" loading="lazy" alt="Balkonlu gri cephenin önünde çimenlik"></figure>
+    </div>
+    <div class="facts">
+      <div style="display:grid;gap:var(--space-s);align-content:start">
+        <h3 class="sub-h">1970’ten beri Kreuzstraße 13 adresinde</h3>
+        <p class="muted">En son 2019 ve 2023 yıllarında yenilendi: yeni resepsiyon, yeni odalar, yeni giriş ve yeni cephe.</p>
+      </div>
+      <ol class="timeline" aria-label="Muayenehanenin tarihçesi">
+        <li><time datetime="1970">1970</time><p>Dr. Bernhard Kleine-Allekotte, Kreuzstraße 13 adresinde göğüs hastalıkları ve iç hastalıkları muayenehanesi açar.</p></li>
+        <li><time datetime="1982">1982</time><p>Dr. Michael Günther muayenehaneyi devralır ve 32 yılı aşkın süre iç hastalıkları ağırlıklı bir aile hekimliği olarak yürütür.</p></li>
+        <li><time datetime="2014-01">Ocak 2014</time><p>Dr. Evelyne Günther muayenehaneye katılır ve Dr. Michael Günther ile ortak muayenehane kurar.</p></li>
+        <li><time datetime="2014-07">Temmuz 2014</time><p>Dr. Andreas Günther, babasının yasal sağlık sigortası ruhsatını devralır. O zamandan beri Dr. Evelyne ve Dr. Andreas Günther muayenehaneyi birlikte yönetiyor.</p></li>
+        <li><time datetime="2019">2019</time><p>Yenileme: yeni resepsiyon, yeni bekleme odası, yeni koridorlar.</p></li>
+        <li><time datetime="2023">2023</time><p>Yeni odalar, yeni giriş ve mavi G’li yeni cephe.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section insta" id="instagram" aria-labelledby="insta-h" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="insta__head">
+      <div class="insta__profile">
+        <span class="avatar" aria-hidden="true">{{gmark}}</span>
+        <div><h2 id="insta-h" style="font-size:var(--step-2)">Instagram’da yenilikler</h2><p class="muted">@gemeinschaftspraxisguenther</p></div>
+      </div>
+      <a class="btn" href="{{INSTA}}" rel="noopener">{{icon:insta}}Instagram’da takip edin</a>
+    </div>
+    <div class="insta__grid" lang="de">
+      <a class="post post--blue" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Der Grippeimpfstoff ist da">
+        <div class="post__in"><span class="post__mark" aria-hidden="true">{{gmark}}</span><p class="post__big">Der Grippe&shy;impfstoff ist da.</p><p class="post__s">Ohne Termin während der Sprechzeiten.</p></div>
+        <span class="post__cap">Ab sofort impfen wir gegen die saisonale Grippe. Bringen Sie Ihren Impfpass mit – wir schauen gleich, ob noch etwas fehlt.</span>
+      </a>
+      <a class="post post--photo" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Unser G leuchtet">
+        <div class="post__in"><img src="assets/img/insta-g.webp" width="900" height="900" loading="lazy" alt=""><p class="post__s">Abends leuchtet unser G. So finden Sie uns auch im Dunkeln.</p></div>
+        <span class="post__cap">Kreuzstraße 13, Viernheim. Parken direkt vor der Tür, kostenlos.</span>
+      </a>
+      <a class="post" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Impfungen ab 60">
+        <div class="post__in"><span class="post__k">STIKO 2026</span><p class="post__mid">Ab 60 empfohlen</p>
+          <ul class="post__list"><li><span>Grippe</span><span>jährlich</span></li><li><span>Pneumokokken</span><span>Standard</span></li><li><span>Gürtelrose</span><span>2 Dosen</span></li></ul>
+          <p class="post__s">Ab 75 zusätzlich RSV und Corona.</p></div>
+        <span class="post__cap">Welche Impfung brauche ich? Unser Impf-Check auf der Website zeigt es Ihnen in zwei Klicks.</span>
+      </a>
+      <a class="post post--grey" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Blutabnahme 8 bis 9 Uhr">
+        <div class="post__in"><span class="post__k">Labor</span><span class="post__clock" aria-hidden="true"></span><p class="post__mid">Blutabnahme 8–9&nbsp;Uhr</p><p class="post__s">Montag bis Freitag. Für Zucker und Blutfette nüchtern kommen.</p></div>
+        <span class="post__cap">Nüchtern heißt: am Vorabend nach dem Abendessen nichts mehr essen. Wasser ist erlaubt.</span>
+      </a>
+      <a class="post post--photo" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Unser Empfang">
+        <div class="post__in"><img src="assets/img/insta-empfang.webp" width="900" height="900" loading="lazy" alt=""><p class="post__s">Unser Empfang. Hier beginnt Ihr Besuch.</p></div>
+        <span class="post__cap">Bitte denken Sie an Ihre Gesundheitskarte – einmal im Quartal lesen wir sie ein.</span>
+      </a>
+      <a class="post post--mist" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Lungenkrebs-Früherkennung">
+        <div class="post__in"><span class="post__k">Neu seit April</span><p class="post__mid">Lungenkrebs-Früh&shy;erkennung</p><p class="post__s">Für starke Raucherinnen und Raucher von 50 bis 75. Fragen Sie uns.</p></div>
+        <span class="post__cap">Die Kasse zahlt jetzt eine jährliche Niedrigdosis-CT für Risikogruppen. Ob Sie dazugehören, klären wir im Gespräch.</span>
+      </a>
+      <a class="post" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Parken direkt vor der Tür">
+        <div class="post__in"><span class="post__k">Anfahrt</span><span class="post__art" aria-hidden="true">{{svg:motiv-parken.svg}}</span><p class="post__mid">Parken? Direkt vor der Tür.</p><p class="post__s">Kostenlos. Kreuzstraße 13.</p></div>
+        <span class="post__cap">Kein Suchen, kein Ticket: Vor der Praxis parken Sie kostenlos.</span>
+      </a>
+      <a class="post post--ink" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Blutdruck richtig messen">
+        <div class="post__in"><span class="post__k">Blutdruck-Tipp</span><p class="post__mid">Richtig messen</p>
+          <ol class="post__steps"><li>5 Minuten ruhig sitzen</li><li>Manschette auf Herzhöhe</li><li>Zweimal messen, Wert notieren</li></ol></div>
+        <span class="post__cap">Bringen Sie Ihr Messprotokoll zum nächsten Termin mit – das hilft uns bei der Einstellung.</span>
+      </a>
+      <a class="post post--blue" href="{{INSTA}}" rel="noopener" aria-label="Instagram-Beitrag: Praxisurlaub">
+        <div class="post__in"><span class="post__k">Zwischen den Jahren</span><p class="post__mid">Praxisurlaub 28.–31.12.</p><p class="post__s">Die Vertretung nennt Ihnen unser Anrufbeantworter.</p></div>
+        <span class="post__cap">Wir wünschen Ihnen schöne Feiertage!</span>
+      </a>
+    </div>
+    <p class="draft-note">Örnek akış (taslak). Yayında burada gerçek gönderiler görünür – veri koruması için ancak bir tıklamadan sonra yüklenir.</p>
+  </div>
+</section>
+
+<section class="section section--tight section--mist" id="fragen" aria-labelledby="fragen-h">
+  <div class="wrap hours">
+    <div class="head" style="margin-bottom:0">
+      <h2 id="fragen-h">Sıkça sorulan sorular</h2>
+      <p class="lead">Kısa ve net yanıtlar – kan almadan ePA’ya kadar.</p>
+      <p><a class="btn btn--primary" href="faq.html">Tüm sorular ve yanıtlar</a></p>
+    </div>
+    <ul class="news">
+      <li><a href="faq.html#faq-termin"><h3>Randevuya ihtiyacım var mı?</h3></a></li>
+      <li><a href="faq.html#faq-rezept"><h3>Tekrar reçeteyi nasıl isterim?</h3></a></li>
+      <li><a href="faq.html#faq-erezept"><h3>E-reçetemi eczaneden nasıl alırım?</h3></a></li>
+      <li><a href="faq.html#faq-bereitschaft"><h3>Muayene saatleri dışında kime ulaşabilirim?</h3></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--deep" id="ausbildung" aria-labelledby="ausbildung-h">
+  <div class="wrap">
+    <div class="band band--deep">
+      <div style="display:grid;gap:var(--space-s)">
+        <h2 id="ausbildung-h">Meslek eğitimi veriyoruz.</h2>
+        <p class="lead" style="font-size:var(--step-0)">Tıbbi asistan (Medizinische Fachangestellte, MFA) meslek eğitimi. Hazırlık stajı da memnuniyetle mümkündür. Başvurunuzu posta veya e-posta ile gönderin.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:{{MAIL}}?subject=Bewerbung%20Ausbildung%20MFA">{{icon:mail}}Hemen başvurun</a>
+    </div>
+  </div>
+</section>
+
+

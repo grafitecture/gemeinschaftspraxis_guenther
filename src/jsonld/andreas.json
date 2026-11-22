@@ -1,0 +1,58 @@
+[
+ {
+  "@type": "Person",
+  "@id": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther#person",
+  "name": "Dr. med. Andreas Günther",
+  "honorificPrefix": "Dr. med.",
+  "givenName": "Andreas",
+  "familyName": "Günther",
+  "jobTitle": "Facharzt für Innere Medizin und Gastroenterologie",
+  "knowsAbout": [
+   "Innere Medizin",
+   "Gastroenterologie",
+   "Diabetologie",
+   "Notfallmedizin",
+   "Ultraschall"
+  ],
+  "url": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther",
+  "worksFor": {
+   "@id": "https://www.gemeinschaftspraxis-guenther.de/#praxis"
+  },
+  "@context": "https://schema.org",
+  "workLocation": {
+   "@type": "Place",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kreuzstraße 13",
+    "postalCode": "68519",
+    "addressLocality": "Viernheim",
+    "addressRegion": "Hessen",
+    "addressCountry": "DE"
+   }
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Start",
+    "item": "https://www.gemeinschaftspraxis-guenther.de/"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Ärzte",
+    "item": "https://www.gemeinschaftspraxis-guenther.de/#aerzte"
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Dr. Andreas Günther",
+    "item": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther"
+   }
+  ]
+ }
+]

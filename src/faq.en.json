@@ -1,0 +1,241 @@
+[
+ {
+  "id": "termine",
+  "title": "Appointments and hours",
+  "items": [
+   {
+    "id": "faq-zeiten",
+    "q": "When is the practice open?",
+    "a": "<p>Monday, Tuesday and Thursday from 9 to 11 am and from 4 to 6 pm, Wednesday from 9 to 11 am and Friday from 9 am to 1 pm.</p><p>We take blood samples Monday to Friday between 8 and 9 am.</p>"
+   },
+   {
+    "id": "faq-termin",
+    "q": "Do I need an appointment?",
+    "a": "<p>For examinations, check-ups and discussing results, yes – for vaccinations, no.</p><p>If you have acute symptoms, please call ahead. This shortens your wait, or we can arrange an urgent home visit.</p>"
+   },
+   {
+    "id": "faq-terminweg",
+    "q": "How do I get an appointment?",
+    "a": "<p>Call us during consultation hours on 06204 37 04 or send us an appointment request via the website. We will get back to you.</p>"
+   },
+   {
+    "id": "faq-sprache",
+    "q": "Can I be seen in English?",
+    "a": "<p>Please ask us by phone which languages we can offer in the consultation. You are also welcome to bring someone along to interpret.</p><p>This website is available in German, English and Turkish.</p>"
+   },
+   {
+    "id": "faq-erstbesuch",
+    "q": "What should I bring to my first visit?",
+    "a": "<p>Your health insurance card, a list or medication plan of your current medicines, any existing test results and doctors’ letters, and your vaccination record.</p>"
+   },
+   {
+    "id": "faq-neu",
+    "q": "Are you taking on new patients?",
+    "a": "<p>Please call us. Together we will find out whether and when we can take you on.</p>"
+   },
+   {
+    "id": "faq-urlaub",
+    "q": "When is the practice closed for holidays?",
+    "a": "<p>The practice is closed from 28 to 31 December 2026. Our answering machine will tell you which practice is covering for us. Current closures are always shown at the top of the home page.</p>"
+   }
+  ]
+ },
+ {
+  "id": "rezepte",
+  "title": "Prescriptions, referrals, sick notes",
+  "items": [
+   {
+    "id": "faq-rezept",
+    "q": "How do I order a repeat prescription?",
+    "a": "<p>By phone on 06204 37 04 or using the “Order a repeat prescription” form on our website.</p><p>This way we only issue repeat prescriptions for medication we have already prescribed for you. If you have not been to see us yet this quarter, we need your health insurance card first.</p>"
+   },
+   {
+    "id": "faq-rezeptzeit",
+    "q": "When can I redeem my e-prescription?",
+    "a": "<p>After a few hours, at the latest after half a day. The e-prescription is then available at the pharmacy.</p>"
+   },
+   {
+    "id": "faq-erezept",
+    "q": "How do I redeem an e-prescription?",
+    "a": "<p>The easiest way is with your health insurance card: the pharmacy puts it in the card reader and retrieves the prescription – you do not need a PIN for this.</p><p>Alternatively, you can use the gematik e-prescription app, your health insurer’s app or a pharmacy app, or a paper printout that you can get from us.</p>"
+   },
+   {
+    "id": "faq-karte",
+    "q": "Why do you need my insurance card every quarter?",
+    "a": "<p>Unless your card has been scanned in the current quarter, we cannot bill prescriptions and services to your health insurer. That is why we only process prescription requests by phone once your card has been scanned with us this quarter.</p>"
+   },
+   {
+    "id": "faq-ueberweisung",
+    "q": "Can I get a referral to a specialist?",
+    "a": "<p>Yes, if it makes medical sense. Just ask us – on request we also coordinate your further care with specialists and hospitals.</p>"
+   },
+   {
+    "id": "faq-eau",
+    "q": "How does my employer receive my sick note?",
+    "a": "<p>Electronically: we send the certificate of incapacity for work to your health insurer, and your employer retrieves it from there. You receive a printout for your records.</p>"
+   }
+  ]
+ },
+ {
+  "id": "labor",
+  "title": "Blood tests and results",
+  "items": [
+   {
+    "id": "faq-blut",
+    "q": "When are blood tests done?",
+    "a": "<p>Monday to Friday from 8 to 9 am.</p>"
+   },
+   {
+    "id": "faq-nuechtern",
+    "q": "Do I need to be fasting for a blood test?",
+    "a": "<p>For blood sugar and blood lipid levels, yes.</p><p>Fasting means: nothing more to eat after dinner the evening before. You may drink water. We will discuss with you beforehand whether to take your medication in the morning.</p>"
+   },
+   {
+    "id": "faq-ergebnis",
+    "q": "When will my lab results be ready?",
+    "a": "<p>Usually the next day. You will get an appointment to discuss the results.</p>"
+   }
+  ]
+ },
+ {
+  "id": "impfen",
+  "title": "Vaccinations",
+  "items": [
+   {
+    "id": "faq-impftermin",
+    "q": "Do I need an appointment for a vaccination?",
+    "a": "<p>No. Just come by during consultation hours.</p>"
+   },
+   {
+    "id": "faq-impfen60",
+    "q": "Which vaccinations does STIKO recommend from age 60?",
+    "a": "<p>The annual flu vaccination, the pneumococcal vaccination and the shingles vaccination.</p><p>From age 75, a one-off RSV vaccination and an annual COVID-19 vaccination are added. For people with serious underlying conditions or living in care homes, STIKO recommends the RSV vaccination from age 60. (Based on the STIKO recommendations 2026)</p>"
+   },
+   {
+    "id": "faq-impfmehr",
+    "q": "Can I have several vaccinations on the same day?",
+    "a": "<p>Yes. According to STIKO, flu, COVID-19, RSV and pneumococcal vaccines can be given at the same appointment if they are recommended for you.</p>"
+   },
+   {
+    "id": "faq-impftag",
+    "q": "What should I keep in mind on the day of my vaccination?",
+    "a": "<p>Come without an acute infection and not on an empty stomach. Please avoid sport after the vaccination. Bring your vaccination record.</p>"
+   },
+   {
+    "id": "faq-reise",
+    "q": "Do you offer travel vaccination advice?",
+    "a": "<p>Yes. Please come in good time before your trip, ideally six to eight weeks beforehand – some vaccinations need several appointments.</p>"
+   }
+  ]
+ },
+ {
+  "id": "vorsorge",
+  "title": "Check-ups and early detection",
+  "items": [
+   {
+    "id": "faq-checkup",
+    "q": "Which check-ups does health insurance pay for?",
+    "a": "<p>These examinations, among others:</p><ul><li>Health check-up: once between 18 and 34, every three years from 35</li><li>Skin cancer screening: every two years from 35</li><li>Cancer screening for men: every year from 45</li><li>Youth health examination J1: between the ages of 12 and 14</li></ul><p>We offer further services on medical recommendation or as self-pay services.</p>"
+   },
+   {
+    "id": "faq-j1",
+    "q": "What is the J1 and how long does it take?",
+    "a": "<p>The J1 is the health examination for young people aged 12 to 14. Allow about half an hour and please book the appointment in good time.</p>"
+   },
+   {
+    "id": "faq-lungenkrebs",
+    "q": "Who is the new lung cancer screening for?",
+    "a": "<p>For current and former heavy smokers aged 50 to 75. Since April 2026, statutory health insurance pays for a low-dose computed tomography scan once a year.</p><p>Talk to us: we will clarify with you whether the examination is right for you and discuss the benefits and risks.</p>"
+   }
+  ]
+ },
+ {
+  "id": "digital",
+  "title": "ePA and digital health",
+  "items": [
+   {
+    "id": "faq-epa",
+    "q": "What do you put in my electronic patient record (ePA)?",
+    "a": "<p>Since October 2025, practices have been required to use the ePA. We add important documents such as test results, doctors’ letters and lab values – unless you have objected.</p><p>In your health insurer’s ePA app you can see for yourself what is stored, and hide or delete individual documents.</p>"
+   },
+   {
+    "id": "faq-epa-nein",
+    "q": "Can I object to the ePA?",
+    "a": "<p>Yes. The ePA is voluntary for you. Send your objection to your health insurer – for the whole record or for individual functions.</p>"
+   },
+   {
+    "id": "faq-primaer",
+    "q": "Will I always have to see my family doctor first in future?",
+    "a": "<p>Not yet. The German government is planning a so-called primary care system, in which the family doctor’s practice is the first point of contact. A draft law has been announced; 2028 is named as the earliest start.</p><p>Until then, you are free to choose your doctor. We will let you know here as soon as anything changes.</p>"
+   }
+  ]
+ },
+ {
+  "id": "notfall",
+  "title": "Emergencies and out-of-hours service",
+  "items": [
+   {
+    "id": "faq-bereitschaft",
+    "q": "Who can I reach outside consultation hours?",
+    "a": "<p>The out-of-hours medical service on 116 117 – nationwide and free of charge. They will tell you which out-of-hours practice is open.</p><p>For our region, this is the Bergstraße out-of-hours centre in Heppenheim, Viernheimer Straße 2a.</p>"
+   },
+   {
+    "id": "faq-112",
+    "q": "When should I call the emergency number 112?",
+    "a": "<p>In life-threatening situations, for example:</p><ul><li>severe chest pain or shortness of breath</li><li>signs of a stroke such as paralysis, a drooping corner of the mouth or speech problems</li><li>unconsciousness</li><li>heavy bleeding</li></ul>"
+   }
+  ]
+ },
+ {
+  "id": "weg",
+  "title": "Getting here and parking",
+  "items": [
+   {
+    "id": "faq-parken",
+    "q": "Where can I park?",
+    "a": "<p>Right in front of the practice – free of charge. There is more free parking at the Bürgerhaus, accessed via Saarlandstraße.</p>"
+   },
+   {
+    "id": "faq-bus",
+    "q": "How do I get to the practice by bus?",
+    "a": "<p>Take the town bus to the Bürgerhaus stop. From there it is only a few minutes’ walk to Kreuzstraße 13.</p>"
+   },
+   {
+    "id": "faq-hilfe",
+    "q": "I have difficulty walking. How do I get into the practice?",
+    "a": "<p>Call us beforehand – we will discuss how we can make it easier for you. If you cannot come to the practice at all, a home visit is possible.</p>"
+   }
+  ]
+ },
+ {
+  "id": "leistungen",
+  "title": "Services and costs",
+  "items": [
+   {
+    "id": "faq-hausbesuch",
+    "q": "Do you make home visits?",
+    "a": "<p>Yes, if your health does not allow you to come to the practice – by arrangement over the phone. We also care for patients in retirement and nursing homes.</p>"
+   },
+   {
+    "id": "faq-dmp",
+    "q": "What are DMP programmes?",
+    "a": "<p>Structured treatment programmes run by health insurers for chronic conditions. We take part in the programmes for coronary heart disease, diabetes, COPD and asthma. You receive regular check-ups according to fixed standards.</p>"
+   },
+   {
+    "id": "faq-akupunktur",
+    "q": "Do you offer acupuncture – and who pays for it?",
+    "a": "<p>Yes, for example for migraine, neck problems, allergies, dizziness or tinnitus.</p><p>Statutory health insurance only pays for acupuncture for chronic lower back pain or knee osteoarthritis that has lasted at least six months. In other cases it is a self-pay service. We will clarify the costs with you beforehand.</p>"
+   },
+   {
+    "id": "faq-privat",
+    "q": "Do you also treat privately insured patients?",
+    "a": "<p>Yes. We treat patients with statutory and private insurance as well as self-payers.</p>"
+   },
+   {
+    "id": "faq-ausbildung",
+    "q": "Do you offer apprenticeships?",
+    "a": "<p>Yes, we train medical assistants (Medizinische Fachangestellte, f/m/d). A preparatory internship is possible. Apply by post or by email to willkommen@gemeinschaftspraxis-guenther.de.</p>"
+   }
+  ]
+ }
+]

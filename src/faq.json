@@ -1,0 +1,119 @@
+[
+  {
+    "id": "termine", "title": "Termine und Sprechzeiten",
+    "items": [
+      {"id": "faq-zeiten", "q": "Wann ist die Praxis geöffnet?",
+       "a": "<p>Montag, Dienstag und Donnerstag von 9 bis 11 Uhr und von 16 bis 18 Uhr, Mittwoch von 9 bis 11 Uhr und Freitag von 9 bis 13 Uhr.</p><p>Blut abnehmen wir von Montag bis Freitag zwischen 8 und 9 Uhr.</p>"},
+      {"id": "faq-termin", "q": "Brauche ich einen Termin?",
+       "a": "<p>Für Untersuchungen, Vorsorge und Befundbesprechungen ja – für Impfungen nicht.</p><p>Bei akuten Beschwerden rufen Sie bitte vorher an. So verkürzt sich Ihre Wartezeit, oder wir organisieren einen Notfallbesuch.</p>"},
+      {"id": "faq-terminweg", "q": "Wie bekomme ich einen Termin?",
+       "a": "<p>Rufen Sie uns während der Sprechzeiten unter 06204 37 04 an oder senden Sie uns über die Website eine Terminanfrage. Wir melden uns bei Ihnen.</p>"},
+      {"id": "faq-erstbesuch", "q": "Was bringe ich zum ersten Besuch mit?",
+       "a": "<p>Ihre Gesundheitskarte, eine Liste oder den Medikationsplan Ihrer aktuellen Medikamente, vorhandene Befunde und Arztbriefe sowie Ihren Impfpass.</p>"},
+      {"id": "faq-neu", "q": "Nehmen Sie neue Patientinnen und Patienten auf?",
+       "a": "<p>Bitte rufen Sie uns an. Wir klären gemeinsam, ob und wann wir Sie aufnehmen können.</p>"},
+      {"id": "faq-urlaub", "q": "Wann ist die Praxis im Urlaub geschlossen?",
+       "a": "<p>Vom 28. bis 31. Dezember 2026 ist die Praxis geschlossen. Welche Praxis uns vertritt, nennt Ihnen unser Anrufbeantworter. Aktuelle Schließzeiten stehen immer oben auf der Startseite.</p>"}
+    ]
+  },
+  {
+    "id": "rezepte", "title": "Rezepte, Überweisungen, Krankmeldung",
+    "items": [
+      {"id": "faq-rezept", "q": "Wie bestelle ich ein Folgerezept?",
+       "a": "<p>Telefonisch unter 06204 37 04 oder über das Formular „Folgerezept bestellen“ auf unserer Website.</p><p>So stellen wir nur Folgerezepte für Medikamente aus, die wir Ihnen bereits verordnet haben. Waren Sie im laufenden Quartal noch nicht bei uns, brauchen wir vorher Ihre Versichertenkarte.</p>"},
+      {"id": "faq-rezeptzeit", "q": "Wann kann ich mein E-Rezept einlösen?",
+       "a": "<p>Nach einigen Stunden, spätestens nach einem halben Tag. Dann ist das E-Rezept in der Apotheke abrufbar.</p>"},
+      {"id": "faq-erezept", "q": "Wie löse ich ein E-Rezept ein?",
+       "a": "<p>Am einfachsten mit Ihrer Gesundheitskarte: Die Apotheke steckt sie ins Lesegerät und ruft das Rezept ab – eine PIN brauchen Sie dafür nicht.</p><p>Alternativ geht es mit der E-Rezept-App der gematik, der App Ihrer Krankenkasse oder einer Apotheke oder mit einem Papierausdruck, den Sie bei uns bekommen.</p>"},
+      {"id": "faq-karte", "q": "Warum brauchen Sie jedes Quartal meine Versichertenkarte?",
+       "a": "<p>Ohne eingelesene Karte im laufenden Quartal können wir Rezepte und Leistungen nicht mit Ihrer Krankenkasse abrechnen. Deshalb bearbeiten wir telefonische Rezeptwünsche erst, wenn Ihre Karte im Quartal bei uns eingelesen wurde.</p>"},
+      {"id": "faq-ueberweisung", "q": "Bekomme ich eine Überweisung zum Facharzt?",
+       "a": "<p>Ja, wenn es medizinisch sinnvoll ist. Sprechen Sie uns an – wir koordinieren auf Wunsch auch die weitere Betreuung durch Fachärzte und Kliniken.</p>"},
+      {"id": "faq-eau", "q": "Wie bekommt mein Arbeitgeber die Krankmeldung?",
+       "a": "<p>Elektronisch: Wir übermitteln die Arbeitsunfähigkeitsbescheinigung an Ihre Krankenkasse, Ihr Arbeitgeber ruft sie dort ab. Für Ihre Unterlagen erhalten Sie einen Ausdruck.</p>"}
+    ]
+  },
+  {
+    "id": "labor", "title": "Blutabnahme und Befunde",
+    "items": [
+      {"id": "faq-blut", "q": "Wann ist Blutabnahme?",
+       "a": "<p>Montag bis Freitag von 8 bis 9 Uhr.</p>"},
+      {"id": "faq-nuechtern", "q": "Muss ich zur Blutabnahme nüchtern sein?",
+       "a": "<p>Für Blutzucker- und Blutfettwerte ja.</p><p>Nüchtern heißt: am Vorabend nach dem Abendessen nichts mehr essen. Wasser dürfen Sie trinken. Ob Sie Ihre Medikamente am Morgen nehmen, besprechen wir vorab mit Ihnen.</p>"},
+      {"id": "faq-ergebnis", "q": "Wann sind meine Laborwerte da?",
+       "a": "<p>Meist am nächsten Tag. Für die Besprechung der Ergebnisse bekommen Sie einen Termin.</p>"}
+    ]
+  },
+  {
+    "id": "impfen", "title": "Impfungen",
+    "items": [
+      {"id": "faq-impftermin", "q": "Brauche ich für eine Impfung einen Termin?",
+       "a": "<p>Nein. Kommen Sie einfach während der Sprechzeiten vorbei.</p>"},
+      {"id": "faq-impfen60", "q": "Welche Impfungen empfiehlt die STIKO ab 60?",
+       "a": "<p>Die jährliche Grippeimpfung, die Pneumokokken-Impfung und die Impfung gegen Gürtelrose.</p><p>Ab 75 kommen eine einmalige RSV-Impfung und eine jährliche Corona-Impfung hinzu. Bei schweren Grunderkrankungen oder in Pflegeeinrichtungen empfiehlt die STIKO die RSV-Impfung schon ab 60. (Stand: STIKO-Empfehlungen 2026)</p>"},
+      {"id": "faq-impfmehr", "q": "Kann ich mehrere Impfungen am selben Tag bekommen?",
+       "a": "<p>Ja. Laut STIKO können Grippe, Corona, RSV und Pneumokokken am selben Termin geimpft werden, wenn sie für Sie empfohlen sind.</p>"},
+      {"id": "faq-impftag", "q": "Was muss ich am Impftag beachten?",
+       "a": "<p>Kommen Sie ohne akuten Infekt und nicht nüchtern. Nach der Impfung verzichten Sie bitte auf Sport. Bringen Sie Ihren Impfpass mit.</p>"},
+      {"id": "faq-reise", "q": "Beraten Sie zu Reiseimpfungen?",
+       "a": "<p>Ja. Kommen Sie bitte rechtzeitig vor der Reise, idealerweise sechs bis acht Wochen vorher – manche Impfungen brauchen mehrere Termine.</p>"}
+    ]
+  },
+  {
+    "id": "vorsorge", "title": "Vorsorge und Früherkennung",
+    "items": [
+      {"id": "faq-checkup", "q": "Welche Vorsorge zahlt die Krankenkasse?",
+       "a": "<p>Unter anderem diese Untersuchungen:</p><ul><li>Gesundheits-Check-up: zwischen 18 und 34 einmal, ab 35 alle drei Jahre</li><li>Hautkrebs-Screening: ab 35 alle zwei Jahre</li><li>Krebsfrüherkennung für Männer: ab 45 jährlich</li><li>Jugendgesundheitsuntersuchung J1: zwischen 12 und 14 Jahren</li></ul><p>Weitere Leistungen bieten wir auf ärztliche Empfehlung oder als Selbstzahlerleistung an.</p>"},
+      {"id": "faq-j1", "q": "Was ist die J1 und wie lange dauert sie?",
+       "a": "<p>Die J1 ist die Gesundheitsuntersuchung für Jugendliche zwischen 12 und 14 Jahren. Planen Sie etwa eine halbe Stunde ein und vereinbaren Sie den Termin bitte rechtzeitig.</p>"},
+      {"id": "faq-lungenkrebs", "q": "Für wen gibt es die neue Lungenkrebs-Früherkennung?",
+       "a": "<p>Für aktive und ehemalige starke Raucherinnen und Raucher zwischen 50 und 75 Jahren. Seit April 2026 zahlt die Krankenkasse dafür einmal im Jahr eine Niedrigdosis-Computertomografie.</p><p>Sprechen Sie uns an: Wir klären mit Ihnen, ob die Untersuchung für Sie infrage kommt, und besprechen Nutzen und Risiken.</p>"}
+    ]
+  },
+  {
+    "id": "digital", "title": "ePA und digitale Gesundheit",
+    "items": [
+      {"id": "faq-epa", "q": "Was stellen Sie in meine elektronische Patientenakte (ePA)?",
+       "a": "<p>Seit Oktober 2025 sind Praxen verpflichtet, die ePA zu nutzen. Wir stellen wichtige Dokumente wie Befunde, Arztbriefe und Laborwerte ein – sofern Sie nicht widersprochen haben.</p><p>In der ePA-App Ihrer Krankenkasse können Sie selbst sehen, was gespeichert ist, und einzelne Dokumente verbergen oder löschen.</p>"},
+      {"id": "faq-epa-nein", "q": "Kann ich der ePA widersprechen?",
+       "a": "<p>Ja. Die ePA ist für Sie freiwillig. Ihren Widerspruch richten Sie an Ihre Krankenkasse – ganz oder für einzelne Funktionen.</p>"},
+      {"id": "faq-primaer", "q": "Muss ich künftig immer zuerst zum Hausarzt?",
+       "a": "<p>Noch nicht. Die Bundesregierung plant ein sogenanntes Primärversorgungssystem, in dem die Hausarztpraxis die erste Anlaufstelle ist. Ein Gesetzentwurf ist angekündigt; als frühester Start wird 2028 genannt.</p><p>Bis dahin gilt die freie Arztwahl. Wir informieren Sie hier, sobald sich etwas ändert.</p>"}
+    ]
+  },
+  {
+    "id": "notfall", "title": "Notfall und Bereitschaftsdienst",
+    "items": [
+      {"id": "faq-bereitschaft", "q": "Wen erreiche ich außerhalb der Sprechzeiten?",
+       "a": "<p>Den ärztlichen Bereitschaftsdienst unter 116 117 – bundesweit und kostenfrei. Dort erfahren Sie, welche Bereitschaftsdienstpraxis geöffnet hat.</p><p>Für unsere Region ist das die Bereitschaftsdienstzentrale Bergstraße in Heppenheim, Viernheimer Straße 2a.</p>"},
+      {"id": "faq-112", "q": "Wann rufe ich den Notruf 112?",
+       "a": "<p>Bei Lebensgefahr, zum Beispiel bei:</p><ul><li>starkem Brustschmerz oder Atemnot</li><li>Zeichen eines Schlaganfalls wie Lähmung, hängender Mundwinkel oder Sprachstörung</li><li>Bewusstlosigkeit</li><li>starker Blutung</li></ul>"}
+    ]
+  },
+  {
+    "id": "weg", "title": "Anfahrt und Parken",
+    "items": [
+      {"id": "faq-parken", "q": "Wo kann ich parken?",
+       "a": "<p>Direkt vor der Praxis – kostenlos. Weitere kostenlose Parkplätze gibt es am Bürgerhaus, Zufahrt über die Saarlandstraße.</p>"},
+      {"id": "faq-bus", "q": "Wie komme ich mit dem Bus zur Praxis?",
+       "a": "<p>Mit dem Stadtbus bis zur Haltestelle Bürgerhaus. Von dort sind es nur wenige Gehminuten bis zur Kreuzstraße 13.</p>"},
+      {"id": "faq-hilfe", "q": "Ich bin nicht gut zu Fuß. Wie komme ich in die Praxis?",
+       "a": "<p>Rufen Sie uns vorher an – wir besprechen, wie wir Ihnen den Weg erleichtern können. Wenn Sie gar nicht in die Praxis kommen können, ist ein Hausbesuch möglich.</p>"}
+    ]
+  },
+  {
+    "id": "leistungen", "title": "Leistungen und Kosten",
+    "items": [
+      {"id": "faq-hausbesuch", "q": "Machen Sie Hausbesuche?",
+       "a": "<p>Ja, wenn Sie gesundheitlich nicht in die Praxis kommen können – nach telefonischer Absprache. Wir betreuen auch Patientinnen und Patienten in Alten- und Pflegeheimen.</p>"},
+      {"id": "faq-dmp", "q": "Was sind DMP-Programme?",
+       "a": "<p>Strukturierte Behandlungsprogramme der Krankenkassen für chronische Erkrankungen. Wir nehmen an den Programmen für koronare Herzkrankheit, Diabetes, COPD und Asthma teil. Sie bekommen dabei regelmäßige Kontrollen nach festen Standards.</p>"},
+      {"id": "faq-akupunktur", "q": "Bieten Sie Akupunktur an – und wer zahlt sie?",
+       "a": "<p>Ja, zum Beispiel bei Migräne, Beschwerden der Halswirbelsäule, Allergien, Schwindel oder Tinnitus.</p><p>Die gesetzlichen Krankenkassen zahlen Akupunktur nur bei chronischen Schmerzen der Lendenwirbelsäule oder bei Kniearthrose, die seit mindestens sechs Monaten bestehen. In anderen Fällen ist sie eine Selbstzahlerleistung. Wir klären die Kosten vorab mit Ihnen.</p>"},
+      {"id": "faq-privat", "q": "Behandeln Sie auch Privatversicherte?",
+       "a": "<p>Ja. Wir behandeln gesetzlich und privat Versicherte sowie Selbstzahler.</p>"},
+      {"id": "faq-ausbildung", "q": "Bilden Sie aus?",
+       "a": "<p>Ja, wir bilden Medizinische Fachangestellte (w/m/d) aus. Ein vorbereitendes Betriebspraktikum ist möglich. Bewerben Sie sich per Post oder per E-Mail an willkommen@gemeinschaftspraxis-guenther.de.</p>"}
+    ]
+  }
+]
