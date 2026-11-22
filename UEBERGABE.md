@@ -59,7 +59,7 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 - **Impf-Check** nach STIKO 2026 (Alter + Vorerkrankung → passende Impfungen).
 - **Sprechzeiten** als schlichte Tabelle (Tag · Vormittag · Nachmittag, Wochenende in einer Zeile), der heutige Tag in Blau hervorgehoben, Blutabnahme als Zeile darunter.
 - **Anfahrt**: Der Abschnitt „So finden Sie uns“ ist auf Wunsch entfernt (Lageplan, Wegbeschreibung, Bildfolge Eingang → Empfang). Route: Haus im Fuß (Google Maps); Adresse und Parken stehen im Fuß, im Hero und in den FAQ.
-- **FAQ-Seite** mit 36 Fragen (Englisch und Türkisch 37, zusätzlich „In welcher Sprache?“), Themen-Sprungmarken, Direktlinks. Suchfeld und Seitenkasten „Ihre Frage war nicht dabei?“ sind auf Wunsch entfernt; die Fragen stehen in einer Spalte.
+- **FAQ-Seite** mit 36 Fragen (Englisch und Türkisch 37, zusätzlich „In welcher Sprache?“), Themen-Sprungmarken, Direktlinks. Suchfeld und Seitenkasten „Ihre Frage war nicht dabei?“ sind auf Wunsch entfernt; die Fragen stehen in einer Spalte. Der Abschnitt „Häufige Fragen“ auf der Startseite ist ebenfalls entfernt – die FAQ-Seite erreicht man über die Navigation und den Fuß.
 - **Dreisprachig**: Deutsch, Englisch, Türkisch – inklusive Team, Fuß, Live-Status, Impf-Check, Formulare.
 - **KI- und Suchmaschinen-Lesbarkeit**: JSON-LD (`MedicalClinic`, `Person`, `FAQPage`, `BreadcrumbList`), `llms.txt`, `sitemap.xml`, antwortorientierte Texte. Google zeigt seit dem 7. Mai 2026 keine FAQ-Rich-Results mehr – das Markup bleibt sinnvoll, weil Suchmaschinen und KI-Systeme es lesen.
 - **Barrierefreiheit**: Kontraste ≥ 4,5 : 1, Tastaturbedienung, sichtbarer Fokus, Skip-Link, `prefers-reduced-motion` (dann keine Logo-Animation), Touch-Ziele ≥ 44 px.
