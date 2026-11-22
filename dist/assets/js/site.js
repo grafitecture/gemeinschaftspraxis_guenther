@@ -259,10 +259,11 @@
     mb.addEventListener("click", function () { set(!nav.classList.contains("is-open")); });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
   });
-  // Logo im Kopf: beim Öffnen groß und dicht über der Hero-Überschrift. Beim Scrollen wandert es genau mit
-  // der Seite nach oben (Abstand zur Überschrift bleibt gleich) und skaliert dabei auf seine Endgröße.
-  // Seiten ohne Hero: Logo steht oben und skaliert in den ersten 160 px Scrollweg.
-  var root = document.documentElement, ticking = false, drop = 0;
+  // Logo im Kopf: beim Öffnen groß und dicht über der Hero-Überschrift. Beim Scrollen fährt zuerst nur das Logo
+  // nach oben und skaliert auf seine Endgröße in der Kopfzeile – die Seite steht so lange still (--pin);
+  // erst wenn das Logo angekommen ist, scrollt die Seite. Seiten ohne Hero: Logo steht oben und skaliert
+  // in den ersten 160 px Scrollweg.
+  var root = document.documentElement, ticking = false, drop = 0, shrink = 0;
   function visibleEl(sel) {
     var l = document.querySelectorAll(sel);
     for (var i = 0; i < l.length; i++) if (l[i].offsetParent) return l[i];
@@ -274,29 +275,62 @@
     var hs = drop > 0 ? Math.min(y / drop, 1) : Math.min(y / 160, 1);
     root.style.setProperty("--hs", hs.toFixed(3));
     root.style.setProperty("--lift", Math.max(drop - y, 0).toFixed(1) + "px");
+    root.style.setProperty("--pin", drop > 0 ? (Math.min(y, drop) + hs * shrink).toFixed(1) + "px" : "0px");
     ticking = false;
   }
   function measureLogo() {
-    var h1 = visibleEl(".hero h1"), logo = visibleEl(".site-header .wm--head .wm__logo");
-    drop = 0;
-    if (h1 && logo) {
-      root.style.setProperty("--hs", "0");
+    var h1 = visibleEl(".hero h1"), logo = visibleEl(".site-header .wm--head .wm__logo"), head = visibleEl(".site-header");
+    drop = 0; shrink = 0;
+    root.style.setProperty("--pin", "0px");
+    if (h1 && logo && head) {
       root.style.setProperty("--lift", "0px");
+      root.style.setProperty("--hs", "1");
+      var headEnd = head.offsetHeight;
+      root.style.setProperty("--hs", "0");
+      shrink = Math.max(0, head.offsetHeight - headEnd);
       var fs = parseFloat(getComputedStyle(h1).fontSize) || 40;
       var gap = Math.max(14, fs * 0.35);
       var h1Top = h1.getBoundingClientRect().top + window.scrollY;
       var logoBottom = logo.getBoundingClientRect().bottom; // Kopf ist sticky und steht immer oben
       drop = Math.max(0, Math.round(h1Top - gap - logoBottom));
     }
+    root.classList.toggle("has-pin", drop > 0);
     onScroll();
   }
   function remeasure() { requestAnimationFrame(measureLogo); }
+  // Sprungziele auf der Startseite: Position so berechnen, wie sie nach der Logo-Phase steht (--pin voll)
+  function scrollToEl(el, smooth) {
+    var pin = parseFloat(root.style.getPropertyValue("--pin")) || 0;
+    var hs = parseFloat(root.style.getPropertyValue("--hs")) || 0;
+    var pad = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
+    // Position im Ausgangszustand (Kopf groß, nichts verschoben) + Logo-Phase − Scroll-Abstand
+    var top = el.getBoundingClientRect().top + window.scrollY - pin + hs * shrink + drop - pad;
+    window.scrollTo({ top: Math.max(0, top), behavior: smooth ? "smooth" : "instant" });
+  }
+  function fixHash() {
+    if (!(drop > 0) || !location.hash) return;
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el && el.offsetParent) scrollToEl(el, false);
+  }
+  function remeasureFix() { requestAnimationFrame(function () { measureLogo(); fixHash(); }); }
+  document.addEventListener("click", function (e) {
+    if (!(drop > 0) || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href*="#"]');
+    if (!a || a.hasAttribute("data-open")) return;
+    var url = new URL(a.getAttribute("href"), location.href);
+    if (url.pathname !== location.pathname || url.search !== location.search || url.hash.length < 2) return;
+    var el = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+    if (!el || !el.offsetParent) return;
+    e.preventDefault();
+    scrollToEl(el, true);
+    if (history.pushState) history.pushState(null, "", url.hash);
+  });
   window.addEventListener("scroll", function () {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
   window.addEventListener("resize", remeasure);
-  window.addEventListener("hashchange", remeasure);
-  window.addEventListener("load", remeasure);
+  window.addEventListener("hashchange", remeasureFix);
+  window.addEventListener("load", remeasureFix);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   onScroll();
   remeasure();
