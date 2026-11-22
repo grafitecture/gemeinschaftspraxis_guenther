@@ -259,17 +259,47 @@
     mb.addEventListener("click", function () { set(!nav.classList.contains("is-open")); });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
   });
-  // Logo im Kopf: beim Öffnen groß, skaliert in den ersten 160 px Scrollweg auf die Endgröße
-  var root = document.documentElement, ticking = false;
+  // Logo im Kopf: beim Öffnen groß und dicht über der Hero-Überschrift. Beim Scrollen wandert es genau mit
+  // der Seite nach oben (Abstand zur Überschrift bleibt gleich) und skaliert dabei auf seine Endgröße.
+  // Seiten ohne Hero: Logo steht oben und skaliert in den ersten 160 px Scrollweg.
+  var root = document.documentElement, ticking = false, drop = 0;
+  function visibleEl(sel) {
+    var l = document.querySelectorAll(sel);
+    for (var i = 0; i < l.length; i++) if (l[i].offsetParent) return l[i];
+    return null;
+  }
   function onScroll() {
-    headers.forEach(function (h) { h.classList.toggle("is-scrolled", window.scrollY > 8); });
-    root.style.setProperty("--hs", Math.min(Math.max(window.scrollY / 160, 0), 1).toFixed(3));
+    var y = Math.max(window.scrollY, 0);
+    headers.forEach(function (h) { h.classList.toggle("is-scrolled", y > 8); });
+    var hs = drop > 0 ? Math.min(y / drop, 1) : Math.min(y / 160, 1);
+    root.style.setProperty("--hs", hs.toFixed(3));
+    root.style.setProperty("--lift", Math.max(drop - y, 0).toFixed(1) + "px");
     ticking = false;
   }
+  function measureLogo() {
+    var h1 = visibleEl(".hero h1"), logo = visibleEl(".site-header .wm--head .wm__logo");
+    drop = 0;
+    if (h1 && logo) {
+      root.style.setProperty("--hs", "0");
+      root.style.setProperty("--lift", "0px");
+      var fs = parseFloat(getComputedStyle(h1).fontSize) || 40;
+      var gap = Math.max(14, fs * 0.35);
+      var h1Top = h1.getBoundingClientRect().top + window.scrollY;
+      var logoBottom = logo.getBoundingClientRect().bottom; // Kopf ist sticky und steht immer oben
+      drop = Math.max(0, Math.round(h1Top - gap - logoBottom));
+    }
+    onScroll();
+  }
+  function remeasure() { requestAnimationFrame(measureLogo); }
   window.addEventListener("scroll", function () {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
+  window.addEventListener("resize", remeasure);
+  window.addEventListener("hashchange", remeasure);
+  window.addEventListener("load", remeasure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   onScroll();
+  remeasure();
   document.addEventListener("click", function (e) {
     document.querySelectorAll("details.lang[open]").forEach(function (d) {
       if (!d.contains(e.target) || e.target.closest("a")) d.removeAttribute("open");
