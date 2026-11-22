@@ -56,6 +56,7 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 - **Schluss-Abschnitt** „Wir sind für Sie da.“ (Anrufen, Termin, Route) über dem Fuß ist auf Wunsch entfernt; die Seite endet mit „Wir bilden aus.“, dann Fuß und Notfall-Band.
 - **Kontextabhängige Haupt-Aktion**: Praxis offen → „Anrufen“ ist der Hauptbutton; geschlossen → „Termin online anfragen“ rückt nach vorn.
 - **Termin anfragen** und **Folgerezept bestellen** als Dialoge (Prototyp – senden nichts). Im Hero stehen nur noch „Termin online anfragen“ und „Anrufen“; die Zeile „Folgerezept bestellen – für Medikamente, die wir Ihnen bereits verordnet haben.“ ist dort auf Wunsch entfernt (das Folgerezept bleibt unter „Was können wir für Sie tun?“ erreichbar).
+- **„Was können wir für Sie tun?“** kompakt und dezent: sechs Anliegen (Termin, Akute Beschwerden, Folgerezept, Blutabnahme, Impfung, Hausbesuch) in drei Spalten (Tablet zwei, Handy eine), kleines Linien-Icon ohne Kreis, Überschrift klein im Tiefblau, Text klein, Textlinks statt Buttons.
 - **Impf-Check** nach STIKO 2026 (Alter + Vorerkrankung → passende Impfungen).
 - **Sprechzeiten** als schlichte Tabelle (Tag · Vormittag · Nachmittag, Wochenende in einer Zeile), der heutige Tag in Blau hervorgehoben, Blutabnahme als Zeile darunter.
 - **Anfahrt**: Der Abschnitt „So finden Sie uns“ ist auf Wunsch entfernt (Lageplan, Wegbeschreibung, Bildfolge Eingang → Empfang). Route: Haus im Fuß (Google Maps); Adresse und Parken stehen im Fuß, im Hero und in den FAQ.

@@ -794,3 +794,17 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now .news a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .now .news .is-important h3, .now .news .is-important p { color: #fff; }
 .now .news .is-important time { justify-self: start; background: #fff; color: var(--alert); font-weight: 600; padding: .2rem .55rem; border-radius: var(--r); }
+
+/* „Was können wir für Sie tun?“: kompakt und dezent – kleine Einträge in drei Spalten,
+   Icon klein ohne Kreis, Überschrift klein im Tiefblau, Textlinks statt Buttons */
+.tasks { border-top: 0; grid-template-columns: minmax(0, 1fr); gap: 0 var(--space-l); }
+@media (min-width: 600px) { .tasks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 960px) { .tasks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tasks .task { grid-template-columns: 1.2rem minmax(0, 1fr); gap: .3rem .65rem; align-items: start; align-content: start; padding-block: var(--space-s) var(--space-m); border-top: 1px solid var(--line); border-bottom: 0; }
+.tasks .task__icon { grid-row: auto; width: 1.2rem; height: 1.2rem; background: none; border-radius: 0; color: var(--blue-deep); margin-top: .22rem; }
+.tasks .task__icon svg { width: 1.2rem; height: 1.2rem; }
+.tasks .task h3 { font-size: var(--step-1); color: var(--blue-deep); }
+.tasks .task > :not(.task__icon) { grid-column: 2; }
+.tasks .task p { font-size: var(--step-m1); line-height: 1.55; max-width: 36ch; }
+.tasks .task__act { justify-self: start; font-size: var(--step-m1); margin-top: .1rem; }
+#anliegen .head { margin-bottom: var(--space-l); }
