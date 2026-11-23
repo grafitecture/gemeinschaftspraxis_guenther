@@ -197,6 +197,9 @@
       if (!call || !book) return;
       call.classList.toggle("btn--primary", s.open);
       book.classList.toggle("btn--primary", !s.open);
+      // Handy: statt „Termin“ steht dort E-Mail – geschlossen ist sie die Haupt-Aktion
+      var mail = box.querySelector('[data-cta="mail"]');
+      if (mail) mail.classList.toggle("btn--primary", !s.open);
       if (s.open) box.insertBefore(call, book); else box.insertBefore(book, call);
     });
     // Sprechzeiten: heutigen Tag markieren

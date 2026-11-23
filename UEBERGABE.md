@@ -1,6 +1,6 @@
 # Gemeinschaftspraxis Günther – neue Website (Prototyp)
 
-Stand: 21. November 2026 (Runde 3: Feinschliff, Impressum und Datenschutz, Platzhalter statt Porträts) · Agentur: Grafitecture
+Stand: 23. November 2026 (Runde 4: Hero auf dem Handy) · Agentur: Grafitecture
 
 ## Inhalt des Pakets
 
@@ -34,6 +34,7 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 - **Logo (Original aus `DATEN/`)**: `LOGO.pdf`, `LOGO_.VARIANTE.pdf` und `SIGNET.pdf` als SVG übernommen (`logo-zeile.svg`, `logo-block.svg`, `signet.svg`, Farben exakt). Einsatz:
   - Kopf: nur der Schriftzug „Gemeinschaftspraxis Günther“ ohne Signet, größer. Fuß: Signet + Schriftzug.
   - Hero-Überschrift immer zweizeilig („Ihre Hausarztpraxis / in Viernheim.“), die Größe passt sich der Spaltenbreite an. Sie steht mittig neben dem Foto. Einleitung darunter, emotional und ohne Leistungen: „Seit 1970 ist die Kreuzstraße 13 eine Adresse, der Viernheim vertraut. Heute sind hier Dr. Evelyne Günther, Dr. Andreas Günther und unser Team für Sie da – persönlich und mit Herz.“ (Die Praxis besteht seit 1970, damals mit anderen Ärzten – siehe Zeitstrahl.) Der Hinweis auf die Parkplätze steht dort nicht mehr (weiter in FAQ und Instagram).
+  - **Hero auf dem Handy (bis 559 px)**: Reihenfolge Überschrift → Foto → Buttons. Das Foto geht über die volle Inhaltsbreite, das G sitzt im Foto (oben links). Einleitung und – auf Englisch/Türkisch – der Sprachhinweis entfallen. Statt „Anrufen“ und „Termin“ stehen dort zwei gleich breite Buttons nur mit Icon: Telefon und E-Mail (Beschriftung für Screenreader bleibt). Umsetzung rein per CSS (`.hero__text` wird `display: contents`), Markup gleich für alle Größen.
   - **Hero**: Das Signet groß über dem Abendfoto. Beim Laden fährt der graue Versatz hinter dem blauen G heraus – das Logo „baut sich“ wie die Profilbuchstaben an der Fassade. Während der Sprechzeiten leuchtet das G wie das hinterleuchtete G am Haus.
   - Favicon, Instagram-Avatar und Feed-Kacheln.
 - **Haus im Fuß (`haus.pdf`)**: So eingesetzt wie auf der Visitenkarte im `PRINT`-Ordner – oben Logo, Ärzte mit Rollen, Sprechzeiten; darunter links Adresse, Telefon, Fax und E-Mail, rechts das Haus – auf dem Desktop mittig unter den Spalten „Sprechzeiten“ und „Praxis“, mit Abstand zum rechten Rand; auf dem Handy mittig – auf der hellgrauen Grundlinie (die Linien aus der Druckdatei sind entfernt); darunter nur noch das Copyright. Arztnamen und Spaltenüberschriften („Sprechzeiten“, „Praxis“) im Fuß einheitlich im Dunkelblau `#006BA8`. Sprachwahl nur im Kopf. Neu für die Website: **Während der Sprechzeiten leuchten die Fenster.** Das Haus verlinkt auf die Routenplanung (Google Maps).
@@ -54,7 +55,7 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 
 - **Live-Status als Licht** (Zeitzone Berlin, inkl. Feiertage und Praxisurlaub): Während der Sprechzeiten leuchtet das G im Hero und die Fenster im Fuß leuchten. Die Textanzeige „Jetzt geöffnet …“ / „Gerade geschlossen …“ ist auf Wunsch entfernt, ebenso der Schließhinweis unter den Sprechzeiten (die Schließung steht in Rot unter „Aktuell“).
 - **Schluss-Abschnitt** „Wir sind für Sie da.“ (Anrufen, Termin, Route) über dem Fuß ist auf Wunsch entfernt; die Seite endet mit „Wir bilden aus.“, dann Fuß und Notfall-Band.
-- **Kontextabhängige Haupt-Aktion**: Praxis offen → „Anrufen“ ist der Hauptbutton; geschlossen → „Termin online anfragen“ rückt nach vorn.
+- **Kontextabhängige Haupt-Aktion**: Praxis offen → „Anrufen“ ist der Hauptbutton; geschlossen → „Termin online anfragen“ rückt nach vorn (auf dem Handy wird dann E-Mail zum Hauptbutton). „Anrufen“ und „Termin“ sind immer gleich breit; reicht die Textspalte nicht für beide nebeneinander (Tablet schmal, Desktop um 1024–1200 px), stehen sie gleich breit untereinander.
 - **Termin anfragen** und **Folgerezept bestellen** als Dialoge (Prototyp – senden nichts). Im Hero stehen nur noch „Termin online anfragen“ und „Anrufen“; die Zeile „Folgerezept bestellen – für Medikamente, die wir Ihnen bereits verordnet haben.“ ist dort auf Wunsch entfernt (das Folgerezept bleibt unter „Was können wir für Sie tun?“ erreichbar).
 - **„Was können wir für Sie tun?“** kompakt und dezent: sechs Anliegen (Termin, Akute Beschwerden, Folgerezept, Blutabnahme, Impfung, Hausbesuch) in drei Spalten (Tablet zwei, Handy eine), kleines Linien-Icon ohne Kreis, Überschrift klein im Tiefblau, Text klein, Textlinks statt Buttons.
 - **Impf-Check** nach STIKO 2026 (Alter + Vorerkrankung → passende Impfungen).

@@ -832,6 +832,31 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 
 /* Fuß: Überschriften („Sprechzeiten“, „Praxis“) im Dunkelblau wie die Arztnamen */
 .site-footer h2 { color: var(--blue-deep); }
+
+/* ---------- Hero: Telefon und Termin gleich breit; auf dem Handy nur Icons ---------- */
+/* Beide Buttons so breit wie der breitere (inline-grid mit gleich großen Spalten) */
+.hero .btn-row { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; justify-self: start; gap: .75rem; }
+.hero .btn[data-cta="mail"] { display: none; }
+/* Ist die Textspalte zu schmal für zwei gleich breite Buttons nebeneinander, stehen sie gleich breit untereinander */
+@container (max-width: 36.5rem) { .hero .btn-row { grid-auto-flow: row; } }
+
+/* Handy: Überschrift → Foto (volle Breite, G im Bild) → Telefon und E-Mail als Icons.
+   Einleitung und Hinweistext entfallen. */
+@media (max-width: 559px) {
+  .hero__grid { container-type: inline-size; gap: var(--space-m); }
+  .hero__text { display: contents; }
+  .hero h1 { order: 1; }
+  .hero__art { order: 2; padding: 0; }
+  .hero__panel { order: 3; padding-top: 0; }
+  .hero__lead, .hero__panel > p { display: none; }
+  .hero .gsig { left: 5%; top: 4%; width: 22%; }
+  .hero .btn-row { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-self: stretch; }
+  .hero .btn[data-cta="book"] { display: none; }
+  .hero .btn[data-cta="mail"] { display: inline-flex; }
+  .hero .btn { min-height: 3.25rem; padding-inline: 0; }
+  .hero .btn svg { width: 1.6rem; height: 1.6rem; }
+  .hero .btn__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+}
 </style>
 <script type="application/ld+json">[
  {
@@ -2068,8 +2093,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <p class="hero__lead">Seit 1970 ist die Kreuzstraße&nbsp;13 eine Adresse, der Viernheim vertraut. Heute sind hier Dr.&nbsp;Evelyne Günther, Dr.&nbsp;Andreas Günther und unser Team für Sie da – persönlich und mit Herz.</p>
       <div class="hero__panel">
         <div class="btn-row" data-cta-swap>
-          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Anrufen: <span class="num">06204 37 04</span></span></a>
+          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="btn__label">Anrufen: <span class="num">06204 37 04</span></span></a>
           <a class="btn" data-cta="book" href="#anliegen" data-open="termin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>Termin online anfragen</a>
+          <a class="btn" data-cta="mail" href="mailto:willkommen@gemeinschaftspraxis-guenther.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="btn__label">E-Mail schreiben</span></a>
         </div>
       </div>
     </div>
@@ -2647,8 +2673,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <p class="hero__lead">Since 1970, Kreuzstraße&nbsp;13 has been an address Viernheim trusts. Today Dr.&nbsp;Evelyne Günther, Dr.&nbsp;Andreas Günther and our team are here for you – with warmth and personal care.</p>
       <div class="hero__panel">
         <div class="btn-row" data-cta-swap>
-          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Call: <span class="num">06204 37 04</span></span></a>
+          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="btn__label">Call: <span class="num">06204 37 04</span></span></a>
           <a class="btn" data-cta="book" href="#en-anliegen" data-open="termin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>Request an appointment</a>
+          <a class="btn" data-cta="mail" href="mailto:willkommen@gemeinschaftspraxis-guenther.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="btn__label">Send an email</span></a>
         </div>
         <p class="small muted">Please ask us by phone which languages we can offer. You are also welcome to bring someone along to interpret.</p>
       </div>
@@ -3227,8 +3254,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <p class="hero__lead">1970’ten beri Kreuzstraße&nbsp;13, Viernheim’ın güvendiği bir adres. Bugün Dr.&nbsp;Evelyne Günther, Dr.&nbsp;Andreas Günther ve ekibimiz burada sizin için var – sıcak ve içten bir şekilde.</p>
       <div class="hero__panel">
         <div class="btn-row" data-cta-swap>
-          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Arayın: <span class="num">06204 37 04</span></span></a>
+          <a class="btn btn--primary" data-cta="call" href="tel:+4962043704"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="btn__label">Arayın: <span class="num">06204 37 04</span></span></a>
           <a class="btn" data-cta="book" href="#tr-anliegen" data-open="termin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>Online randevu talebi</a>
+          <a class="btn" data-cta="mail" href="mailto:willkommen@gemeinschaftspraxis-guenther.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="btn__label">E-posta gönderin</span></a>
         </div>
         <p class="small muted">Hangi dillerde hizmet verebildiğimizi lütfen telefonla sorun. Tercümanlık yapacak bir yakınınızı da yanınızda getirebilirsiniz.</p>
       </div>
@@ -4789,6 +4817,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       if (!call || !book) return;
       call.classList.toggle("btn--primary", s.open);
       book.classList.toggle("btn--primary", !s.open);
+      // Handy: statt „Termin“ steht dort E-Mail – geschlossen ist sie die Haupt-Aktion
+      var mail = box.querySelector('[data-cta="mail"]');
+      if (mail) mail.classList.toggle("btn--primary", !s.open);
       if (s.open) box.insertBefore(call, book); else box.insertBefore(book, call);
     });
     // Sprechzeiten: heutigen Tag markieren
