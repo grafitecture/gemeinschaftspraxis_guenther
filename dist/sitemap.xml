@@ -29,13 +29,6 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/dr-andreas-guenther"/>
   </url>
   <url>
-    <loc>https://www.gemeinschaftspraxis-guenther.de/impfkalender</loc>
-    <lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gemeinschaftspraxis-guenther.de/en/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/impfkalender"/>
-  </url>
-  <url>
     <loc>https://www.gemeinschaftspraxis-guenther.de/en</loc>
     <lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/"/>
@@ -64,13 +57,6 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/dr-andreas-guenther"/>
   </url>
   <url>
-    <loc>https://www.gemeinschaftspraxis-guenther.de/en/impfkalender</loc>
-    <lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gemeinschaftspraxis-guenther.de/en/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/impfkalender"/>
-  </url>
-  <url>
     <loc>https://www.gemeinschaftspraxis-guenther.de/tr</loc>
     <lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/"/>
@@ -97,13 +83,6 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gemeinschaftspraxis-guenther.de/en/dr-andreas-guenther"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/dr-andreas-guenther"/>
-  </url>
-  <url>
-    <loc>https://www.gemeinschaftspraxis-guenther.de/tr/impfkalender</loc>
-    <lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.gemeinschaftspraxis-guenther.de/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gemeinschaftspraxis-guenther.de/en/impfkalender"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.gemeinschaftspraxis-guenther.de/tr/impfkalender"/>
   </url>
   <url>
     <loc>https://www.gemeinschaftspraxis-guenther.de/impressum</loc>

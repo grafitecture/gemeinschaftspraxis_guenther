@@ -44,8 +44,7 @@ ICONS = {
 PAGES = [("start", "index.html", "index.html", "/"),
          ("faq", "faq.html", None, "/faq"),
          ("evelyne", "dr-evelyne-guenther.html", "evelyne.html", "/dr-evelyne-guenther"),
-         ("andreas", "dr-andreas-guenther.html", "andreas.html", "/dr-andreas-guenther"),
-         ("impfkalender", "impfkalender.html", "impfkalender.html", "/impfkalender")]
+         ("andreas", "dr-andreas-guenther.html", "andreas.html", "/dr-andreas-guenther")]
 FILE = {k: fn for k, fn, _, _ in PAGES}
 
 # Rechtstexte: nur auf Deutsch (maßgebliche Fassung), aus allen Sprachen verlinkt
@@ -185,7 +184,6 @@ def footer(lang, pres=False):
         <h2>{u["practice"]}</h2>
         <ul>
           <li><a href="faq.html">{u["faq"]}</a></li>
-          <li><a href="impfkalender.html">{u["vacc_cal"]}</a></li>
           <li><a href="index.html#ausbildung">{u["training"]}</a></li>
           <li><a href="{INSTA}" rel="noopener">Instagram</a></li>
           <li><a href="impressum.html">{u["imprint"]}</a></li>
@@ -404,16 +402,6 @@ def jsonld(lang, key):
                 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": UI[lang]["crumb_home"], "item": BASE_URL + url_path(lang, "start")},
                     {"@type": "ListItem", "position": 2, "name": title, "item": BASE_URL + url_path(lang, "faq")}]}]
-        return json.dumps(data, ensure_ascii=False, indent=1)
-    if key == "impfkalender":
-        title = PAGEMETA[lang][key][0].split(" – ")[0]
-        data = [{"@context": "https://schema.org", "@type": "MedicalWebPage", "url": BASE_URL + url_path(lang, key),
-                 "name": PAGEMETA[lang][key][0], "description": PAGEMETA[lang][key][1], "inLanguage": META[lang]["inlang"],
-                 "about": {"@id": BASE_URL + "/#praxis"}, "isPartOf": {"@id": BASE_URL + "/#website"},
-                 "lastReviewed": TODAY, "dateModified": TODAY},
-                {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": UI[lang]["crumb_home"], "item": BASE_URL + url_path(lang, "start")},
-                    {"@type": "ListItem", "position": 2, "name": title, "item": BASE_URL + url_path(lang, key)}]}]
         return json.dumps(data, ensure_ascii=False, indent=1)
     if lang == "de":
         return open(os.path.join(SRC, "jsonld", key + ".json"), encoding="utf-8").read()
