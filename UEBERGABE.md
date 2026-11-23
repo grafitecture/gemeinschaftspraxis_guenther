@@ -1,6 +1,6 @@
 # Gemeinschaftspraxis Günther – neue Website (Prototyp)
 
-Stand: 23. November 2026 (Runde 4: Hero auf dem Handy, neues Praxisblau `#377EC3`) · Agentur: Grafitecture
+Stand: 23. November 2026 (Runde 4: Hero auf dem Handy, neues Praxisblau `#377EC3`; Vorschau-Zugang mit Passwort) · Agentur: Grafitecture
 
 ## Inhalt des Pakets
 
@@ -12,15 +12,23 @@ Stand: 23. November 2026 (Runde 4: Hero auf dem Handy, neues Praxisblau `#377EC3
 | `src/` | Seiteninhalte (`pages/*.html` Deutsch, `pages/en/`, `pages/tr/`), Notfall-Band (`partials/`), Rechtstexte (`legal/`), FAQ-Daten (`faq.json`, `faq.en.json`, `faq.tr.json`), strukturierte Daten (`jsonld/`) |
 | `assets/` | CSS (Designsystem), JS, Schriften (Fira Sans, selbst gehostet), Logo-SVGs, Fotos |
 | `tools/` | `build.py` (baut `dist/`, Präsentation, Artefakt), `i18n.py` (Texte von Kopf, Fuß, Team, Formularen, Metadaten in DE/EN/TR), `signet_paths.py` (Pfade des Original-Signets), `grade_photos.py` + `make_photos.py` (Farbangleichung der Praxisfotos), Screenshot-Helfer |
+| `middleware.js` | **Vorschau-Zugang** (Vercel Routing Middleware, siehe unten): Passwort vor der ganzen Website. Tests: `node tools/test_login.mjs`; lokal mit Passwort ausprobieren: `node tools/vorschau_server.mjs` → `http://localhost:4173` |
 | `vercel.json` | Clean URLs (`/faq` statt `/faq.html`), Caching und Sicherheits-Header. `/assets` wird ein Jahr `immutable` gecacht – deshalb hängt `build.py` an jede im HTML verlinkte Datei unter `assets/` (CSS, JS, Fotos, Logos, Favicon) eine Prüfsumme an (`site.css?v=…`, Funktionen `versioned` und `bust_assets`), sonst sehen Besucher Änderungen nicht. Nur Schriften (aus der CSS geladen) haben keine Prüfsumme – eine geänderte Schrift unter neuem Dateinamen ablegen. |
 
 Bauen: `python3 tools/build.py`
 Fotos neu erzeugen (nur wenn sich Quellbilder ändern): `PRAXIS_SRC=…/WEBSEITE_DATEN/PRAXIS python3 tools/make_photos.py`.
-Repository: `github.com/grafitecture/gemeinschaftspraxis_guenther` (Branch `main`). Deploy: GitHub → Vercel; `vercel.json` setzt `outputDirectory: dist`, Vercel liefert also direkt den fertigen Ordner `dist/` aus (kein Build-Schritt nötig – vor jedem Push `python3 tools/build.py` laufen lassen). **Vor dem Livegang** im `<head>` die Zeile `noindex, nofollow` entfernen (steht in `tools/build.py`, Funktion `head`).
+Repository: `github.com/grafitecture/gemeinschaftspraxis_guenther` (Branch `main`). Deploy: GitHub → Vercel; `vercel.json` setzt `outputDirectory: dist`, Vercel liefert also direkt den fertigen Ordner `dist/` aus (kein Build-Schritt nötig – vor jedem Push `python3 tools/build.py` laufen lassen). **Vor dem Livegang** im `<head>` die Zeile `noindex, nofollow` entfernen (steht in `tools/build.py`, Funktion `head`) und `middleware.js` löschen (Vorschau-Zugang).
 
 Testen der Öffnungs-Logik: `index.html?jetzt=2026-11-23T09:30` (geöffnet) bzw. `?jetzt=2026-11-23T20:30` (geschlossen) simuliert eine Uhrzeit.
 
 Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Seite verweist per `hreflang` auf ihre Geschwister, `x-default` ist Deutsch. In der Präsentation heißen die Routen `#start`, `#faq`, `#en`, `#en-faq`, `#tr-evelyne` usw.
+
+## Vorschau-Zugang (seit 23. November 2026)
+
+Solange die Seite ein Entwurf ist, steht vor jeder Seite und jeder Datei ein Passwort (Adresse: `gemeinschaftspraxisguenther.vercel.app`; das Passwort hat Martin).
+- **Technik**: `middleware.js` im Repo-Root läuft auf Vercel vor jeder Anfrage. Ohne gültiges Cookie geht es per Weiterleitung auf `/login?ziel=…`; nach dem Anmelden zurück zur ursprünglich aufgerufenen Seite. Frei ohne Passwort sind nur `/login`, die Schriften, das Favicon, `login-*.webp` und `robots.txt` – Fotos, Texte, CSS, Sitemap und `llms.txt` sind gesperrt. Cookie `gpg_vorschau`, 30 Tage, `HttpOnly`, `Secure`, `SameSite=Lax`. Im Code steht nur der SHA-256-Wert des Passworts, das Cookie ist davon abgeleitet. Abmelden: `/logout`. Ohne JavaScript funktioniert das Formular als normales POST.
+- **Passwort ändern**: SHA-256 des neuen Passworts in `PASSWORT_SHA256` (Anleitung im Kopf von `middleware.js`), pushen – alle bisherigen Anmeldungen werden ungültig.
+- **Gestaltung** (`src/login.html` → `dist/login.html`, erzeugt in `build.py`, Funktion `build_login`): links dunkle Fläche `#2E3438` wie die Fassade am Abend, rechts das Abendfoto mit dem leuchtenden G (`login-abend.webp`, aus `IMG_8282.jpeg`, in `make_photos.py`). Überschrift „Herein.“, Logo-Schriftzug mit leuchtendem Blau `#4592DE`. Das Signet baut sich wie im Hero auf und geht dann an. Falsches Passwort: Feld schüttelt sich, Hinweis in hellem Rot `#FF9B93` (6,2 : 1). Richtiges Passwort: Der Button sagt „Willkommen“, und vom beleuchteten G im Foto breitet sich weißes Licht über den Bildschirm aus – dann erscheint die Website. Auf dem Handy Foto oben, Text darunter, kein zweites Signet. `prefers-reduced-motion`: keine Animation.
 
 ## Designsystem
 

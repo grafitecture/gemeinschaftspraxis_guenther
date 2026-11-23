@@ -7,4 +7,4 @@ Neue Website für die Gemeinschaftspraxis Günther, Kreuzstraße 13, Viernheim (
 - `praesentation/` – alle Seiten in einer HTML-Datei zum Zeigen
 - `UEBERGABE.md` – Designsystem, Funktionen, offene Punkte
 
-Stand: Prototyp. Die Seite trägt `noindex, nofollow`; vor dem Livegang in `tools/build.py` (Funktion `head`) entfernen. Die Teamporträts sind KI-Demobilder mit erfundenen Namen und werden vor dem Livegang durch echte Fotos ersetzt.
+Stand: Prototyp. Die Seite trägt `noindex, nofollow`; vor dem Livegang in `tools/build.py` (Funktion `head`) entfernen. Vor der ganzen Seite steht ein Passwort (`middleware.js`, Login-Seite `/login`); zum Livegang `middleware.js` löschen. Die Teamporträts sind KI-Demobilder mit erfundenen Namen und werden vor dem Livegang durch echte Fotos ersetzt.
