@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://www.gemeinschaftspraxis-guenther.de/assets/img/og-bild.png">
 <meta name="robots" content="noindex, nofollow"><!-- Prototyp: vor dem Livegang entfernen -->
 <link rel="icon" href="assets/img/favicon.svg?v=913667f5b4" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/site.css?v=118bd00fb6">
+<link rel="stylesheet" href="assets/css/site.css?v=00b19500c4">
 <script type="application/ld+json">[
  {
   "@context": "https://schema.org",
@@ -1269,27 +1269,9 @@
   <div class="wrap">
     <div class="now__title"><h2 id="aktuell-h">Aktuell</h2></div>
     <div class="now__grid">
-      <article class="feature" id="impfen" aria-labelledby="impfen-h">
-        <p class="feature__date">Die neuen Grippeimpfstoffe sind eingetroffen. Sie können sich ab sofort in unserer Praxis gegen die saisonale Grippe impfen lassen.</p>
-        <h3 id="impfen-h">Die Grippe&shy;impfstoffe sind da. Impfen ohne Termin.</h3>
-        <p>Kommen Sie einfach während der Sprechzeiten vorbei. Grippe, Corona, RSV und Pneumokokken können laut STIKO auch am selben Tag geimpft werden – wenn sie für Sie empfohlen sind.</p>
-        <div class="vacc" data-vacc>
-          <p class="vacc__q" id="vacc-q">Welche Impfungen empfiehlt die STIKO für Sie?</p>
-          <div class="chips" role="group" aria-labelledby="vacc-q">
-            <button class="chip" type="button" data-age="u60" aria-pressed="false">unter 60</button>
-            <button class="chip" type="button" data-age="60" aria-pressed="true">60 bis 74</button>
-            <button class="chip" type="button" data-age="75" aria-pressed="false">ab 75</button>
-          </div>
-          <label class="check"><input type="checkbox" data-risk> Ich habe eine chronische Erkrankung oder lebe in einer Pflegeeinrichtung.</label>
-          <ul class="vacc__out" data-vacc-out aria-live="polite">
-            <li><b>Grippe</b><span>jährlich, am besten jetzt</span></li>
-            <li><b>Pneumokokken</b><span>Standardimpfung</span></li>
-            <li><b>Gürtelrose</b><span>2 Impfungen</span></li>
-            <li class="is-grey"><b>Tetanus und Diphtherie</b><span>alle 10 Jahre auffrischen</span></li>
-          </ul>
-          <p class="vacc__note">Stand: STIKO-Empfehlungen 2026. Die Übersicht ersetzt keine Beratung – bringen Sie Ihren Impfpass mit, wir prüfen ihn gern.</p>
-        </div>
-      </article>
+      <div class="now__lead" id="impfen">
+        <p>Die neuen Grippeimpfstoffe sind eingetroffen. Sie können sich ab sofort in unserer Praxis gegen die saisonale Grippe impfen lassen.</p>
+      </div>
       <div>
         <ul class="news">
           <li class="is-important">
@@ -1361,7 +1343,7 @@
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
         <h3>Impfung</h3>
         <p>Ohne Termin während der Sprechzeiten. Kommen Sie bitte ohne Infekt und nicht nüchtern – und verzichten Sie danach auf Sport.</p>
-        <div class="task__act"><a class="textlink" href="#impfen">Zum Impf-Check</a></div>
+        <div class="task__act"><a class="textlink" href="#impfen">Fragen zur Impfung</a></div>
       </li>
       <li class="task">
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
@@ -1572,7 +1554,7 @@
         <div class="post__in"><span class="post__k">STIKO 2026</span><p class="post__mid">Ab 60 empfohlen</p>
           <ul class="post__list"><li><span>Grippe</span><span>jährlich</span></li><li><span>Pneumokokken</span><span>Standard</span></li><li><span>Gürtelrose</span><span>2 Dosen</span></li></ul>
           <p class="post__s">Ab 75 zusätzlich RSV und Corona.</p></div>
-        <span class="post__cap">Welche Impfung brauche ich? Unser Impf-Check auf der Website zeigt es Ihnen in zwei Klicks.</span>
+        <span class="post__cap">Welche Impfung brauche ich? Bringen Sie Ihren Impfpass mit – wir beraten Sie gern.</span>
       </a>
       <a class="post post--grey" href="https://www.instagram.com/gemeinschaftspraxisguenther/" rel="noopener" aria-label="Instagram-Beitrag: Blutabnahme 8 bis 9 Uhr">
         <div class="post__in"><span class="post__k">Labor</span><span class="post__clock" aria-hidden="true"></span><p class="post__mid">Blutabnahme 8–9&nbsp;Uhr</p><p class="post__s">Montag bis Freitag. Für Zucker und Blutfette nüchtern kommen.</p></div>
@@ -1850,27 +1832,9 @@
   <div class="wrap">
     <div class="now__title"><h2 id="en-aktuell-h">News</h2></div>
     <div class="now__grid">
-      <article class="feature" id="en-impfen" aria-labelledby="en-impfen-h">
-        <p class="feature__date">The new flu vaccines have arrived. You can now get your seasonal flu vaccination at our practice.</p>
-        <h3 id="en-impfen-h">Flu vaccines have arrived. No appointment needed.</h3>
-        <p>Just come by during consultation hours. According to STIKO, Germany’s Standing Committee on Vaccination, flu, COVID-19, RSV and pneumococcal vaccines can be given on the same day – if they are recommended for you.</p>
-        <div class="vacc" data-vacc>
-          <p class="vacc__q" id="en-vacc-q">Which vaccinations does STIKO recommend for you?</p>
-          <div class="chips" role="group" aria-labelledby="en-vacc-q">
-            <button class="chip" type="button" data-age="u60" aria-pressed="false">under 60</button>
-            <button class="chip" type="button" data-age="60" aria-pressed="true">60 to 74</button>
-            <button class="chip" type="button" data-age="75" aria-pressed="false">75 and over</button>
-          </div>
-          <label class="check"><input type="checkbox" data-risk> I have a chronic illness or live in a care home.</label>
-          <ul class="vacc__out" data-vacc-out aria-live="polite">
-            <li><b>Flu</b><span>every year, ideally now</span></li>
-            <li><b>Pneumococcus</b><span>standard vaccination</span></li>
-            <li><b>Shingles</b><span>2 doses</span></li>
-            <li class="is-grey"><b>Tetanus and diphtheria</b><span>booster every 10 years</span></li>
-          </ul>
-          <p class="vacc__note">Based on the STIKO recommendations 2026. This overview does not replace a consultation – bring your vaccination record (Impfpass) and we will be happy to check it.</p>
-        </div>
-      </article>
+      <div class="now__lead" id="en-impfen">
+        <p>The new flu vaccines have arrived. You can now get your seasonal flu vaccination at our practice.</p>
+      </div>
       <div>
         <ul class="news">
           <li class="is-important">
@@ -1942,7 +1906,7 @@
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
         <h3>Vaccination</h3>
         <p>No appointment needed during consultation hours. Please come without an infection and not on an empty stomach – and avoid sport afterwards.</p>
-        <div class="task__act"><a class="textlink" href="#en-impfen">Go to the vaccination check</a></div>
+        <div class="task__act"><a class="textlink" href="#en-impfen">Questions about vaccination</a></div>
       </li>
       <li class="task">
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
@@ -2153,7 +2117,7 @@
         <div class="post__in"><span class="post__k">STIKO 2026</span><p class="post__mid">Ab 60 empfohlen</p>
           <ul class="post__list"><li><span>Grippe</span><span>jährlich</span></li><li><span>Pneumokokken</span><span>Standard</span></li><li><span>Gürtelrose</span><span>2 Dosen</span></li></ul>
           <p class="post__s">Ab 75 zusätzlich RSV und Corona.</p></div>
-        <span class="post__cap">Welche Impfung brauche ich? Unser Impf-Check auf der Website zeigt es Ihnen in zwei Klicks.</span>
+        <span class="post__cap">Welche Impfung brauche ich? Bringen Sie Ihren Impfpass mit – wir beraten Sie gern.</span>
       </a>
       <a class="post post--grey" href="https://www.instagram.com/gemeinschaftspraxisguenther/" rel="noopener" aria-label="Instagram-Beitrag: Blutabnahme 8 bis 9 Uhr">
         <div class="post__in"><span class="post__k">Labor</span><span class="post__clock" aria-hidden="true"></span><p class="post__mid">Blutabnahme 8–9&nbsp;Uhr</p><p class="post__s">Montag bis Freitag. Für Zucker und Blutfette nüchtern kommen.</p></div>
@@ -2431,27 +2395,9 @@
   <div class="wrap">
     <div class="now__title"><h2 id="tr-aktuell-h">Güncel</h2></div>
     <div class="now__grid">
-      <article class="feature" id="tr-impfen" aria-labelledby="tr-impfen-h">
-        <p class="feature__date">Yeni grip aşıları geldi. Mevsimsel gribe karşı artık muayenehanemizde aşı olabilirsiniz.</p>
-        <h3 id="tr-impfen-h">Grip aşıları geldi. Randevu gerekmez.</h3>
-        <p>Muayene saatlerinde gelmeniz yeterli. Almanya Daimi Aşı Komisyonu STIKO’ya göre grip, Covid-19, RSV ve pnömokok aşıları – sizin için önerildiyse – aynı gün yapılabilir.</p>
-        <div class="vacc" data-vacc>
-          <p class="vacc__q" id="tr-vacc-q">STIKO sizin için hangi aşıları öneriyor?</p>
-          <div class="chips" role="group" aria-labelledby="tr-vacc-q">
-            <button class="chip" type="button" data-age="u60" aria-pressed="false">60 yaş altı</button>
-            <button class="chip" type="button" data-age="60" aria-pressed="true">60–74 yaş</button>
-            <button class="chip" type="button" data-age="75" aria-pressed="false">75 yaş ve üstü</button>
-          </div>
-          <label class="check"><input type="checkbox" data-risk> Kronik bir hastalığım var veya bir bakımevinde yaşıyorum.</label>
-          <ul class="vacc__out" data-vacc-out aria-live="polite">
-            <li><b>Grip</b><span>her yıl, en iyisi şimdi</span></li>
-            <li><b>Pnömokok</b><span>standart aşı</span></li>
-            <li><b>Zona</b><span>2 doz</span></li>
-            <li class="is-grey"><b>Tetanoz ve difteri</b><span>10 yılda bir rapel</span></li>
-          </ul>
-          <p class="vacc__note">Kaynak: STIKO önerileri 2026. Bu özet doktor görüşmesinin yerini tutmaz – aşı kartınızı (Impfpass) getirin, memnuniyetle kontrol ederiz.</p>
-        </div>
-      </article>
+      <div class="now__lead" id="tr-impfen">
+        <p>Yeni grip aşıları geldi. Mevsimsel gribe karşı artık muayenehanemizde aşı olabilirsiniz.</p>
+      </div>
       <div>
         <ul class="news">
           <li class="is-important">
@@ -2523,7 +2469,7 @@
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
         <h3>Aşı</h3>
         <p>Muayene saatlerinde randevusuz. Lütfen enfeksiyonunuz yokken ve aç karnına olmadan gelin – aşıdan sonra spor yapmayın.</p>
-        <div class="task__act"><a class="textlink" href="#tr-impfen">Aşı kontrolüne git</a></div>
+        <div class="task__act"><a class="textlink" href="#tr-impfen">Aşı hakkında sorular</a></div>
       </li>
       <li class="task">
         <span class="task__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
@@ -2734,7 +2680,7 @@
         <div class="post__in"><span class="post__k">STIKO 2026</span><p class="post__mid">Ab 60 empfohlen</p>
           <ul class="post__list"><li><span>Grippe</span><span>jährlich</span></li><li><span>Pneumokokken</span><span>Standard</span></li><li><span>Gürtelrose</span><span>2 Dosen</span></li></ul>
           <p class="post__s">Ab 75 zusätzlich RSV und Corona.</p></div>
-        <span class="post__cap">Welche Impfung brauche ich? Unser Impf-Check auf der Website zeigt es Ihnen in zwei Klicks.</span>
+        <span class="post__cap">Welche Impfung brauche ich? Bringen Sie Ihren Impfpass mit – wir beraten Sie gern.</span>
       </a>
       <a class="post post--grey" href="https://www.instagram.com/gemeinschaftspraxisguenther/" rel="noopener" aria-label="Instagram-Beitrag: Blutabnahme 8 bis 9 Uhr">
         <div class="post__in"><span class="post__k">Labor</span><span class="post__clock" aria-hidden="true"></span><p class="post__mid">Blutabnahme 8–9&nbsp;Uhr</p><p class="post__s">Montag bis Freitag. Für Zucker und Blutfette nüchtern kommen.</p></div>
