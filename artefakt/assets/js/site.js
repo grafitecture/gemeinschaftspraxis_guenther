@@ -323,6 +323,32 @@
     });
   });
 
+  /* Stimmen-Laufband: anhalten und weiterlaufen lassen (WCAG 2.2.2) */
+  document.querySelectorAll("[data-marquee-toggle]").forEach(function (btn) {
+    var sec = btn.closest("section"), mq = sec && sec.querySelector("[data-marquee]"), lab = btn.querySelector("span");
+    if (!mq) return;
+    btn.addEventListener("click", function () {
+      var paused = mq.classList.toggle("is-paused");
+      btn.classList.toggle("is-paused", paused);
+      lab.textContent = btn.getAttribute(paused ? "data-l-play" : "data-l-pause");
+    });
+  });
+
+  /* Kontaktformular auf der Seite (Prototyp – sendet nichts) */
+  document.querySelectorAll("form[data-form]").forEach(function (f) {
+    var box = f.parentElement, dn = box.querySelector(".done"), again = box.querySelector("[data-reset]");
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      f.hidden = true; f.reset();
+      if (dn) { dn.hidden = false; var h = dn.querySelector("h3"); if (h) h.focus(); }
+    });
+    if (again) again.addEventListener("click", function () {
+      if (dn) dn.hidden = true;
+      f.hidden = false;
+      var first = f.querySelector("input, textarea"); if (first) first.focus();
+    });
+  });
+
   /* Adresse kopieren */
   document.querySelectorAll("[data-copy]").forEach(function (b) {
     b.addEventListener("click", function () {

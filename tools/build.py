@@ -39,6 +39,8 @@ ICONS = {
     "hand": '<path d="M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V5.5a1.5 1.5 0 0 1 3 0V11M16 11V8a1.5 1.5 0 0 1 3 0v6a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-2.7L3.5 15a1.6 1.6 0 0 1 2.6-1.8L7 14"/>',
     "doc": '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
     "cap": '<path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/>',
+    "pause": '<path d="M9 5v14M15 5v14"/>',
+    "play": '<path d="M8 5.5v13l10.5-6.5z"/>',
     "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
 }
 
@@ -144,7 +146,7 @@ def chrome_attr(lang, pres):
 
 def header(lang, active, pres=False):
     u = UI[lang]
-    hrefs = ["index.html#aktuell", "index.html#sprechzeiten", "index.html#aerzte",
+    hrefs = ["index.html#sprechzeiten", "index.html#aktuell", "index.html#aerzte",
              "index.html#leistungen", "faq.html"]
     items = []
     for i, (href, label) in enumerate(zip(hrefs, u["nav"])):

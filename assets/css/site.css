@@ -863,3 +863,74 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now .news .is-important a:focus-visible { outline-color: var(--alert); }
 .now .news .is-important time { background: var(--alert); color: #fff; }
 .now .news .is-important .news__icon { background: #fbe9eb; color: var(--alert); }
+
+/* ---------- Hero auf dem Desktop: füllt genau den ersten Bildschirm unter der Kopfzeile ---------- */
+@media (min-width: 1024px) {
+  .hero { display: grid; grid-template-rows: minmax(0, 1fr); padding-block: var(--space-l) var(--space-xl);
+          min-height: calc(100vh - var(--header-h) - var(--grow)); min-height: calc(100svh - var(--header-h) - var(--grow)); }
+  .hero__grid { align-items: stretch; }
+  .hero__text { align-self: center; }
+  .hero__art { display: flex; flex-direction: column; }
+  /* Foto füllt die Spaltenhöhe – trägt selbst nichts zur Höhe bei, damit der Hero nicht über den Bildschirm wächst */
+  .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; min-height: 22rem; }
+  .hero__photo img { position: absolute; inset: 0; }
+}
+
+/* ---------- Kontakt: Angaben links, Formular rechts ---------- */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+@media (min-width: 960px) { .contact { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: start; } }
+.contact__intro { display: grid; gap: var(--space-l); align-content: start; }
+.contact__intro .head { margin-bottom: 0; }
+.contact__ways { list-style: none; display: grid; gap: var(--space-s); }
+.contact__ways li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: center; }
+.contact__ways b { display: block; font-size: var(--step-m1); font-weight: 500; color: var(--ink); }
+.contact__ways a { font-weight: 500; overflow-wrap: anywhere; }
+.contact__icon { width: 2.75rem; height: 2.75rem; border-radius: 50%; display: grid; place-items: center; background: var(--blue-tint); color: var(--blue-deep); }
+.contact__icon svg { width: 1.25rem; height: 1.25rem; }
+.contact__intro .hint { justify-self: start; }
+.contact__box { display: grid; gap: var(--space-m); padding: var(--space-l); border: 1px solid var(--line); border-radius: var(--r); background: #fff; }
+.contact__fields { display: grid; gap: 1.1rem; }
+.contact .field textarea { min-height: 9rem; }
+.field__opt { font-weight: 400; color: var(--ink-soft); }
+.field__hint { font-size: var(--step-m1); color: var(--ink-soft); }
+.field__hint a, .check a { font-weight: 500; }
+.contact .btn-row .btn svg { width: 1.2rem; height: 1.2rem; }
+@media (max-width: 559px) { .contact__box { padding: var(--space-m); } .contact .btn-row .btn { width: 100%; justify-content: center; } }
+
+/* ---------- Stimmen: Laufband mit Rückmeldungen (Social Proof) ----------
+   Immer drei Karten nebeneinander (Tablet zwei, Handy eine), läuft langsam durch und hält bei Maus,
+   Tastaturfokus oder per Knopf an. Die Kopien am Ende sorgen für den nahtlosen Übergang. */
+.stimmen__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-m); margin-bottom: var(--space-xl); }
+.stimmen__head .head { margin-bottom: 0; }
+.marquee__toggle { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .5rem 1rem; font: inherit; font-size: var(--step-m1); font-weight: 500; color: var(--blue-deep); background: #fff; border: 1px solid var(--line); border-radius: var(--pill); cursor: pointer; }
+.marquee__toggle:hover { border-color: var(--blue); }
+.marquee__toggle svg { width: 1rem; height: 1rem; }
+.marquee__toggle svg + svg, .marquee__toggle.is-paused svg:first-child { display: none; }
+.marquee__toggle.is-paused svg + svg { display: block; }
+.marquee { --n: 3; --gap: var(--space-m); --per: 7s; container-type: inline-size; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent); mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent); }
+@media (max-width: 899px) { .marquee { --n: 2; } }
+@media (max-width: 559px) { .marquee { --n: 1; --per: 6s; } }
+.marquee__track { list-style: none; display: flex; gap: var(--gap); width: max-content; }
+.voice { flex: 0 0 calc((100cqi - (var(--n) - 1) * var(--gap)) / var(--n)); display: flex; }
+.voice figure { margin: 0; display: flex; flex-direction: column; gap: var(--space-s); width: 100%; padding: var(--space-l); background: var(--mist); border-radius: var(--r); }
+.voice__dots { display: flex; gap: .35rem; }
+.voice__dots i { width: .7rem; height: .7rem; border-radius: 50%; background: var(--blue); }
+.voice__dots i + i { background: var(--grey); }
+.voice blockquote { margin: 0; display: grid; gap: var(--space-xs); }
+.voice__h { font-size: var(--step-2); font-weight: 600; line-height: 1.15; color: var(--blue-deep); text-wrap: balance; }
+.voice__t { font-size: var(--step-0); color: var(--ink); }
+@container (max-width: 64rem) { .voice figure { padding: var(--space-m); } .voice__h { font-size: var(--step-1); } }
+.voice figcaption { margin-top: auto; padding-top: var(--space-xs); font-size: var(--step-m1); font-weight: 500; color: var(--ink-soft); }
+.stimmen .draft-note { margin-top: var(--space-m); }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee__track { animation: marquee calc(9 * var(--per)) linear infinite; }
+  .marquee:hover .marquee__track, .marquee:focus-within .marquee__track, .marquee.is-paused .marquee__track { animation-play-state: paused; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - var(--gap) / 2)); } }
+}
+/* Ohne Bewegung: kein Laufband, die neun Stimmen lassen sich seitlich durchblättern */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-s); }
+  .voice { scroll-snap-align: start; }
+  .voice--clone, .marquee__toggle { display: none; }
+}

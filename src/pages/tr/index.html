@@ -19,6 +19,29 @@
   </div>
 </section>
 
+<section class="section section--mist" id="sprechzeiten" aria-labelledby="zeiten-h">
+  <div class="wrap hours">
+    <div class="head" style="margin-bottom:0">
+      <h2 id="zeiten-h">Muayene saatleri</h2>
+      <p class="lead">Aşı için randevu gerekmez, muayene için randevu gerekir. Kan alma her iş günü saat 8.00’de başlar.</p>
+    </div>
+    <div>
+      <table class="times">
+        <thead><tr><th scope="col"><span class="sr-only">Gün</span></th><th scope="col">Öğleden önce</th><th scope="col">Öğleden sonra</th></tr></thead>
+        <tbody>
+          <tr data-dow="1"><th scope="row">Pazartesi</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="2"><th scope="row">Salı</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="3"><th scope="row">Çarşamba</th><td class="num">9–11</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
+          <tr data-dow="4"><th scope="row">Perşembe</th><td class="num">9–11</td><td class="num">16–18</td></tr>
+          <tr data-dow="5"><th scope="row">Cuma</th><td class="num">9–13</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
+          <tr class="is-off" data-dow="6 0"><th scope="row">Cumartesi ve Pazar</th><td colspan="2">kapalı</td></tr>
+        </tbody>
+      </table>
+      <p class="times__lab"><b>Kan alma</b> Pazartesi–Cuma 8–9</p>
+    </div>
+  </div>
+</section>
+
 <section class="now" id="aktuell" aria-labelledby="aktuell-h">
   <div class="wrap">
     <div class="now__title"><h2 id="aktuell-h">Güncel</h2></div>
@@ -70,7 +93,40 @@
   </div>
 </section>
 
-<section class="section section--tight" id="anliegen" aria-labelledby="anliegen-h">
+<section class="section" id="aerzte" aria-labelledby="aerzte-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="aerzte-h">Doktorlarınız</h2>
+      <p class="lead">İkisi de iç hastalıkları uzmanıdır ve uzun yıllar hastanede çalışmıştır – kardiyoloji ve gastroenteroloji alanlarında. Bu deneyimi aile hekimliğine taşıyorlar.</p>
+    </div>
+    <div class="docs">
+      <article class="doc" aria-labelledby="doc-e">
+        <a class="doc__img" href="dr-evelyne-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:evelyne}}</a>
+        <h3 id="doc-e">Dr. med. Evelyne Günther</h3>
+        <p class="doc__role">İç hastalıkları uzmanı. Hipertansiyon uzmanı (DHL), akupunktur, palyatif tıp.</p>
+        <ul class="dots">
+          <li>Kalp, dolaşım ve yüksek tansiyon</li>
+          <li>Akupunktur ve Geleneksel Çin Tıbbı</li>
+          <li>Ağır hastalara bakım ve destek</li>
+        </ul>
+        <p><a class="btn" href="dr-evelyne-guenther.html">Dr. Evelyne Günther’i tanıyın</a></p>
+      </article>
+      <article class="doc" aria-labelledby="doc-a">
+        <a class="doc__img" href="dr-andreas-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:andreas}}</a>
+        <h3 id="doc-a">Dr. med. Andreas Günther</h3>
+        <p class="doc__role">İç hastalıkları ve gastroenteroloji uzmanı. Acil tıp.</p>
+        <ul class="dots dots--grey">
+          <li>Mide, bağırsak, karaciğer ve ultrason</li>
+          <li>Diyabet ve metabolizma</li>
+          <li>Acil tıp</li>
+        </ul>
+        <p><a class="btn" href="dr-andreas-guenther.html">Dr. Andreas Günther’i tanıyın</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight section--mist" id="anliegen" aria-labelledby="anliegen-h">
   <div class="wrap">
     <div class="head">
       <h2 id="anliegen-h">Size nasıl yardımcı olabiliriz?</h2>
@@ -114,62 +170,6 @@
         <div class="task__act"><a class="textlink" href="tel:{{TEL}}">Bizi arayın</a></div>
       </li>
     </ul>
-  </div>
-</section>
-
-<section class="section section--mist" id="sprechzeiten" aria-labelledby="zeiten-h">
-  <div class="wrap hours">
-    <div class="head" style="margin-bottom:0">
-      <h2 id="zeiten-h">Muayene saatleri</h2>
-      <p class="lead">Aşı için randevu gerekmez, muayene için randevu gerekir. Kan alma her iş günü saat 8.00’de başlar.</p>
-    </div>
-    <div>
-      <table class="times">
-        <thead><tr><th scope="col"><span class="sr-only">Gün</span></th><th scope="col">Öğleden önce</th><th scope="col">Öğleden sonra</th></tr></thead>
-        <tbody>
-          <tr data-dow="1"><th scope="row">Pazartesi</th><td class="num">9–11</td><td class="num">16–18</td></tr>
-          <tr data-dow="2"><th scope="row">Salı</th><td class="num">9–11</td><td class="num">16–18</td></tr>
-          <tr data-dow="3"><th scope="row">Çarşamba</th><td class="num">9–11</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
-          <tr data-dow="4"><th scope="row">Perşembe</th><td class="num">9–11</td><td class="num">16–18</td></tr>
-          <tr data-dow="5"><th scope="row">Cuma</th><td class="num">9–13</td><td class="is-none"><span aria-hidden="true">–</span><span class="sr-only">kapalı</span></td></tr>
-          <tr class="is-off" data-dow="6 0"><th scope="row">Cumartesi ve Pazar</th><td colspan="2">kapalı</td></tr>
-        </tbody>
-      </table>
-      <p class="times__lab"><b>Kan alma</b> Pazartesi–Cuma 8–9</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="aerzte" aria-labelledby="aerzte-h" style="border-top:1px solid var(--line)">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="aerzte-h">Doktorlarınız</h2>
-      <p class="lead">İkisi de iç hastalıkları uzmanıdır ve uzun yıllar hastanede çalışmıştır – kardiyoloji ve gastroenteroloji alanlarında. Bu deneyimi aile hekimliğine taşıyorlar.</p>
-    </div>
-    <div class="docs">
-      <article class="doc" aria-labelledby="doc-e">
-        <a class="doc__img" href="dr-evelyne-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:evelyne}}</a>
-        <h3 id="doc-e">Dr. med. Evelyne Günther</h3>
-        <p class="doc__role">İç hastalıkları uzmanı. Hipertansiyon uzmanı (DHL), akupunktur, palyatif tıp.</p>
-        <ul class="dots">
-          <li>Kalp, dolaşım ve yüksek tansiyon</li>
-          <li>Akupunktur ve Geleneksel Çin Tıbbı</li>
-          <li>Ağır hastalara bakım ve destek</li>
-        </ul>
-        <p><a class="btn" href="dr-evelyne-guenther.html">Dr. Evelyne Günther’i tanıyın</a></p>
-      </article>
-      <article class="doc" aria-labelledby="doc-a">
-        <a class="doc__img" href="dr-andreas-guenther.html" tabindex="-1" aria-hidden="true">{{portrait:andreas}}</a>
-        <h3 id="doc-a">Dr. med. Andreas Günther</h3>
-        <p class="doc__role">İç hastalıkları ve gastroenteroloji uzmanı. Acil tıp.</p>
-        <ul class="dots dots--grey">
-          <li>Mide, bağırsak, karaciğer ve ultrason</li>
-          <li>Diyabet ve metabolizma</li>
-          <li>Acil tıp</li>
-        </ul>
-        <p><a class="btn" href="dr-andreas-guenther.html">Dr. Andreas Günther’i tanıyın</a></p>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -253,6 +253,79 @@
   </div>
 </section>
 
+<section class="section stimmen" id="stimmen" aria-labelledby="stimmen-h">
+  <div class="wrap">
+    <div class="stimmen__head">
+      <div class="head">
+        <h2 id="stimmen-h">Hastalarımız ne diyor?</h2>
+        <p class="lead">Muayenehanemizden sesler – resepsiyondan ev ziyaretine kadar.</p>
+      </div>
+      <button class="marquee__toggle" type="button" data-marquee-toggle data-l-pause="Durdur" data-l-play="Devam et">{{icon:pause}}{{icon:play}}<span>Durdur</span></button>
+    </div>
+    <div class="marquee" data-marquee>
+      <ul class="marquee__track" aria-label="Hastalarımızdan geri bildirimler">
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
+      </ul>
+    </div>
+    <p class="draft-note">Örnek metinler (taslak). Yayında burada hastalarımızın gerçek geri bildirimleri yer alacak – yalnızca yazılı onaylarıyla.</p>
+  </div>
+</section>
+
+<section class="section section--mist" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap contact">
+    <div class="contact__intro">
+      <div class="head">
+        <h2 id="kontakt-h">Bize yazın.</h2>
+        <p class="lead">Acil olmayan sorularınız için. Genellikle iki iş günü içinde yanıt veriyoruz.</p>
+      </div>
+      <ul class="contact__ways">
+        <li><span class="contact__icon">{{icon:phone}}</span><span><b>Telefon</b><a class="num" href="tel:{{TEL}}">{{PHONE}}</a></span></li>
+        <li><span class="contact__icon">{{icon:mail}}</span><span><b>E-posta</b><a href="mailto:{{MAIL}}">willkommen@<wbr>gemeinschaftspraxis-guenther.de</a></span></li>
+        <li><span class="contact__icon">{{icon:pin}}</span><span><b>Adres</b>Kreuzstraße 13, 68519 Viernheim</span></li>
+      </ul>
+      <p class="hint hint--alert">Akut şikâyetlerde lütfen bizi arayın. Hayati tehlikede 112’yi arayın.</p>
+    </div>
+    <div class="contact__box">
+      <p class="demo">Prototip: Bu form veri göndermez. Yayında şifreli bir hizmet üzerinden çalışacaktır.</p>
+      <form data-form="kontakt">
+        <div class="contact__fields">
+          <div class="grid2">
+            <div class="field"><label for="k-name">Ad soyad</label><input id="k-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="k-mail">E-posta</label><input id="k-mail" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="k-tel">Telefon <span class="field__opt">(isteğe bağlı)</span></label><input id="k-tel" name="tel" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="k-msg">Mesajınız</label><textarea id="k-msg" name="nachricht" rows="5" required aria-describedby="k-hint"></textarea><p class="field__hint" id="k-hint">Lütfen buradan tıbbi rapor göndermeyin. Randevu ve reçete için ayrı formlarımız var: <a href="#kontakt" data-open="termin">Randevu talebi</a> · <a href="#kontakt" data-open="rezept">Tekrar reçete isteyin</a></p></div>
+          <label class="check"><input type="checkbox" required> <span>Muayenehanenin bilgilerimi yalnızca mesajımı yanıtlamak için kullanmasını kabul ediyorum. Ayrıntılar <a href="datenschutz.html">gizlilik politikasında (Almanca)</a>.</span></label>
+          <div class="btn-row"><button class="btn btn--primary" type="submit">{{icon:mail}}Mesajı gönder</button></div>
+        </div>
+      </form>
+      <div class="done" hidden>
+        <span class="done__dots" aria-hidden="true"><i></i><i></i></span>
+        <h3 tabindex="-1">Mesaj gönderildi</h3>
+        <p class="muted">Teşekkürler! Genellikle iki iş günü içinde yanıt veriyoruz. (Prototip: hiçbir veri iletilmedi.)</p>
+        <button class="btn" type="button" data-reset>Yeni mesaj</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="praxis" aria-labelledby="praxis-h">
   <div class="wrap">
     <div class="head">
@@ -294,7 +367,19 @@
   </div>
 </section>
 
-<section class="section insta" id="instagram" aria-labelledby="insta-h" style="border-top:1px solid var(--line)">
+<section class="section section--deep" id="ausbildung" aria-labelledby="ausbildung-h">
+  <div class="wrap">
+    <div class="band band--deep">
+      <div style="display:grid;gap:var(--space-s)">
+        <h2 id="ausbildung-h">Meslek eğitimi veriyoruz.</h2>
+        <p class="lead" style="font-size:var(--step-0)">Tıbbi asistan (Medizinische Fachangestellte, MFA) meslek eğitimi. Hazırlık stajı da memnuniyetle mümkündür. Başvurunuzu posta veya e-posta ile gönderin.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:{{MAIL}}?subject=Bewerbung%20Ausbildung%20MFA">{{icon:mail}}Hemen başvurun</a>
+    </div>
+  </div>
+</section>
+
+<section class="section insta" id="instagram" aria-labelledby="insta-h">
   <div class="wrap">
     <div class="insta__head">
       <div class="insta__profile">
@@ -347,18 +432,3 @@
     <p class="draft-note">Örnek akış (taslak). Yayında burada gerçek gönderiler görünür – veri koruması için ancak bir tıklamadan sonra yüklenir.</p>
   </div>
 </section>
-
-
-<section class="section section--deep" id="ausbildung" aria-labelledby="ausbildung-h">
-  <div class="wrap">
-    <div class="band band--deep">
-      <div style="display:grid;gap:var(--space-s)">
-        <h2 id="ausbildung-h">Meslek eğitimi veriyoruz.</h2>
-        <p class="lead" style="font-size:var(--step-0)">Tıbbi asistan (Medizinische Fachangestellte, MFA) meslek eğitimi. Hazırlık stajı da memnuniyetle mümkündür. Başvurunuzu posta veya e-posta ile gönderin.</p>
-      </div>
-      <a class="btn btn--primary" href="mailto:{{MAIL}}?subject=Bewerbung%20Ausbildung%20MFA">{{icon:mail}}Hemen başvurun</a>
-    </div>
-  </div>
-</section>
-
-
