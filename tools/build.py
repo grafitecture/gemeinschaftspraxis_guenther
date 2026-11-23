@@ -531,6 +531,26 @@ def build_dist():
         if os.path.exists(p):
             shutil.copy(p, os.path.join(DIST, extra))
     write_sitemap()
+    build_login()
+
+
+def build_login():
+    """Vorschau-Zugang: Login-Seite /login (wirksam nur zusammen mit middleware.js im Repo-Root).
+    Eigenständig – lädt nur Schriften, Favicon und das Login-Foto, die die Middleware ohne Passwort freigibt."""
+    logo = open(os.path.join(ROOT, "assets", "img", "logo-zeile.svg"), encoding="utf-8").read()
+    logo = re.sub(r'<\?xml[^>]*>\s*', "", logo).replace(
+        '<svg role="img" aria-label="Gemeinschaftspraxis Günther"',
+        '<svg class="gate__logo" role="img" aria-label="Gemeinschaftspraxis Günther" width="236" height="21"', 1)
+    # eigene IDs, damit sie nicht mit dem Signet kollidieren
+    logo = re.sub(r'(id="|url\(#|href="#)clip-', r'\1lg-clip-', logo)
+    html = open(os.path.join(SRC, "login.html"), encoding="utf-8").read()
+    for k, v in {"LOGO": logo.strip(), "SIG": sig("gate__svg"), "STAND": "November 2026",
+                 "FAVICON": "/" + versioned("assets/img/favicon.svg"),
+                 "IMG": "/" + versioned("assets/img/login-abend.webp"),
+                 "IMG800": "/" + versioned("assets/img/login-abend-800.webp")}.items():
+        html = html.replace("{{" + k + "}}", v)
+    assert "{{" not in html, "Platzhalter in login.html nicht ersetzt"
+    open(os.path.join(DIST, "login.html"), "w", encoding="utf-8").write(html)
 
 
 def write_sitemap():

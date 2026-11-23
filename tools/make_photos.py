@@ -20,6 +20,9 @@ JOBS = [
     ("foto-tuer.webp", "IMG_8246.jpeg", (1050, 1400), None),
     ("insta-g.webp", "IMG_8282.jpeg", (900, 900), (0.0, 0.18, 1.0, 0.93)),
     ("insta-empfang.webp", "IMG_0687.jpeg", (900, 900), (0.0, 0.25, 1.0, 1.0)),
+    # Vorschau-Zugang (/login): Fassade am Abend, groß für die rechte Spalte
+    ("login-abend.webp", "IMG_8282.jpeg", (1350, 1800), None),
+    ("login-abend-800.webp", "IMG_8282.jpeg", (800, 1067), None),
 ]
 for name, src, size, crop in JOBS:
     print(name, process(os.path.join(SRC, src), os.path.join(OUT, name), crop=crop, size=size))

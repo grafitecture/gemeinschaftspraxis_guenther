@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vorschau – Gemeinschaftspraxis Günther</title>
+<meta name="description" content="Vorschau der neuen Website der Gemeinschaftspraxis Günther in Viernheim – Zugang mit Passwort.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2e3438">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gemeinschaftspraxis Günther">
+<meta property="og:title" content="Gemeinschaftspraxis Günther – Vorschau der neuen Website">
+<meta property="og:description" content="Hier entsteht die neue Website. Zugang mit Passwort.">
+<link rel="icon" href="{{FAVICON}}" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/fira-sans-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{IMG800}}" as="image" imagesrcset="{{IMG800}} 800w, {{IMG}} 1350w" imagesizes="(min-width: 860px) 58vw, 100vw">
+<style>
+@font-face { font-family: "Fira Sans"; font-weight: 300; font-display: swap; src: url("/assets/fonts/fira-sans-Light.woff") format("woff"); }
+@font-face { font-family: "Fira Sans"; font-weight: 400; font-display: swap; src: url("/assets/fonts/fira-sans-Regular.woff") format("woff"); }
+@font-face { font-family: "Fira Sans"; font-weight: 500; font-display: swap; src: url("/assets/fonts/fira-sans-Medium.woff") format("woff"); }
+@font-face { font-family: "Fira Sans"; font-weight: 600; font-display: swap; src: url("/assets/fonts/fira-sans-SemiBold.woff") format("woff"); }
+
+/* Vorschau-Zugang · Farben und Formen wie auf der Website:
+   Praxisblau #377ec3, leuchtendes G #4592de, dunkle Fläche #2e3438 (wie die Fassade am Abend),
+   Bedienelemente 2 px, Flächen 8 px. Kontraste auf #2e3438: Weiß 12,6 · #c9cfd3 8,0 · #aab3b9 5,9 · #9cc8f2 7,2 · #ff9b93 6,2 */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+:root { --blue: #377ec3; --lit: #4592de; --night: #2e3438; --grey: #9ba2a7; --soft: #c9cfd3; --dim: #aab3b9; --sky: #9cc8f2; --err: #ff9b93; --ease: cubic-bezier(.2, .7, .2, 1); color-scheme: dark; }
+html { background: var(--night); -webkit-text-size-adjust: 100%; }
+body { min-height: 100vh; min-height: 100svh; font-family: "Fira Sans", system-ui, sans-serif; font-weight: 400; line-height: 1.5; color: #fff; background: var(--night); -webkit-font-smoothing: antialiased; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.gate { position: relative; display: grid; grid-template-columns: minmax(25rem, 5fr) 7fr; min-height: 100vh; min-height: 100svh; }
+
+/* Linke Spalte */
+.gate__panel { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2.5rem; padding: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(1.5rem, .5rem + 3.5vw, 5rem); }
+.gate__top { display: flex; }
+.gate__logo { display: block; height: 1.3rem; width: auto; }
+.gate__logo [fill="#9ba2a7"] { fill: var(--grey); }
+.gate__logo [fill="#377ec3"] { fill: var(--lit); }
+.gate__body { margin-block: auto; width: 100%; max-width: 26rem; }
+
+/* Signet: die graue Extrusion fährt heraus, dann geht das Licht an – wie am Haus */
+.gate__sig { position: relative; width: 3.4rem; margin-bottom: 2.25rem; }
+.gate__svg { position: relative; z-index: 1; display: block; width: 100%; height: auto; overflow: visible; }
+.gate__svg .sg-x path { fill: var(--grey); stroke: var(--night); stroke-width: .3; }
+.gate__svg .sg-g path { fill: var(--lit); stroke: var(--night); stroke-width: .3; }
+.gate__glow { position: absolute; inset: -25% -60% -20% -60%; border-radius: 50%; background: radial-gradient(closest-side, rgba(69, 146, 222, .5), rgba(69, 146, 222, 0)); filter: blur(14px); transition: transform 1s var(--ease), opacity .6s ease; }
+
+.gate__eyebrow { font-size: .8125rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+.gate__title { font-size: clamp(3.4rem, 2.4rem + 4vw, 5.75rem); font-weight: 600; line-height: .95; letter-spacing: -.02em; margin-bottom: 1.4rem; }
+.gate__lead { font-size: clamp(1.05rem, .98rem + .3vw, 1.2rem); font-weight: 300; color: var(--soft); margin-bottom: 2.5rem; }
+.gate__lead strong { font-weight: 400; color: #fff; }
+
+/* Formular */
+.gate__label { display: block; font-size: .875rem; font-weight: 500; color: var(--soft); margin-bottom: .5rem; }
+.gate__field { position: relative; }
+.gate__input { display: block; width: 100%; height: 3.5rem; padding: 0 3.5rem 0 1.1rem; font: inherit; font-size: 1.125rem; letter-spacing: .06em; color: #fff; background: rgba(255, 255, 255, .06); border: 1px solid #7c858b; border-radius: 2px; outline: none; transition: border-color .2s, background-color .2s, box-shadow .2s; }
+.gate__input:hover { border-color: var(--dim); }
+.gate__input:focus-visible { border-color: var(--sky); background: rgba(255, 255, 255, .09); box-shadow: 0 0 0 3px rgba(69, 146, 222, .4); }
+.gate__input[aria-invalid="true"] { border-color: var(--err); }
+.gate__eye { position: absolute; top: 50%; right: .4rem; width: 2.75rem; height: 2.75rem; transform: translateY(-50%); display: grid; place-items: center; color: var(--dim); background: none; border: 0; border-radius: 2px; cursor: pointer; }
+.gate__eye:hover { color: #fff; }
+.gate__eye:focus-visible { outline: 2px solid var(--sky); outline-offset: 0; }
+.gate__eye svg { width: 1.3rem; height: 1.3rem; }
+.gate__eye .i-off, .gate__eye[aria-pressed="true"] .i-on { display: none; }
+.gate__eye[aria-pressed="true"] .i-off { display: block; }
+.gate__error { display: flex; gap: .55rem; align-items: flex-start; margin-top: .8rem; font-size: .9375rem; line-height: 1.4; color: var(--err); }
+.gate__error[hidden] { display: none; }
+.gate__error svg { flex: none; width: 1.15rem; height: 1.15rem; margin-top: .05rem; }
+.gate__btn { display: flex; align-items: center; justify-content: center; gap: .8rem; width: 100%; height: 3.5rem; margin-top: 1.25rem; font: inherit; font-size: 1.0625rem; font-weight: 600; color: #fff; background: var(--blue); border: 0; border-radius: 2px; cursor: pointer; transition: background-color .2s, box-shadow .4s; }
+.gate__btn:hover { background: #306fab; box-shadow: 0 10px 34px rgba(69, 146, 222, .28); }
+.gate__btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.gate__btn svg { width: 1.35rem; height: auto; transition: transform .35s var(--ease); }
+.gate__btn:hover svg { transform: translateX(4px); }
+.is-busy .gate__btn { cursor: progress; }
+.is-busy .gate__btn svg { animation: nudge .8s var(--ease) infinite; }
+
+.gate__foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1.5rem; font-size: .8125rem; color: var(--dim); }
+
+/* Rechte Spalte: die Praxis am Abend */
+.gate__photo { position: relative; margin: 0; overflow: hidden; background: #3b434a; }
+.gate__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 46% 52%; }
+.gate__photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--night) 0, rgba(46, 52, 56, .86) 4%, rgba(46, 52, 56, .55) 11%, rgba(46, 52, 56, .22) 21%, rgba(46, 52, 56, 0) 34%); }
+
+/* Eintreten: das Licht breitet sich vom G über den Bildschirm aus */
+.gate__light { position: fixed; inset: 0; z-index: 20; pointer-events: none; background: #fff; clip-path: circle(0 at var(--x, 20%) var(--y, 40%)); transition: clip-path 1s cubic-bezier(.7, 0, .25, 1) .25s; }
+.is-in .gate__light { clip-path: circle(150vmax at var(--x, 20%) var(--y, 40%)); }
+.is-in .gate__glow { transform: scale(1.9); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .gate__photo img { animation: drift 18s var(--ease) both; }
+  .gate__svg { animation: fade .7s ease both; }
+  .gate__svg .sg-x { animation: extrude 1.3s var(--ease) .35s both; }
+  .gate__svg .sg-g path { animation: light-g 1.2s ease 1.35s both; }
+  .gate__glow { animation: fade 1.6s ease 1.35s both; }
+  .gate__eyebrow, .gate__title, .gate__lead, .gate__form { animation: rise .9s var(--ease) both; }
+  .gate__eyebrow { animation-delay: .15s; }
+  .gate__title { animation-delay: .25s; }
+  .gate__lead { animation-delay: .35s; }
+  .gate__form { animation-delay: .45s; }
+  .is-wrong .gate__field { animation: shake .45s ease; }
+}
+@media (prefers-reduced-motion: reduce) { .gate__light { transition: none; } }
+@keyframes drift { from { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes extrude { from { transform: translate(5px, 3.9px); } to { transform: translate(0, 0); } }
+@keyframes light-g { from { fill: var(--blue); } to { fill: var(--lit); } }
+@keyframes shake { 0%, 100% { transform: none; } 20% { transform: translateX(-9px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+/* Tablet und Handy: Foto oben, Text darunter */
+@media (max-width: 859px) {
+  .gate { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .gate__photo { order: -1; height: 44vh; height: 44svh; min-height: 15rem; max-height: 30rem; }
+  .gate__photo img { object-position: 50% 50%; }
+  .gate__photo::before { content: ""; position: absolute; z-index: 1; inset: 0 0 auto; height: 7rem; background: linear-gradient(180deg, rgba(30, 35, 39, .55), rgba(30, 35, 39, 0)); }
+  .gate__photo::after { background: linear-gradient(0deg, var(--night) 0, rgba(46, 52, 56, .6) 12%, rgba(46, 52, 56, 0) 42%); }
+  .gate__panel { position: static; gap: 2rem; padding-top: 0; padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
+  .gate__top { position: absolute; z-index: 2; top: 1.25rem; left: clamp(1.5rem, .5rem + 3.5vw, 5rem); right: 1.5rem; }
+  .gate__logo { height: 1.1rem; max-width: 100%; filter: drop-shadow(0 1px 6px rgba(20, 24, 27, .45)); }
+  .gate__logo [fill="#9ba2a7"] { fill: #e3e7ea; }
+  .gate__body { margin-top: -.75rem; max-width: 30rem; }
+  .gate__sig { position: absolute; width: 1px; height: 1px; overflow: hidden; margin: 0; opacity: 0; }
+  .gate__foot { flex-direction: column; }
+}
+@media (max-width: 859px) and (max-height: 560px) { .gate__photo { height: 32svh; min-height: 9rem; } }
+/* niedrige Laptop-Bildschirme: alles ohne Scrollen sichtbar */
+@media (min-width: 860px) and (max-height: 800px) {
+  .gate__panel { gap: 1.5rem; }
+  .gate__sig { width: 2.8rem; margin-bottom: 1.4rem; }
+  .gate__title { font-size: clamp(3rem, 2rem + 3.4vw, 4.6rem); margin-bottom: 1rem; }
+  .gate__lead { margin-bottom: 1.75rem; }
+}
+</style>
+</head>
+<body>
+<main class="gate">
+  <section class="gate__panel" aria-labelledby="titel">
+    <header class="gate__top">{{LOGO}}</header>
+    <div class="gate__body">
+      <div class="gate__sig" aria-hidden="true">{{SIG}}<span class="gate__glow"></span></div>
+      <p class="gate__eyebrow">Vorschau · Neue Website</p>
+      <h1 class="gate__title" id="titel">Herein.</h1>
+      <p class="gate__lead">Hier entsteht die neue Website der <strong>Gemeinschaftspraxis Günther</strong>. Mit dem Passwort können Sie schon jetzt hineinschauen.</p>
+      <form class="gate__form" method="post" action="/login">
+        <input type="hidden" name="ziel" value="/">
+        <label class="gate__label" for="pw">Passwort</label>
+        <div class="gate__field">
+          <input class="gate__input" id="pw" name="passwort" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required aria-describedby="pw-fehler">
+          <button class="gate__eye" type="button" aria-pressed="false" aria-label="Passwort anzeigen">
+            <svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a9.6 9.6 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+          </button>
+        </div>
+        <p class="gate__error" id="pw-fehler" role="alert" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></svg><span>Das Passwort stimmt leider nicht. Bitte versuchen Sie es noch einmal.</span></p>
+        <button class="gate__btn" type="submit"><span>Eintreten</span><svg viewBox="0 0 22 10" aria-hidden="true"><path d="M0 5h20.5M16 .8 20.5 5 16 9.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      </form>
+    </div>
+    <footer class="gate__foot"><span>Kreuzstraße 13 · 68519 Viernheim</span><span>Entwurf: Grafitecture · Stand {{STAND}}</span></footer>
+  </section>
+  <figure class="gate__photo">
+    <img src="{{IMG}}" srcset="{{IMG800}} 800w, {{IMG}} 1350w" sizes="(min-width: 860px) 58vw, 100vw" width="1350" height="1800" fetchpriority="high" alt="Die Praxis am Abend: das beleuchtete G an der Fassade, warmes Licht in den Fenstern">
+  </figure>
+</main>
+<div class="gate__light" aria-hidden="true"></div>
+<script>
+(() => {
+  const d = document, f = d.querySelector('.gate__form'), pw = d.getElementById('pw'),
+    err = d.getElementById('pw-fehler'), eye = d.querySelector('.gate__eye'), btn = f.querySelector('.gate__btn');
+  const q = new URLSearchParams(location.search);
+  if (q.get('ziel')) f.elements.ziel.value = q.get('ziel');
+  history.replaceState(null, '', location.pathname + (q.get('ziel') ? '?ziel=' + encodeURIComponent(q.get('ziel')) : ''));
+
+  const shake = () => { f.classList.remove('is-wrong'); void f.offsetWidth; f.classList.add('is-wrong'); pw.focus(); };
+  const wrong = () => {
+    err.hidden = false;
+    pw.setAttribute('aria-invalid', 'true');
+    shake(); pw.select();
+  };
+  if (q.get('fehler')) wrong();
+  else if (matchMedia('(pointer: fine)').matches) pw.focus({ preventScroll: true });
+
+  pw.addEventListener('input', () => { err.hidden = true; pw.removeAttribute('aria-invalid'); });
+  eye.addEventListener('click', () => {
+    const show = pw.type === 'password';
+    pw.type = show ? 'text' : 'password';
+    eye.setAttribute('aria-pressed', String(show));
+    eye.setAttribute('aria-label', show ? 'Passwort verbergen' : 'Passwort anzeigen');
+    pw.focus();
+  });
+
+  // Lage des beleuchteten G im Foto (Anteil an Breite/Höhe des Originalbilds) → Punkt auf dem Bildschirm
+  const G = [0.464, 0.522];
+  const gPunkt = () => {
+    const img = d.querySelector('.gate__photo img'), r = img.getBoundingClientRect();
+    const s = Math.max(r.width / img.naturalWidth, r.height / img.naturalHeight) || 1;
+    const w = img.naturalWidth * s, h = img.naturalHeight * s;
+    const [px, py] = getComputedStyle(img).objectPosition.split(' ').map((v) => parseFloat(v) / 100);
+    const x = r.left + (r.width - w) * (isNaN(px) ? .5 : px) + G[0] * w, y = r.top + (r.height - h) * (isNaN(py) ? .5 : py) + G[1] * h;
+    return x >= 0 && y >= 0 && x <= innerWidth && y <= innerHeight ? [x, y] : [innerWidth / 2, innerHeight / 3];
+  };
+  const enter = (ziel) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return location.assign(ziel);
+    const [x, y] = gPunkt();
+    d.documentElement.style.setProperty('--x', x + 'px');
+    d.documentElement.style.setProperty('--y', y + 'px');
+    btn.querySelector('span').textContent = 'Willkommen';
+    d.body.classList.add('is-in');
+    setTimeout(() => location.assign(ziel), 1250);
+  };
+
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!pw.value.trim()) return shake();
+    if (f.classList.contains('is-busy')) return;
+    f.classList.add('is-busy'); btn.setAttribute('aria-busy', 'true');
+    try {
+      const r = await fetch('/login', { method: 'POST', headers: { accept: 'application/json' }, body: new URLSearchParams(new FormData(f)), credentials: 'same-origin' });
+      const data = await r.json().catch(() => ({}));
+      if (r.ok && data.ok) return enter(data.ziel || '/');
+      if (r.status === 401) return wrong();
+      f.submit(); // unerwartete Antwort: klassisch absenden
+    } catch (_) {
+      f.submit();
+    } finally {
+      f.classList.remove('is-busy'); btn.removeAttribute('aria-busy');
+    }
+  });
+  addEventListener('pageshow', (e) => { if (e.persisted) d.body.classList.remove('is-in'); });
+})();
+</script>
+</body>
+</html>
