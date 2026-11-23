@@ -477,6 +477,14 @@ def versioned(rel):
     return f"{rel}?v={hashlib.sha1(data).hexdigest()[:10]}"
 
 
+def bust_assets(html):
+    """Hängt an jede verlinkte Datei unter assets/ (Bilder, Logos, Favicon) die Prüfsumme an."""
+    def rep(m):
+        rel = m.group(2)
+        return f'{m.group(1)}="{versioned(rel)}"' if os.path.isfile(os.path.join(ROOT, rel)) else m.group(0)
+    return re.sub(r'(src|href)="(assets/[^"?#]+)"', rep, html)
+
+
 def css_link():
     return f'<link rel="stylesheet" href="{versioned("assets/css/site.css")}">'
 
@@ -501,6 +509,7 @@ def build_dist():
                     + f'\n<body>\n{header(lang, key)}\n<main id="inhalt">\n{body}\n</main>\n{footer(lang)}\n{dialogs(lang)}\n'
                     + js_script() + '\n</body>\n</html>\n')
             html = html.replace("{{LANGSWITCH}}", lang_switch(lang, key, False)).replace("{{FOOTLANGS}}", foot_langs(lang, key, False))
+            html = bust_assets(html)
             if lang != "de":
                 html = html.replace('src="assets/', 'src="../assets/').replace('href="assets/', 'href="../assets/')
                 for _, lfn, _, _ in LEGAL:
@@ -513,6 +522,7 @@ def build_dist():
                 + f'\n<body>\n{header("de", key)}\n<main id="inhalt">\n{body}\n</main>\n{footer("de")}\n{dialogs("de")}\n'
                 + js_script() + '\n</body>\n</html>\n')
         html = html.replace("{{LANGSWITCH}}", lang_switch("de", "start", False)).replace("{{FOOTLANGS}}", foot_langs("de", "start", False))
+        html = bust_assets(html)
         open(os.path.join(DIST, fn), "w", encoding="utf-8").write(html)
     for extra in ("robots.txt", "llms.txt"):
         p = os.path.join(SRC, extra)
@@ -624,6 +634,7 @@ def build_presentation(inline=True):
         os.makedirs(ART)
         html = html.replace("<title>Hausarzt Viernheim – Gemeinschaftspraxis Günther, Innere Medizin</title>",
                             "<title>Gemeinschaftspraxis Günther – Entwurf</title>")
+        html = bust_assets(html)
         open(os.path.join(ART, "index.html"), "w", encoding="utf-8").write(html)
         used = set(re.findall(r'"assets/img/([\w.-]+)', html))
         for sub in ("css", "js", "fonts"):

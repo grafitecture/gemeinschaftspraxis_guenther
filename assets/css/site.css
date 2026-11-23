@@ -12,16 +12,16 @@
 
 :root {
   /* Farben – Vorgabe Praxis */
-  --blue: #0080c9;        /* Praxisblau */
+  --blue: #377ec3;        /* Praxisblau (seit 23.11.2026, vorher #0080c9) – auf der ganzen Seite */
   --grey: #9ba2a7;        /* Praxisgrau (Logo-Versatz, Linien, Zweitfarbe) */
   /* Farben – abgeleitet, gleicher Farbton */
-  --blue-deep: #006ba8;   /* Blau für Text und Buttons, Kontrast 5,7 : 1 */
+  --blue-deep: #377ec3;   /* Text, Links und Buttons: dasselbe Praxisblau, Kontrast 4,3 : 1 auf Weiß */
   --grey-deep: #565d62;   /* Grau für Text, Kontrast 6,7 : 1 */
   --ink: #5a6268;         /* Text: wie der Einleitungstext (Praxisgrau, dunkler gestuft), Kontrast 6,2 : 1 */
   --ink-soft: #5a6268;    /* Sekundärtext, Kontrast 6,2 : 1 */
   --night: #2e3438;       /* dunkle Flächen */
   --mist: #f3f6f8;        /* zarte Fläche */
-  --blue-tint: #e5f2fa;
+  --blue-tint: #e6f0f9;
   --grey-tint: #eef0f1;
   --line: #dde1e3;        /* Linien: 1 px hellgrau, auf Flächen weiß */
   --white: #ffffff;
@@ -121,10 +121,10 @@ ul, ol { margin: 0; padding: 0; }
    solange die Praxis geöffnet ist, leuchtet das G – wie abends an der Hauswand */
 .gsig { position: absolute; z-index: 2; left: -2%; top: -3%; width: 25%; pointer-events: none; }
 .gsig__svg { position: relative; z-index: 1; width: 100%; height: auto; overflow: visible; display: block; filter: drop-shadow(0 10px 18px rgba(31,40,45,.18)); }
-.gsig__glow { position: absolute; inset: 8% -18% -6% -18%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,128,201,.55), rgba(0,128,201,0)); filter: blur(14px); opacity: 0; transition: opacity 1.4s ease; }
+.gsig__glow { position: absolute; inset: 8% -18% -6% -18%; border-radius: 50%; background: radial-gradient(closest-side, rgba(55,126,195,.55), rgba(55,126,195,0)); filter: blur(14px); opacity: 0; transition: opacity 1.4s ease; }
 .gsig.is-open .gsig__glow { opacity: 1; }
 .gsig .sg-g path { transition: fill 1.2s ease; }
-.gsig.is-open .sg-g path { fill: #1596e0; }
+.gsig.is-open .sg-g path { fill: #4592de; }
 @media (prefers-reduced-motion: no-preference) {
   .js .gsig .sg-x { animation: g-extrude 1.3s var(--ease) .35s both; }
   .js .gsig__svg { animation: fade .7s ease both; }
@@ -167,7 +167,7 @@ ul, ol { margin: 0; padding: 0; }
 }
 .btn:hover { --bg: var(--blue-tint); color: var(--blue-deep); }
 .btn--primary { --bg: var(--blue-deep); --fg: #fff; --bd: var(--blue-deep); }
-.btn--primary:hover { --bg: var(--blue); --bd: var(--blue); color: #fff; }
+.btn--primary:hover { --bg: #306fab; --bd: #306fab; color: #fff; } /* Hover: dasselbe Blau, eine Stufe dunkler */
 .btn--light { --bg: #fff; --fg: var(--blue-deep); --bd: #fff; }
 .btn--light:hover { --bg: var(--blue-tint); --bd: var(--blue-tint); }
 .btn--line-light { --fg: #fff; --bd: rgba(255,255,255,.7); }
@@ -200,7 +200,7 @@ ul, ol { margin: 0; padding: 0; }
 .hero__art { padding: 6% 0 0 7%; }
 .hero__photo { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r); background: var(--mist); }
 .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; display: block; }
-.hero__tag { position: absolute; z-index: 3; left: 0; bottom: 6%; display: flex; align-items: center; gap: .7rem; background: #fff; border: 1px solid var(--blue); border-radius: var(--pill); padding: .5rem 1rem .5rem .55rem; font-size: var(--step-m1); font-weight: 500; color: var(--blue-deep); box-shadow: 0 6px 24px rgba(0,95,149,.08); }
+.hero__tag { position: absolute; z-index: 3; left: 0; bottom: 6%; display: flex; align-items: center; gap: .7rem; background: #fff; border: 1px solid var(--blue); border-radius: var(--pill); padding: .5rem 1rem .5rem .55rem; font-size: var(--step-m1); font-weight: 500; color: var(--blue-deep); box-shadow: 0 6px 24px rgba(55,126,195,.08); }
 .hero__tag b { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--blue-deep); color: #fff; font-weight: 600; }
 
 /* ---------- Aktuell ---------- */
@@ -341,7 +341,7 @@ ul, ol { margin: 0; padding: 0; }
 .post--grey .post__in { background: var(--grey-tint); border-color: var(--grey-tint); color: var(--grey-deep); }
 .post--mist .post__in { background: var(--mist); border-color: var(--mist); }
 .post--ink .post__in { background: var(--night); color: #fff; border-color: var(--night); }
-.post__cap { position: absolute; inset: 0; background: rgba(0,95,149,.92); color: #fff; padding: 8cqi; font-size: 5.4cqi; line-height: 1.4; opacity: 0; transition: opacity .2s; display: flex; align-items: flex-end; }
+.post__cap { position: absolute; inset: 0; background: rgba(55,126,195,.92); color: #fff; padding: 8cqi; font-size: 5.4cqi; line-height: 1.4; opacity: 0; transition: opacity .2s; display: flex; align-items: flex-end; }
 .post:hover .post__cap, .post:focus-visible .post__cap { opacity: 1; }
 .post__list { list-style: none; display: grid; gap: 2.2cqi; font-size: 5.2cqi; }
 .post__list li { display: flex; justify-content: space-between; gap: 2cqi; border-bottom: 1px solid currentColor; padding-bottom: 1.6cqi; }
@@ -422,7 +422,7 @@ ul, ol { margin: 0; padding: 0; }
 .haus .h-win { transition: fill 1s ease; }
 .haus .h-g { transition: fill 1s ease; }
 [data-light].is-open .haus .h-win { fill: #fff6dc; }
-[data-light].is-open .haus .h-g { fill: #1596e0; }
+[data-light].is-open .haus .h-g { fill: #4592de; }
 .foot-house__under { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; padding-top: .7rem; color: var(--ink-soft); }
 .foot-house__note { display: inline-flex; align-items: center; gap: .5rem; }
 .foot-house__note i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--grey); transition: background 1s ease, box-shadow 1s ease; }
