@@ -839,6 +839,3 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero .btn svg { width: 1.6rem; height: 1.6rem; }
   .hero .btn__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 }
-
-/* ---------- Aktuell: Grippe-Hinweis als reiner Text (statt Impf-Kasten mit Impf-Check) ---------- */
-.now__lead p { font-size: var(--step-2); line-height: 1.35; font-weight: 400; color: #fff; text-wrap: pretty; max-width: 30ch; }
