@@ -2,7 +2,7 @@
 und einen Ordner zum Veröffentlichen als Artefakt (artefakt/).
 
 Deutsch liegt im Wurzelverzeichnis, Englisch unter /en/, Türkisch unter /tr/."""
-import base64, json, os, re, shutil, sys
+import base64, hashlib, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from i18n import LANGS, META, UI, PAGEMETA, SVG, DLG, TEAMTXT, FOOT
 from signet_paths import SIG_VIEWBOX, SIG_GREY, SIG_BLUE
@@ -470,6 +470,21 @@ def head(lang, key, css_tag, ld, extra_robots=True):
 </head>'''
 
 
+def versioned(rel):
+    """Adresse mit Inhalts-Prüfsumme (?v=…): /assets wird ein Jahr „immutable“ gecacht,
+    eine geänderte Datei bekommt so eine neue Adresse und wird sofort neu geladen."""
+    data = open(os.path.join(ROOT, rel), "rb").read()
+    return f"{rel}?v={hashlib.sha1(data).hexdigest()[:10]}"
+
+
+def css_link():
+    return f'<link rel="stylesheet" href="{versioned("assets/css/site.css")}">'
+
+
+def js_script(defer=True):
+    return f'<script src="{versioned("assets/js/site.js")}"{" defer" if defer else ""}></script>'
+
+
 def build_dist():
     if os.path.exists(DIST):
         shutil.rmtree(DIST)
@@ -482,9 +497,9 @@ def build_dist():
         for key, fn, src, _ in PAGES:
             body = page_body(lang, key, src)
             ld = f'<script type="application/ld+json">{jsonld(lang, key)}</script>'
-            html = (head(lang, key, '<link rel="stylesheet" href="assets/css/site.css">', ld)
+            html = (head(lang, key, css_link(), ld)
                     + f'\n<body>\n{header(lang, key)}\n<main id="inhalt">\n{body}\n</main>\n{footer(lang)}\n{dialogs(lang)}\n'
-                    + '<script src="assets/js/site.js" defer></script>\n</body>\n</html>\n')
+                    + js_script() + '\n</body>\n</html>\n')
             html = html.replace("{{LANGSWITCH}}", lang_switch(lang, key, False)).replace("{{FOOTLANGS}}", foot_langs(lang, key, False))
             if lang != "de":
                 html = html.replace('src="assets/', 'src="../assets/').replace('href="assets/', 'href="../assets/')
@@ -494,9 +509,9 @@ def build_dist():
     for key, fn, src, _ in LEGAL:
         body = legal_body(key, src)
         ld = f'<script type="application/ld+json">{legal_jsonld(key)}</script>'
-        html = (head("de", key, '<link rel="stylesheet" href="assets/css/site.css">', ld)
+        html = (head("de", key, css_link(), ld)
                 + f'\n<body>\n{header("de", key)}\n<main id="inhalt">\n{body}\n</main>\n{footer("de")}\n{dialogs("de")}\n'
-                + '<script src="assets/js/site.js" defer></script>\n</body>\n</html>\n')
+                + js_script() + '\n</body>\n</html>\n')
         html = html.replace("{{LANGSWITCH}}", lang_switch("de", "start", False)).replace("{{FOOTLANGS}}", foot_langs("de", "start", False))
         open(os.path.join(DIST, fn), "w", encoding="utf-8").write(html)
     for extra in ("robots.txt", "llms.txt"):
@@ -553,8 +568,8 @@ def build_presentation(inline=True):
         css_tag = "<style>" + re.sub(r'url\("\.\./fonts/([\w-]+\.woff)"\)', font64, css) + "</style>"
         js_tag = f"<script>{js}</script>"
     else:
-        css_tag = '<link rel="stylesheet" href="assets/css/site.css">'
-        js_tag = '<script src="assets/js/site.js"></script>'
+        css_tag = css_link()
+        js_tag = js_script(defer=False)
     tops, mains, bottoms, dlgs, lds = [], [], [], [], []
     for lang in LANGS:
         ca = chrome_attr(lang, True)

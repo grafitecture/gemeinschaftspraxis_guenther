@@ -12,7 +12,7 @@ Stand: 23. November 2026 (Runde 4: Hero auf dem Handy) · Agentur: Grafitecture
 | `src/` | Seiteninhalte (`pages/*.html` Deutsch, `pages/en/`, `pages/tr/`), Notfall-Band (`partials/`), Rechtstexte (`legal/`), FAQ-Daten (`faq.json`, `faq.en.json`, `faq.tr.json`), strukturierte Daten (`jsonld/`) |
 | `assets/` | CSS (Designsystem), JS, Schriften (Fira Sans, selbst gehostet), Logo-SVGs, Fotos |
 | `tools/` | `build.py` (baut `dist/`, Präsentation, Artefakt), `i18n.py` (Texte von Kopf, Fuß, Team, Formularen, Metadaten in DE/EN/TR), `signet_paths.py` (Pfade des Original-Signets), `grade_photos.py` + `make_photos.py` (Farbangleichung der Praxisfotos), Screenshot-Helfer |
-| `vercel.json` | Clean URLs (`/faq` statt `/faq.html`), Caching und Sicherheits-Header |
+| `vercel.json` | Clean URLs (`/faq` statt `/faq.html`), Caching und Sicherheits-Header. `/assets` wird ein Jahr `immutable` gecacht – deshalb bindet `build.py` CSS und JS mit Prüfsumme ein (`site.css?v=…`, Funktion `versioned`), sonst sehen Besucher Änderungen nicht. Ein geändertes Bild oder eine geänderte Schrift unter neuem Dateinamen ablegen. |
 
 Bauen: `python3 tools/build.py`
 Fotos neu erzeugen (nur wenn sich Quellbilder ändern): `PRAXIS_SRC=…/WEBSEITE_DATEN/PRAXIS python3 tools/make_photos.py`.
