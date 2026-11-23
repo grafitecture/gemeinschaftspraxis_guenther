@@ -622,7 +622,7 @@ label.chip:has(input:focus-visible) { outline: 3px solid var(--blue); outline-of
 .mate h3 { font-size: var(--step-1); font-weight: 600; }
 .mate__role { font-size: var(--step-m1); color: var(--blue-deep); font-weight: 500; }
 .mate__txt { font-size: var(--step-m1); color: var(--ink-soft); max-width: 30ch; }
-#team { padding-top: 0; }
+#team { padding-top: clamp(6rem, 4.5rem + 5vw, 10.5rem); } /* eigene graue Fläche nach den Ärzten: oben etwas mehr Luft als die anderen Sektionen */
 .docs .doc__img { max-width: 26rem; }
 .person__img .doc__img { max-width: 30rem; margin-inline: auto; }
 .draft-line { margin: 0; max-width: none; padding: .9rem var(--gutter) calc(.9rem + env(safe-area-inset-bottom)); font-size: .75rem; line-height: 1.45; color: var(--ink-soft); text-align: center; border-top: 1px solid var(--line); }
@@ -962,8 +962,6 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 /* Handy: nur Überschriften, die Schließung mit Text */
 @media (max-width: 759px) { .now .news li:not(.is-important) p { display: none; } }
 
-/* Team direkt nach den Ärzten: eigene graue Fläche, oben mehr Luft */
-.section--team { padding-top: clamp(5.5rem, 4rem + 4.5vw, 9.5rem); }
 
 /* Stimmen auf grauer Fläche: Karten weiß; kleines Schild „Beispiel“, solange die Texte keine echten Rückmeldungen sind */
 .section--mist .voice figure { background: #fff; }
