@@ -839,3 +839,27 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero .btn svg { width: 1.6rem; height: 1.6rem; }
   .hero .btn__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 }
+
+/* ---------- Aktuell: Meldungen als Kästen mit Icon (Desktop zwei nebeneinander) ---------- */
+@media (min-width: 1000px) { .now__grid { grid-template-columns: minmax(0, 1fr); } }
+.now .news { gap: .75rem; }
+@media (min-width: 760px) {
+  .now .news { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-m); }
+  .now .news .is-important { grid-column: 1 / -1; }   /* Schließzeit über die ganze Breite */
+}
+/* Kasten: dasselbe Blau eine Stufe dunkler (Weiß darauf 5,3 : 1), feine helle Linie */
+.now .news li, .now .news li:first-child { background: #306fab; border: 1px solid rgba(255,255,255,.28); border-radius: var(--r); transition: background-color .2s; }
+.now .news li:hover { background: #2c66a0; }
+.now .news a { height: 100%; grid-template-columns: auto minmax(0, 1fr); align-content: start; align-items: center; column-gap: .75rem; row-gap: .5rem; padding: var(--space-m); }
+.now .news a > h3, .now .news a > p { grid-column: 1 / -1; }
+.now .news h3 { border-top: 1px solid rgba(255,255,255,.3); padding-top: .8rem; margin-top: .35rem; }
+.news__icon { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--blue-deep); }
+.news__icon svg { width: 1.15rem; height: 1.15rem; }
+/* Schließzeit: weißer Kasten, Rot für Icon und Datum */
+.now .news li.is-important, .now .news li.is-important:hover { background: #fff; border-color: #fff; }
+.now .news .is-important h3 { color: var(--night); border-top-color: var(--line); }
+.now .news .is-important p { color: var(--ink); }
+.now .news .is-important a:hover h3 { color: var(--night); }
+.now .news .is-important a:focus-visible { outline-color: var(--alert); }
+.now .news .is-important time { background: var(--alert); color: #fff; }
+.now .news .is-important .news__icon { background: #fbe9eb; color: var(--alert); }
