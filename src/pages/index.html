@@ -6,7 +6,7 @@
       <div class="hero__panel">
         <div class="btn-row" data-cta-swap>
           <a class="btn btn--primary" data-cta="call" href="tel:{{TEL}}">{{icon:phone}}<span class="btn__label">Anrufen: <span class="num">{{PHONE}}</span></span></a>
-          <a class="btn" data-cta="book" href="#anliegen" data-open="termin">{{icon:calendar}}Termin online anfragen</a>
+          <a class="btn" data-cta="book" href="#kontakt" data-open="termin">{{icon:calendar}}Termin online anfragen</a>
           <a class="btn" data-cta="mail" href="mailto:{{MAIL}}">{{icon:mail}}<span class="btn__label">E-Mail schreiben</span></a>
         </div>
       </div>
@@ -123,60 +123,13 @@
   </div>
 </section>
 
-<section class="section section--tight section--mist" id="anliegen" aria-labelledby="anliegen-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="anliegen-h">Was können wir für Sie tun?</h2>
-      <p class="lead">Die häufigsten Anliegen – jeweils mit dem schnellsten Weg.</p>
-    </div>
-    <ul class="tasks">
-      <li class="task">
-        <span class="task__icon">{{icon:calendar}}</span>
-        <h3>Termin vereinbaren</h3>
-        <p>Für Untersuchungen, Vorsorge und Befundbesprechungen. Rufen Sie an oder senden Sie uns eine Anfrage – wir melden uns.</p>
-        <div class="task__act"><a class="textlink" href="#anliegen" data-open="termin">Termin anfragen</a></div>
-      </li>
-      <li class="task task--urgent">
-        <span class="task__icon">{{icon:alert}}</span>
-        <h3>Akute Beschwerden</h3>
-        <p>Bitte rufen Sie vorher an. So verkürzt sich Ihre Wartezeit – oder wir organisieren einen Notfallbesuch.</p>
-        <div class="task__act"><a class="textlink" href="tel:{{TEL}}"><span class="num">{{PHONE}}</span></a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:pill}}</span>
-        <h3>Folgerezept</h3>
-        <p>Für Medikamente, die wir Ihnen bereits verordnet haben. Das E-Rezept können Sie nach einigen Stunden, spätestens nach einem halben Tag in der Apotheke einlösen.</p>
-        <div class="task__act"><a class="textlink" href="#anliegen" data-open="rezept">Rezept bestellen</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:drop}}</span>
-        <h3>Blutabnahme</h3>
-        <p>Montag bis Freitag von 8 bis 9 Uhr. Für Blutzucker und Blutfette kommen Sie bitte nüchtern. Die Ergebnisse liegen meist am nächsten Tag vor.</p>
-        <div class="task__act"><a class="textlink" href="faq.html#faq-nuechtern">Was heißt nüchtern?</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:syringe}}</span>
-        <h3>Impfung</h3>
-        <p>Ohne Termin während der Sprechzeiten. Kommen Sie bitte ohne Infekt und nicht nüchtern – und verzichten Sie danach auf Sport.</p>
-        <div class="task__act"><a class="textlink" href="faq.html#impfen">Fragen zur Impfung</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:home}}</span>
-        <h3>Hausbesuch</h3>
-        <p>Wenn Sie gesundheitlich nicht in die Praxis kommen können, besuchen wir Sie nach telefonischer Absprache zu Hause oder im Pflegeheim.</p>
-        <div class="task__act"><a class="textlink" href="tel:{{TEL}}">Anrufen</a></div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="team" aria-labelledby="team-h">
+<section class="section section--mist section--team" id="team" aria-labelledby="team-h">
   <div class="wrap">
     {{team:staff}}
   </div>
 </section>
 
-<section class="section section--mist" id="leistungen" aria-labelledby="leistungen-h">
+<section class="section" id="leistungen" aria-labelledby="leistungen-h">
   <div class="wrap">
     <div class="head">
       <h2 id="leistungen-h">Leistungen</h2>
@@ -250,7 +203,7 @@
   </div>
 </section>
 
-<section class="section stimmen" id="stimmen" aria-labelledby="stimmen-h">
+<section class="section section--mist stimmen" id="stimmen" aria-labelledby="stimmen-h">
   <div class="wrap">
     <div class="stimmen__head">
       <div class="head">
@@ -261,31 +214,30 @@
     </div>
     <div class="marquee" data-marquee>
       <ul class="marquee__track" aria-label="Rückmeldungen von Patientinnen und Patienten">
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Hier nimmt man sich Zeit.“</p><p class="voice__t">„Frau Dr. Günther hat mir alles in Ruhe erklärt, bis ich wirklich verstanden habe, was los ist. Das erlebe ich selten.“</p></blockquote><figcaption>Patientin seit 2016</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Ein Empfang, der einen auffängt.“</p><p class="voice__t">„Freundlich, gut organisiert und immer mit einem Lächeln – auch wenn das Wartezimmer voll ist.“</p></blockquote><figcaption>Patient aus Viernheim</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Termine laufen einfach.“</p><p class="voice__t">„Anfrage abgeschickt, am nächsten Tag kam der Rückruf. Die Wartezeit vor Ort war kurz.“</p></blockquote><figcaption>Patientin seit 2021</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Seit Jahren unsere Hausarztpraxis.“</p><p class="voice__t">„Die ganze Familie ist hier in guten Händen. Man kennt uns und unsere Geschichte.“</p></blockquote><figcaption>Mutter von drei Kindern</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Hausbesuch ohne Umstände.“</p><p class="voice__t">„Als meine Mutter nicht mehr in die Praxis kommen konnte, kam Herr Dr. Günther zu uns nach Hause. Dafür sind wir sehr dankbar.“</p></blockquote><figcaption>Tochter einer Patientin</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Ehrlich und auf Augenhöhe.“</p><p class="voice__t">„Ich fühle mich ernst genommen. Hier wird mit mir gesprochen, nicht über mich.“</p></blockquote><figcaption>Patient seit 2019</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Modern und trotzdem persönlich.“</p><p class="voice__t">„Die Praxis ist hell und neu gemacht – und das Team ist so herzlich wie eh und je.“</p></blockquote><figcaption>Patientin seit 2009</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Rezept ohne Wartezimmer.“</p><p class="voice__t">„Folgerezept bestellt, am Nachmittag in der Apotheke abgeholt. So unkompliziert sollte es immer sein.“</p></blockquote><figcaption>Patient aus Lampertheim</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Gut beraten vor der Reise.“</p><p class="voice__t">„Impfpass geprüft, Reiseimpfungen besprochen, alles in einem Termin. Sehr kompetent.“</p></blockquote><figcaption>Patientin seit 2022</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Hier nimmt man sich Zeit.“</p><p class="voice__t">„Frau Dr. Günther hat mir alles in Ruhe erklärt, bis ich wirklich verstanden habe, was los ist. Das erlebe ich selten.“</p></blockquote><figcaption>Patientin seit 2016</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Ein Empfang, der einen auffängt.“</p><p class="voice__t">„Freundlich, gut organisiert und immer mit einem Lächeln – auch wenn das Wartezimmer voll ist.“</p></blockquote><figcaption>Patient aus Viernheim</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Termine laufen einfach.“</p><p class="voice__t">„Anfrage abgeschickt, am nächsten Tag kam der Rückruf. Die Wartezeit vor Ort war kurz.“</p></blockquote><figcaption>Patientin seit 2021</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Seit Jahren unsere Hausarztpraxis.“</p><p class="voice__t">„Die ganze Familie ist hier in guten Händen. Man kennt uns und unsere Geschichte.“</p></blockquote><figcaption>Mutter von drei Kindern</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Hausbesuch ohne Umstände.“</p><p class="voice__t">„Als meine Mutter nicht mehr in die Praxis kommen konnte, kam Herr Dr. Günther zu uns nach Hause. Dafür sind wir sehr dankbar.“</p></blockquote><figcaption>Tochter einer Patientin</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Ehrlich und auf Augenhöhe.“</p><p class="voice__t">„Ich fühle mich ernst genommen. Hier wird mit mir gesprochen, nicht über mich.“</p></blockquote><figcaption>Patient seit 2019</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Modern und trotzdem persönlich.“</p><p class="voice__t">„Die Praxis ist hell und neu gemacht – und das Team ist so herzlich wie eh und je.“</p></blockquote><figcaption>Patientin seit 2009</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Rezept ohne Wartezimmer.“</p><p class="voice__t">„Folgerezept bestellt, am Nachmittag in der Apotheke abgeholt. So unkompliziert sollte es immer sein.“</p></blockquote><figcaption>Patient aus Lampertheim</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">„Gut beraten vor der Reise.“</p><p class="voice__t">„Impfpass geprüft, Reiseimpfungen besprochen, alles in einem Termin. Sehr kompetent.“</p></blockquote><figcaption>Patientin seit 2022</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Hier nimmt man sich Zeit.“</p><p class="voice__t">„Frau Dr. Günther hat mir alles in Ruhe erklärt, bis ich wirklich verstanden habe, was los ist. Das erlebe ich selten.“</p></blockquote><figcaption>Patientin seit 2016</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Ein Empfang, der einen auffängt.“</p><p class="voice__t">„Freundlich, gut organisiert und immer mit einem Lächeln – auch wenn das Wartezimmer voll ist.“</p></blockquote><figcaption>Patient aus Viernheim</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Termine laufen einfach.“</p><p class="voice__t">„Anfrage abgeschickt, am nächsten Tag kam der Rückruf. Die Wartezeit vor Ort war kurz.“</p></blockquote><figcaption>Patientin seit 2021</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Seit Jahren unsere Hausarztpraxis.“</p><p class="voice__t">„Die ganze Familie ist hier in guten Händen. Man kennt uns und unsere Geschichte.“</p></blockquote><figcaption>Mutter von drei Kindern</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Hausbesuch ohne Umstände.“</p><p class="voice__t">„Als meine Mutter nicht mehr in die Praxis kommen konnte, kam Herr Dr. Günther zu uns nach Hause. Dafür sind wir sehr dankbar.“</p></blockquote><figcaption>Tochter einer Patientin</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Ehrlich und auf Augenhöhe.“</p><p class="voice__t">„Ich fühle mich ernst genommen. Hier wird mit mir gesprochen, nicht über mich.“</p></blockquote><figcaption>Patient seit 2019</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Modern und trotzdem persönlich.“</p><p class="voice__t">„Die Praxis ist hell und neu gemacht – und das Team ist so herzlich wie eh und je.“</p></blockquote><figcaption>Patientin seit 2009</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Rezept ohne Wartezimmer.“</p><p class="voice__t">„Folgerezept bestellt, am Nachmittag in der Apotheke abgeholt. So unkompliziert sollte es immer sein.“</p></blockquote><figcaption>Patient aus Lampertheim</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Gut beraten vor der Reise.“</p><p class="voice__t">„Impfpass geprüft, Reiseimpfungen besprochen, alles in einem Termin. Sehr kompetent.“</p></blockquote><figcaption>Patientin seit 2022</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Hier nimmt man sich Zeit.“</p><p class="voice__t">„Frau Dr. Günther hat mir alles in Ruhe erklärt, bis ich wirklich verstanden habe, was los ist. Das erlebe ich selten.“</p></blockquote><figcaption>Patientin seit 2016</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Ein Empfang, der einen auffängt.“</p><p class="voice__t">„Freundlich, gut organisiert und immer mit einem Lächeln – auch wenn das Wartezimmer voll ist.“</p></blockquote><figcaption>Patient aus Viernheim</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Termine laufen einfach.“</p><p class="voice__t">„Anfrage abgeschickt, am nächsten Tag kam der Rückruf. Die Wartezeit vor Ort war kurz.“</p></blockquote><figcaption>Patientin seit 2021</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Seit Jahren unsere Hausarztpraxis.“</p><p class="voice__t">„Die ganze Familie ist hier in guten Händen. Man kennt uns und unsere Geschichte.“</p></blockquote><figcaption>Mutter von drei Kindern</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Hausbesuch ohne Umstände.“</p><p class="voice__t">„Als meine Mutter nicht mehr in die Praxis kommen konnte, kam Herr Dr. Günther zu uns nach Hause. Dafür sind wir sehr dankbar.“</p></blockquote><figcaption>Tochter einer Patientin</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Ehrlich und auf Augenhöhe.“</p><p class="voice__t">„Ich fühle mich ernst genommen. Hier wird mit mir gesprochen, nicht über mich.“</p></blockquote><figcaption>Patient seit 2019</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Modern und trotzdem persönlich.“</p><p class="voice__t">„Die Praxis ist hell und neu gemacht – und das Team ist so herzlich wie eh und je.“</p></blockquote><figcaption>Patientin seit 2009</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Rezept ohne Wartezimmer.“</p><p class="voice__t">„Folgerezept bestellt, am Nachmittag in der Apotheke abgeholt. So unkompliziert sollte es immer sein.“</p></blockquote><figcaption>Patient aus Lampertheim</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Beispiel</span></span><blockquote><p class="voice__h">„Gut beraten vor der Reise.“</p><p class="voice__t">„Impfpass geprüft, Reiseimpfungen besprochen, alles in einem Termin. Sehr kompetent.“</p></blockquote><figcaption>Patientin seit 2022</figcaption></figure></li>
       </ul>
     </div>
-    <p class="draft-note">Beispieltexte (Entwurf). Im Livebetrieb stehen hier echte Rückmeldungen von Patientinnen und Patienten – nur mit ihrem schriftlichen Einverständnis.</p>
   </div>
 </section>
 
-<section class="section section--mist" id="kontakt" aria-labelledby="kontakt-h">
+<section class="section" id="kontakt" aria-labelledby="kontakt-h">
   <div class="wrap contact">
     <div class="contact__intro">
       <div class="head">
@@ -321,7 +273,7 @@
   </div>
 </section>
 
-<section class="section" id="praxis" aria-labelledby="praxis-h">
+<section class="section section--mist" id="praxis" aria-labelledby="praxis-h">
   <div class="wrap">
     <div class="head">
       <h2 id="praxis-h">Die Praxis</h2>

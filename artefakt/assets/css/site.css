@@ -961,3 +961,12 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 }
 /* Handy: nur Überschriften, die Schließung mit Text */
 @media (max-width: 759px) { .now .news li:not(.is-important) p { display: none; } }
+
+/* Team direkt nach den Ärzten: eigene graue Fläche, oben mehr Luft */
+.section--team { padding-top: clamp(5.5rem, 4rem + 4.5vw, 9.5rem); }
+
+/* Stimmen auf grauer Fläche: Karten weiß; kleines Schild „Beispiel“, solange die Texte keine echten Rückmeldungen sind */
+.section--mist .voice figure { background: #fff; }
+.voice__top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.voice__tag { font-size: .75rem; font-weight: 500; color: var(--ink-soft); padding: .1rem .5rem; border: 1px solid var(--line); border-radius: var(--pill); }
+.section--mist .voice__tag { border-color: #dde1e3; }

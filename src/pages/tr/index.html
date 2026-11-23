@@ -6,7 +6,7 @@
       <div class="hero__panel">
         <div class="btn-row" data-cta-swap>
           <a class="btn btn--primary" data-cta="call" href="tel:{{TEL}}">{{icon:phone}}<span class="btn__label">Arayın: <span class="num">{{PHONE}}</span></span></a>
-          <a class="btn" data-cta="book" href="#anliegen" data-open="termin">{{icon:calendar}}Online randevu talebi</a>
+          <a class="btn" data-cta="book" href="#kontakt" data-open="termin">{{icon:calendar}}Online randevu talebi</a>
           <a class="btn" data-cta="mail" href="mailto:{{MAIL}}">{{icon:mail}}<span class="btn__label">E-posta gönderin</span></a>
         </div>
         <p class="small muted">Hangi dillerde hizmet verebildiğimizi lütfen telefonla sorun. Tercümanlık yapacak bir yakınınızı da yanınızda getirebilirsiniz.</p>
@@ -124,60 +124,13 @@
   </div>
 </section>
 
-<section class="section section--tight section--mist" id="anliegen" aria-labelledby="anliegen-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="anliegen-h">Size nasıl yardımcı olabiliriz?</h2>
-      <p class="lead">En sık gelen talepler – her biri için en hızlı yol.</p>
-    </div>
-    <ul class="tasks">
-      <li class="task">
-        <span class="task__icon">{{icon:calendar}}</span>
-        <h3>Randevu almak</h3>
-        <p>Muayene, check-up ve sonuç görüşmeleri için. Bizi arayın veya talep gönderin – size geri dönüş yaparız.</p>
-        <div class="task__act"><a class="textlink" href="#anliegen" data-open="termin">Randevu talebi</a></div>
-      </li>
-      <li class="task task--urgent">
-        <span class="task__icon">{{icon:alert}}</span>
-        <h3>Akut şikâyetler</h3>
-        <p>Lütfen gelmeden önce arayın. Böylece bekleme süreniz kısalır – gerekirse acil bir ev ziyareti ayarlarız.</p>
-        <div class="task__act"><a class="textlink" href="tel:{{TEL}}"><span class="num">{{PHONE}}</span></a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:pill}}</span>
-        <h3>Tekrar reçete</h3>
-        <p>Size daha önce yazdığımız ilaçlar için. E-reçetenizi birkaç saat sonra, en geç yarım gün içinde eczaneden alabilirsiniz.</p>
-        <div class="task__act"><a class="textlink" href="#anliegen" data-open="rezept">Reçete isteyin</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:drop}}</span>
-        <h3>Kan alma</h3>
-        <p>Pazartesiden cumaya saat 8–9 arası. Kan şekeri ve kan yağları için lütfen aç karnına gelin. Sonuçlar genellikle ertesi gün hazırdır.</p>
-        <div class="task__act"><a class="textlink" href="faq.html#faq-nuechtern">Aç karnına ne demek?</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:syringe}}</span>
-        <h3>Aşı</h3>
-        <p>Muayene saatlerinde randevusuz. Lütfen enfeksiyonunuz yokken ve aç karnına olmadan gelin – aşıdan sonra spor yapmayın.</p>
-        <div class="task__act"><a class="textlink" href="faq.html#impfen">Aşı hakkında sorular</a></div>
-      </li>
-      <li class="task">
-        <span class="task__icon">{{icon:home}}</span>
-        <h3>Ev ziyareti</h3>
-        <p>Sağlık durumunuz nedeniyle muayenehaneye gelemiyorsanız, telefonla anlaştıktan sonra sizi evinizde veya bakımevinde ziyaret ederiz.</p>
-        <div class="task__act"><a class="textlink" href="tel:{{TEL}}">Bizi arayın</a></div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="team" aria-labelledby="team-h">
+<section class="section section--mist section--team" id="team" aria-labelledby="team-h">
   <div class="wrap">
     {{team:staff}}
   </div>
 </section>
 
-<section class="section section--mist" id="leistungen" aria-labelledby="leistungen-h">
+<section class="section" id="leistungen" aria-labelledby="leistungen-h">
   <div class="wrap">
     <div class="head">
       <h2 id="leistungen-h">Hizmetlerimiz</h2>
@@ -251,7 +204,7 @@
   </div>
 </section>
 
-<section class="section stimmen" id="stimmen" aria-labelledby="stimmen-h">
+<section class="section section--mist stimmen" id="stimmen" aria-labelledby="stimmen-h">
   <div class="wrap">
     <div class="stimmen__head">
       <div class="head">
@@ -262,31 +215,30 @@
     </div>
     <div class="marquee" data-marquee>
       <ul class="marquee__track" aria-label="Hastalarımızdan geri bildirimler">
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
-        <li class="voice"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
-        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Burada insana zaman ayrılıyor.”</p><p class="voice__t">“Dr. Evelyne Günther her şeyi, gerçekten anlayana kadar sakin sakin anlattı. Bunu nadiren yaşıyorum.”</p></blockquote><figcaption>Hasta, 2016’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“İnsanı karşılayan bir resepsiyon.”</p><p class="voice__t">“Güler yüzlü, iyi organize ve bekleme salonu dolu olsa bile hep gülümseyerek.”</p></blockquote><figcaption>Viernheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Randevular sorunsuz.”</p><p class="voice__t">“Talebimi gönderdim, ertesi gün geri arandım. Muayenehanede bekleme süresi kısaydı.”</p></blockquote><figcaption>Hasta, 2021’den beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Yıllardır aile hekimimiz.”</p><p class="voice__t">“Bütün aile burada emin ellerde. Bizi ve hikâyemizi tanıyorlar.”</p></blockquote><figcaption>Üç çocuk annesi</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Zahmetsiz ev ziyareti.”</p><p class="voice__t">“Annem artık muayenehaneye gelemeyince Dr. Andreas Günther evimize geldi. Çok minnettarız.”</p></blockquote><figcaption>Bir hastanın kızı</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Dürüst ve eşit seviyede.”</p><p class="voice__t">“Ciddiye alındığımı hissediyorum. Burada benim hakkımda değil, benimle konuşuluyor.”</p></blockquote><figcaption>Hasta, 2019’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Modern ama yine de samimi.”</p><p class="voice__t">“Muayenehane aydınlık ve yenilenmiş – ekip ise her zamanki kadar sıcak.”</p></blockquote><figcaption>Hasta, 2009’dan beri</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Bekleme salonu olmadan reçete.”</p><p class="voice__t">“Tekrar reçetemi istedim, öğleden sonra eczaneden aldım. Hep bu kadar kolay olmalı.”</p></blockquote><figcaption>Lampertheim’dan bir hasta</figcaption></figure></li>
+        <li class="voice voice--clone" aria-hidden="true"><figure><span class="voice__top"><span class="voice__dots" aria-hidden="true"><i></i><i></i></span><span class="voice__tag">Örnek</span></span><blockquote><p class="voice__h">“Seyahat öncesi iyi bilgilendirildim.”</p><p class="voice__t">“Aşı kartım kontrol edildi, seyahat aşıları konuşuldu, hepsi tek randevuda. Çok yetkin.”</p></blockquote><figcaption>Hasta, 2022’den beri</figcaption></figure></li>
       </ul>
     </div>
-    <p class="draft-note">Örnek metinler (taslak). Yayında burada hastalarımızın gerçek geri bildirimleri yer alacak – yalnızca yazılı onaylarıyla.</p>
   </div>
 </section>
 
-<section class="section section--mist" id="kontakt" aria-labelledby="kontakt-h">
+<section class="section" id="kontakt" aria-labelledby="kontakt-h">
   <div class="wrap contact">
     <div class="contact__intro">
       <div class="head">
@@ -322,7 +274,7 @@
   </div>
 </section>
 
-<section class="section" id="praxis" aria-labelledby="praxis-h">
+<section class="section section--mist" id="praxis" aria-labelledby="praxis-h">
   <div class="wrap">
     <div class="head">
       <h2 id="praxis-h">Muayenehane</h2>
