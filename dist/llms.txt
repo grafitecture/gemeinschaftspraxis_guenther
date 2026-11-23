@@ -24,6 +24,7 @@
 ## Seiten
 - [Startseite](https://www.gemeinschaftspraxis-guenther.de/): Aktuelles, Sprechzeiten, Leistungen, Anfahrt
 - [Häufige Fragen](https://www.gemeinschaftspraxis-guenther.de/faq): Termine, Rezepte, Labor, Impfungen (STIKO 2026), Vorsorge, ePA, Notdienst, Parken
+- [Impfkalender](https://www.gemeinschaftspraxis-guenther.de/impfkalender): empfohlene Impfungen nach STIKO 2026 für Erwachsene ab 18, ab 60, ab 75, bei Vorerkrankungen, in der Schwangerschaft und für Jugendliche
 - [Dr. Evelyne Günther](https://www.gemeinschaftspraxis-guenther.de/dr-evelyne-guenther)
 - [Dr. Andreas Günther](https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther)
 

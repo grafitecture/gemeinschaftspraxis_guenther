@@ -22,7 +22,7 @@ UI = {
         "contact": "Kontakt", "phone": "Telefon", "fax": "Telefax",
         "hours": "Sprechzeiten",
         "hours_lines": ["Mo, Di, Do 9–11 und 16–18 Uhr", "Mi 9–11 Uhr", "Fr 9–13 Uhr", "Blutabnahme Mo–Fr 8–9 Uhr"],
-        "practice": "Praxis", "faq": "Häufige Fragen", "training": "Ausbildung",
+        "practice": "Praxis", "faq": "Häufige Fragen", "vacc_cal": "Impfkalender", "training": "Ausbildung",
         "imprint": "Impressum", "privacy": "Datenschutz",
         "emergency": "Notfall 112, Bereitschaftsdienst 116 117",
         "quick": "Schnellzugriff", "call": "Anrufen", "appt": "Termin", "route": "Route",
@@ -51,7 +51,7 @@ UI = {
         "contact": "Contact", "phone": "Phone", "fax": "Fax",
         "hours": "Consultation hours",
         "hours_lines": ["Mon, Tue, Thu 9–11 am and 4–6 pm", "Wed 9–11 am", "Fri 9 am–1 pm", "Blood tests Mon–Fri 8–9 am"],
-        "practice": "Practice", "faq": "FAQ", "training": "Apprenticeships",
+        "practice": "Practice", "faq": "FAQ", "vacc_cal": "Vaccination schedule", "training": "Apprenticeships",
         "imprint": "Legal notice (Impressum)", "privacy": "Privacy policy (Datenschutz)",
         "emergency": "Emergency 112, out-of-hours service 116 117",
         "quick": "Quick access", "call": "Call", "appt": "Appointment", "route": "Route",
@@ -79,7 +79,7 @@ UI = {
         "contact": "İletişim", "phone": "Telefon", "fax": "Faks",
         "hours": "Muayene saatleri",
         "hours_lines": ["Pzt, Sal, Per 9–11 ve 16–18", "Çar 9–11", "Cum 9–13", "Kan alma Pzt–Cum 8–9"],
-        "practice": "Muayenehane", "faq": "Sıkça sorulan sorular", "training": "Meslek eğitimi",
+        "practice": "Muayenehane", "faq": "Sıkça sorulan sorular", "vacc_cal": "Aşı takvimi", "training": "Meslek eğitimi",
         "imprint": "Künye (Impressum)", "privacy": "Gizlilik (Datenschutz)",
         "emergency": "Acil 112, nöbetçi doktor 116 117",
         "quick": "Hızlı erişim", "call": "Ara", "appt": "Randevu", "route": "Rota",
@@ -107,6 +107,8 @@ PAGEMETA = {
                     "Dr. med. Evelyne Günther: Fachärztin für Innere Medizin, Hypertensiologin DHL, Akupunktur und Palliativmedizin. Gemeinschaftspraxis Günther, Viernheim."),
         "andreas": ("Dr. med. Andreas Günther – Internist und Gastroenterologe in Viernheim",
                     "Dr. med. Andreas Günther: Facharzt für Innere Medizin und Gastroenterologie, Notfallmedizin. Gemeinschaftspraxis Günther, Viernheim."),
+        "impfkalender": ("Impfkalender – Gemeinschaftspraxis Günther, Viernheim",
+                         "Impfkalender nach STIKO 2026: welche Impfungen Erwachsenen ab 18, ab 60 und ab 75, bei Vorerkrankungen, in der Schwangerschaft und Jugendlichen empfohlen sind. Impfen ohne Termin in Viernheim."),
     },
     "en": {
         "start": ("Family doctor in Viernheim – Gemeinschaftspraxis Günther, internal medicine",
@@ -117,6 +119,8 @@ PAGEMETA = {
                     "Dr. med. Evelyne Günther: specialist in internal medicine, hypertension specialist (DHL), acupuncture and palliative medicine. Gemeinschaftspraxis Günther, Viernheim."),
         "andreas": ("Dr. med. Andreas Günther – internist and gastroenterologist in Viernheim",
                     "Dr. med. Andreas Günther: specialist in internal medicine and gastroenterology, emergency medicine. Gemeinschaftspraxis Günther, Viernheim."),
+        "impfkalender": ("Vaccination schedule – Gemeinschaftspraxis Günther, Viernheim",
+                         "Vaccination schedule based on STIKO 2026: which vaccinations are recommended for adults from 18, 60 and 75, with pre-existing conditions, in pregnancy and for young people. No appointment needed in Viernheim."),
     },
     "tr": {
         "start": ("Viernheim’da aile hekimi – Gemeinschaftspraxis Günther, iç hastalıkları",
@@ -127,6 +131,8 @@ PAGEMETA = {
                     "Dr. med. Evelyne Günther: iç hastalıkları uzmanı, hipertansiyon uzmanı (DHL), akupunktur ve palyatif tıp. Gemeinschaftspraxis Günther, Viernheim."),
         "andreas": ("Dr. med. Andreas Günther – Viernheim’da dahiliye ve gastroenteroloji uzmanı",
                     "Dr. med. Andreas Günther: iç hastalıkları ve gastroenteroloji uzmanı, acil tıp. Gemeinschaftspraxis Günther, Viernheim."),
+        "impfkalender": ("Aşı takvimi – Gemeinschaftspraxis Günther, Viernheim",
+                         "STIKO 2026’ya göre aşı takvimi: 18, 60 ve 75 yaştan itibaren yetişkinlere, kronik hastalıklarda, hamilelikte ve gençlere önerilen aşılar. Viernheim’da randevusuz aşı."),
     },
 }
 

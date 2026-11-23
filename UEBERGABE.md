@@ -1,12 +1,12 @@
 # Gemeinschaftspraxis Günther – neue Website (Prototyp)
 
-Stand: 23. November 2026 (Runde 4: Hero auf dem Handy, neues Praxisblau `#377EC3`) · Agentur: Grafitecture
+Stand: 23. November 2026 (Runde 4: Hero auf dem Handy, neues Praxisblau `#377EC3`, Seite Impfkalender) · Agentur: Grafitecture
 
 ## Inhalt des Pakets
 
 | Pfad | Zweck |
 |---|---|
-| `dist/` | Fertige Website in drei Sprachen: Deutsch im Wurzelverzeichnis, Englisch unter `en/`, Türkisch unter `tr/` – je `index.html`, `faq.html`, `dr-evelyne-guenther.html`, `dr-andreas-guenther.html`; dazu `impressum.html` und `datenschutz.html` (nur Deutsch, aus allen Sprachen verlinkt), Assets, `robots.txt`, `sitemap.xml` (mit hreflang), `llms.txt` |
+| `dist/` | Fertige Website in drei Sprachen: Deutsch im Wurzelverzeichnis, Englisch unter `en/`, Türkisch unter `tr/` – je `index.html`, `faq.html`, `impfkalender.html`, `dr-evelyne-guenther.html`, `dr-andreas-guenther.html`; dazu `impressum.html` und `datenschutz.html` (nur Deutsch, aus allen Sprachen verlinkt), Assets, `robots.txt`, `sitemap.xml` (mit hreflang), `llms.txt` |
 | `praesentation/praxis-guenther-praesentation.html` | Alle Seiten und alle drei Sprachen in **einer** Datei (Schriften und Bilder eingebettet) – zum Zeigen auf jedem Gerät, ohne Entwurfsbalken |
 | `artefakt/` | Dieselbe Präsentation als Ordner mit getrennten Dateien – so als privater Link auf claude.ai veröffentlicht (mit einer kleinen Entwurfszeile ganz unten im Rot des Notfall-Bands) |
 | `src/` | Seiteninhalte (`pages/*.html` Deutsch, `pages/en/`, `pages/tr/`), Notfall-Band (`partials/`), Rechtstexte (`legal/`), FAQ-Daten (`faq.json`, `faq.en.json`, `faq.tr.json`), strukturierte Daten (`jsonld/`) |
@@ -58,7 +58,8 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 - **Kontextabhängige Haupt-Aktion**: Praxis offen → „Anrufen“ ist der Hauptbutton; geschlossen → „Termin online anfragen“ rückt nach vorn (auf dem Handy wird dann E-Mail zum Hauptbutton). „Anrufen“ und „Termin“ sind immer gleich breit; reicht die Textspalte nicht für beide nebeneinander (Tablet schmal, Desktop um 1024–1200 px), stehen sie gleich breit untereinander.
 - **Termin anfragen** und **Folgerezept bestellen** als Dialoge (Prototyp – senden nichts). Im Hero stehen nur noch „Termin online anfragen“ und „Anrufen“; die Zeile „Folgerezept bestellen – für Medikamente, die wir Ihnen bereits verordnet haben.“ ist dort auf Wunsch entfernt (das Folgerezept bleibt unter „Was können wir für Sie tun?“ erreichbar).
 - **„Was können wir für Sie tun?“** kompakt und dezent: sechs Anliegen (Termin, Akute Beschwerden, Folgerezept, Blutabnahme, Impfung, Hausbesuch) in drei Spalten (Tablet zwei, Handy eine), kleines Linien-Icon ohne Kreis, Überschrift klein im Praxisblau, Text klein, Textlinks statt Buttons.
-- **Impf-Check** nach STIKO 2026 (Alter + Vorerkrankung → passende Impfungen).
+- **Impf-Check** nach STIKO 2026 (Alter + Vorerkrankung → passende Impfungen). Im Kasten steht oben der Hinweis „Die neuen Grippeimpfstoffe sind eingetroffen. …“ (ersetzt „Impfsaison 2026/27“), darunter der Link „Zum Impfkalender“.
+- **Impfkalender** (`/impfkalender`, `/en/impfkalender`, `/tr/impfkalender`; Quelle `src/pages/impfkalender.html` je Sprache): STIKO-Empfehlungen als Karten – alle Erwachsenen, ab 60, ab 75, bei Vorerkrankungen, Schwangerschaft, Jugendliche und junge Erwachsene (9 bis 24), Reisen; Sprungmarken oben, Stand und Link zum RKI-Impfkalender unten. Verlinkt aus dem Impf-Kasten und im Fuß unter „Praxis“. Stand: Epidemiologisches Bulletin 4/2026, Corona-Aktualisierung Juli 2026 (Bulletin 28/2026). Strukturierte Daten `MedicalWebPage` + `BreadcrumbList`, in `sitemap.xml` und `llms.txt`.
 - **Sprechzeiten** als schlichte Tabelle (Tag · Vormittag · Nachmittag, Wochenende in einer Zeile), der heutige Tag in Blau hervorgehoben, Blutabnahme als Zeile darunter.
 - **Anfahrt**: Der Abschnitt „So finden Sie uns“ ist auf Wunsch entfernt (Lageplan, Wegbeschreibung, Bildfolge Eingang → Empfang). Route: Haus im Fuß (Google Maps); Adresse und Parken stehen im Fuß, im Hero und in den FAQ.
 - **FAQ-Seite** mit 36 Fragen (Englisch und Türkisch 37, zusätzlich „In welcher Sprache?“), Themen-Sprungmarken, Direktlinks. Suchfeld und Seitenkasten „Ihre Frage war nicht dabei?“ sind auf Wunsch entfernt; die Fragen stehen in einer Spalte. Der Abschnitt „Häufige Fragen“ auf der Startseite ist ebenfalls entfernt – die FAQ-Seite erreicht man über die Navigation und den Fuß.
@@ -86,10 +87,12 @@ Sprachen: Live-Adressen `/`, `/en`, `/tr` (plus `/faq`, `/en/faq` usw.). Jede Se
 15. **Zeitstrahl prüfen**: Die Jahreszahlen (u. a. Umbau 2019 und 2023) wurden aus den Fotos abgeleitet.
 16. **Sprachen in der Sprechstunde**: Welche Sprachen spricht das Team?
 17. **Übersetzungen** von Muttersprachlern gegenlesen lassen, besonders Türkisch.
+18. **Impfkalender**: Impft die Praxis auch Jugendliche (HPV, Meningokokken, Auffrischung 9–16)? Sonst den Abschnitt „Jugendliche und junge Erwachsene“ kürzen. Die Seite jährlich mit dem neuen STIKO-Bulletin (meist im Januar) abgleichen.
 
 ## Quellen für die aktuellen Inhalte
 
 - STIKO-Empfehlungen 2026 (Grippe, Pneumokokken, Gürtelrose ab 60; RSV einmalig ab 75 bzw. ab 60 mit Grunderkrankung; Corona jährlich ab 75 seit Juli 2026)
+- Impfkalender: STIKO Epidemiologisches Bulletin 4/2026 (Gürtelrose ab 18 bei erhöhter Gefährdung; MenACWY 12–14, Nachholen bis zum 25. Geburtstag; Schwangerschaft: Grippe ab 2. Trimenon, Keuchhusten im 3. Trimenon) und 28/2026 (Corona: Basisimmunität entfällt, jährlich ab 75 und bei Grunderkrankungen)
 - G-BA / KBV: Lungenkrebs-Früherkennung seit 1. April 2026 für starke Raucher 50–75
 - ePA-Nutzungspflicht für Praxen seit 1. Oktober 2025
 - Bundesgesundheitsministerium: Check-up und Krebsfrüherkennung; E-Rezept-Einlösewege
