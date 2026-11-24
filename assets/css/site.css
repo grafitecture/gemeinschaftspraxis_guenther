@@ -883,6 +883,15 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero__photo img { position: absolute; inset: 0; }
 }
 
+/* ---------- Hero: bei jedem Aufruf ein zufälliges Bild (Haus, Ärzte im Gespräch, Ehepaar), ohne Animation ----------
+   Alle drei Bilder stehen im HTML, ein kleines Skript direkt hinter der figure wählt eins aus (Klasse is-shown)
+   und lädt nur dieses sofort. Die anderen bleiben ausgeblendet und werden nicht geladen (loading="lazy").
+   Ohne JavaScript: das Hausfoto. Das G liegt über jedem Bild. */
+.hero__photo .hero__pic:not(.hero__pic--haus), .hero__photo.is-random .hero__pic { display: none; }
+.hero__photo.is-random .hero__pic.is-shown { display: block; }
+.hero__photo .hero__pic--gespraech { object-position: 50% 60%; }
+.hero__photo .hero__pic--ehepaar { object-position: 50% 35%; }
+
 /* ---------- Kontakt: Angaben links, Formular rechts ---------- */
 .contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
 @media (min-width: 960px) { .contact { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: start; } }

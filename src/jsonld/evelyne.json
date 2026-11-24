@@ -6,6 +6,9 @@
   "honorificPrefix": "Dr. med.",
   "givenName": "Evelyne",
   "familyName": "Günther",
+  "spouse": {
+   "@id": "https://www.gemeinschaftspraxis-guenther.de/dr-andreas-guenther#person"
+  },
   "jobTitle": "Fachärztin für Innere Medizin",
   "knowsAbout": [
    "Innere Medizin",
