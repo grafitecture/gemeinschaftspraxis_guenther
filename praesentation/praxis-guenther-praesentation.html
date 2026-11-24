@@ -251,8 +251,7 @@ ul, ol { margin: 0; padding: 0; }
 .news { list-style: none; display: grid; }
 .news li { border-bottom: 1px solid var(--line); }
 .news li:first-child { border-top: 1px solid var(--line); }
-.news a { display: grid; gap: .35rem; padding-block: var(--space-m); text-decoration: none; color: var(--ink); }
-.news a:hover h3 { color: var(--blue-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.news__in { display: grid; gap: .35rem; padding-block: var(--space-m); color: var(--ink); }
 .news time { font-size: var(--step-m1); color: var(--ink-soft); }
 .news h3 { font-size: var(--step-1); font-weight: 600; }
 .news p { color: var(--ink-soft); font-size: var(--step-m1); }
@@ -804,12 +803,10 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now__title h2 { color: #fff; }
 .now .feature { border-color: #fff; color: var(--ink); }
 .now .news li, .now .news li:first-child { border-color: rgba(255,255,255,.3); }
-.now .news a { color: #fff; }
+.now .news__in { color: #fff; }
 .now .news time { color: rgba(255,255,255,.8); }
 .now .news h3 { color: #fff; }
 .now .news p { color: rgba(255,255,255,.88); }
-.now .news a:hover h3 { color: #fff; }
-.now .news a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .now .news .is-important h3, .now .news .is-important p { color: #fff; }
 .now .news .is-important time { justify-self: start; background: #fff; color: var(--alert); font-weight: 600; padding: .2rem .55rem; border-radius: var(--r); }
 
@@ -867,18 +864,15 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 }
 /* Kasten: dasselbe Blau eine Stufe dunkler (Weiß darauf 5,3 : 1), feine helle Linie */
 .now .news li, .now .news li:first-child { background: #306fab; border: 1px solid rgba(255,255,255,.28); border-radius: var(--r); transition: background-color .2s; }
-.now .news li:hover { background: #2c66a0; }
-.now .news a { height: 100%; grid-template-columns: auto minmax(0, 1fr); align-content: start; align-items: center; column-gap: .75rem; row-gap: .5rem; padding: var(--space-m); }
-.now .news a > h3, .now .news a > p { grid-column: 1 / -1; }
+.now .news__in { height: 100%; grid-template-columns: auto minmax(0, 1fr); align-content: start; align-items: center; column-gap: .75rem; row-gap: .5rem; padding: var(--space-m); }
+.now .news__in > h3, .now .news__in > p, .now .news__in > .news__more { grid-column: 1 / -1; }
 .now .news h3 { border-top: 1px solid rgba(255,255,255,.3); padding-top: .8rem; margin-top: .35rem; }
 .news__icon { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--blue-deep); }
 .news__icon svg { width: 1.15rem; height: 1.15rem; }
 /* Schließzeit: weißer Kasten, Rot für Icon und Datum */
-.now .news li.is-important, .now .news li.is-important:hover { background: #fff; border-color: #fff; }
+.now .news li.is-important { background: #fff; border-color: #fff; }
 .now .news .is-important h3 { color: var(--night); border-top-color: var(--line); }
 .now .news .is-important p { color: var(--ink); }
-.now .news .is-important a:hover h3 { color: var(--night); }
-.now .news .is-important a:focus-visible { outline-color: var(--alert); }
 .now .news .is-important time { background: var(--alert); color: #fff; }
 .now .news .is-important .news__icon { background: #fbe9eb; color: var(--alert); }
 
@@ -977,7 +971,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now__title { margin-bottom: var(--space-m); }
 .now__title h2 { font-size: var(--step-3); }
 .now .news { gap: var(--space-s); }
-.now .news a { padding: var(--space-s) var(--space-m); row-gap: .35rem; column-gap: .6rem; }
+.now .news__in { padding: var(--space-s) var(--space-m); row-gap: .35rem; column-gap: .6rem; }
 .news__icon { width: 1.9rem; height: 1.9rem; }
 .news__icon svg { width: 1rem; height: 1rem; }
 .now .news h3 { font-size: var(--step-0); line-height: 1.3; border-top: 0; padding-top: 0; margin-top: .15rem; }
@@ -987,9 +981,16 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 /* Schließung: eine Zeile – Icon, Datum, Überschrift, Text; Meldungen höchstens drei Zeilen Text */
 @media (min-width: 1100px) {
   .now .news li:not(.is-important) p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
-  .now .news .is-important a { grid-template-columns: auto auto auto minmax(0, 1fr); align-items: center; column-gap: var(--space-s); }
-  .now .news .is-important a > h3, .now .news .is-important a > p { grid-column: auto; margin: 0; }
+  .now .news .is-important .news__in { grid-template-columns: auto auto auto minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-s); }
+  .now .news .is-important .news__in > h3, .now .news .is-important .news__in > p, .now .news .is-important .news__in > .news__more { grid-column: auto; margin: 0; }
+  .now .news .news__more { white-space: nowrap; }
 }
+/* Aktuell: Meldungen sind keine Links (seit 24.11.2026). Nur die Schließung trägt einen kleinen Textlink zum Notfall-Band.
+   Kleine Schrift in #306FAB (5,3 : 1 auf Weiß); Klickfläche per Padding/negativem Margin vergrößert, ohne Platz zu nehmen */
+.now .news .news__more { justify-self: start; display: inline-block; padding-block: .6rem; margin-block: -.6rem; font-size: var(--step-m1); font-weight: 500; color: #306fab; text-decoration: underline; }
+.now .news .news__more::after { content: " \2192"; }
+.now .news .news__more:hover { color: var(--night); }
+.now .news .news__more:focus-visible { outline: 2px solid #306fab; outline-offset: 2px; }
 /* Handy: nur Überschriften, die Schließung mit Text */
 @media (max-width: 759px) { .now .news li:not(.is-important) p { display: none; } }
 
@@ -2276,43 +2277,44 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <div>
         <ul class="news">
           <li class="is-important">
-            <a href="#sprechzeiten">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg></span>
               <time datetime="2026-12-28">28. bis 31. Dezember</time>
               <h3>Praxis zwischen den Jahren geschlossen</h3>
               <p>Die Vertretung nennt Ihnen unser Anrufbeantworter. Im neuen Jahr sind wir wie gewohnt für Sie da.</p>
-            </a>
+              <a class="news__more" href="#notfall">Notdienst und Notfall</a>
+            </div>
           </li>
           <li id="impfen">
-            <a href="#impfen">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
               <h3>Die neuen Grippeimpfstoffe sind eingetroffen</h3>
               <p>Sie können sich ab sofort in unserer Praxis gegen die saisonale Grippe impfen lassen.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#faq-lungenkrebs">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
               <time datetime="2026-04-01">Neu seit April 2026</time>
               <h3>Lungenkrebs-Früherkennung für starke Raucher</h3>
               <p>Für aktive und ehemalige starke Raucherinnen und Raucher von 50 bis 75 zahlt die Kasse jetzt eine jährliche Niedrigdosis-CT. Wir beraten Sie, ob das für Sie infrage kommt.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#faq-epa">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
               <time datetime="2025-10-01">Seit Oktober 2025</time>
               <h3>Ihre elektronische Patientenakte</h3>
               <p>Was wir in Ihre ePA einstellen – und wie Sie selbst entscheiden, wer was sieht.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#ausbildung">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg></span>
               <time datetime="2027">Ausbildung 2027</time>
               <h3>Wir bilden aus: Medizinische Fachangestellte (w/m/d)</h3>
               <p>Ein Praktikum vorab ist möglich. Bewerben Sie sich per Post oder E-Mail.</p>
-            </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -2865,43 +2867,44 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <div>
         <ul class="news">
           <li class="is-important">
-            <a href="#en-sprechzeiten">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg></span>
               <time datetime="2026-12-28">28 to 31 December</time>
               <h3>Practice closed between Christmas and New Year</h3>
               <p>Our answering machine will tell you which practice is covering for us. We will be back as usual in the new year.</p>
-            </a>
+              <a class="news__more" href="#en-notfall">Out-of-hours and emergencies</a>
+            </div>
           </li>
           <li id="en-impfen">
-            <a href="#en-impfen">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
               <h3>The new flu vaccines have arrived</h3>
               <p>You can now get your seasonal flu vaccination at our practice.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#en-faq-lungenkrebs">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
               <time datetime="2026-04-01">New since April 2026</time>
               <h3>Lung cancer screening for heavy smokers</h3>
               <p>For current and former heavy smokers aged 50 to 75, statutory health insurance now pays for an annual low-dose CT scan. We can advise you on whether it is right for you.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#en-faq-epa">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
               <time datetime="2025-10-01">Since October 2025</time>
               <h3>Your electronic patient record (ePA)</h3>
               <p>What we add to your ePA – and how you decide for yourself who sees what.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#en-ausbildung">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg></span>
               <time datetime="2027">Apprenticeship 2027</time>
               <h3>We train medical assistants (MFA, f/m/d)</h3>
               <p>An internship beforehand is possible. Apply by post or email.</p>
-            </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -3454,43 +3457,44 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
       <div>
         <ul class="news">
           <li class="is-important">
-            <a href="#tr-sprechzeiten">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg></span>
               <time datetime="2026-12-28">28–31 Aralık</time>
               <h3>Yılbaşı arasında muayenehane kapalı</h3>
               <p>Bizim yerimize bakan muayenehaneyi telesekreterimiz size bildirir. Yeni yılda her zamanki gibi hizmetinizdeyiz.</p>
-            </a>
+              <a class="news__more" href="#tr-notfall">Nöbetçi doktor ve acil durum</a>
+            </div>
           </li>
           <li id="tr-impfen">
-            <a href="#tr-impfen">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4M17 7l3-3M19 9 8.5 19.5 4.5 15.5 15 5zM9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
               <h3>Yeni grip aşıları geldi</h3>
               <p>Mevsimsel gribe karşı artık muayenehanemizde aşı olabilirsiniz.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#tr-faq-lungenkrebs">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
               <time datetime="2026-04-01">Nisan 2026’dan beri yeni</time>
               <h3>Yoğun sigara içenler için akciğer kanseri taraması</h3>
               <p>Halen veya geçmişte yoğun sigara içmiş 50–75 yaş arası kişiler için yasal sağlık sigortası artık yılda bir kez düşük dozlu bilgisayarlı tomografi (BT) ödüyor. Sizin için uygun olup olmadığını birlikte değerlendiririz.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#tr-faq-epa">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
               <time datetime="2025-10-01">Ekim 2025’ten beri</time>
               <h3>Elektronik hasta dosyanız (ePA)</h3>
               <p>Dosyanıza neler eklediğimiz – ve kimin neyi göreceğine nasıl kendiniz karar verdiğiniz.</p>
-            </a>
+            </div>
           </li>
           <li>
-            <a href="#tr-ausbildung">
+            <div class="news__in">
               <span class="news__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg></span>
               <time datetime="2027">2027 meslek eğitimi</time>
               <h3>Tıbbi asistan (MFA) yetiştiriyoruz</h3>
               <p>Önceden staj yapmak mümkündür. Başvurunuzu posta veya e-posta ile gönderin.</p>
-            </a>
+            </div>
           </li>
         </ul>
       </div>
