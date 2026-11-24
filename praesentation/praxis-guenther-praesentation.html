@@ -878,12 +878,12 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now .news h3 { border-top: 1px solid rgba(255,255,255,.3); padding-top: .8rem; margin-top: .35rem; }
 .news__icon { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--blue-deep); }
 .news__icon svg { width: 1.15rem; height: 1.15rem; }
-/* Schließzeit: weißer Kasten, Rot für Icon und Datum */
-.now .news li.is-important { background: #fff; border-color: #fff; }
-.now .news .is-important h3 { color: var(--night); border-top-color: var(--line); }
-.now .news .is-important p { color: var(--ink); }
-.now .news .is-important time { background: var(--alert); color: #fff; }
-.now .news .is-important .news__icon { background: #fbe9eb; color: var(--alert); }
+/* Schließzeit: roter Balken, Schrift weiß – nur diese beiden Farben (seit 24.11.2026).
+   Signalrot wie das Notfall-Band #C8102E (Weiß darauf 5,9 : 1); Icon im weißen Kreis in Rot, Datum als weiße Schrift */
+.now .news li.is-important { background: #c8102e; border-color: #c8102e; }
+.now .news .is-important h3, .now .news .is-important p { color: #fff; }
+.now .news .is-important time { background: none; padding: 0; color: #fff; font-weight: 600; }
+.now .news .is-important .news__icon { background: #fff; color: #c8102e; }
 
 /* ---------- Hero auf dem Desktop: füllt genau den ersten Bildschirm unter der Kopfzeile ---------- */
 @media (min-width: 1024px) {
@@ -1020,11 +1020,11 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .now .news .news__more { white-space: nowrap; }
 }
 /* Aktuell: Meldungen sind keine Links (seit 24.11.2026). Nur die Schließung trägt einen kleinen Textlink zum Notfall-Band.
-   Kleine Schrift in #306FAB (5,3 : 1 auf Weiß); Klickfläche per Padding/negativem Margin vergrößert, ohne Platz zu nehmen */
-.now .news .news__more { justify-self: start; display: inline-block; padding-block: .6rem; margin-block: -.6rem; font-size: var(--step-m1); font-weight: 500; color: #306fab; text-decoration: underline; }
+   Weiß auf dem roten Balken (5,9 : 1); Klickfläche per Padding/negativem Margin vergrößert, ohne Platz zu nehmen */
+.now .news .news__more { justify-self: start; display: inline-block; padding-block: .6rem; margin-block: -.6rem; font-size: var(--step-m1); font-weight: 500; color: #fff; text-decoration: underline; }
 .now .news .news__more::after { content: " \2192"; }
-.now .news .news__more:hover { color: var(--night); }
-.now .news .news__more:focus-visible { outline: 2px solid #306fab; outline-offset: 2px; }
+.now .news .news__more:hover { color: #fff; text-decoration-thickness: 2px; }
+.now .news .news__more:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 /* Handy: nur Überschriften, die Schließung mit Text */
 @media (max-width: 759px) { .now .news li:not(.is-important) p { display: none; } }
 
