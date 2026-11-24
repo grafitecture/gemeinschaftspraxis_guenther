@@ -895,16 +895,14 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero__photo img { position: absolute; inset: 0; }
 }
 
-/* ---------- Hero auf dem Handy: Überschrift, Foto mit G, Telefon und E-Mail ganz im ersten Bildschirm ----------
-   Höhe = Bildschirm (svh) minus Kopfzeile minus Reserve. Die Reserve (--hero-reserve) hält die Buttons über der
-   Browserleiste: Seit iOS 26 schwebt die Safari-Leiste unten über der Seite und svh zieht sie nicht mehr ab.
-   Ohne überlagernde Leiste (Android) schaut darunter der Anfang von „Sprechzeiten“ hervor.
+/* ---------- Hero auf dem Handy: Überschrift, Foto mit G, Telefon und E-Mail füllen genau den ersten Bildschirm ----------
+   Höhe = Bildschirm (svh: bei eingeblendeter Adressleiste, springt beim Scrollen nicht) minus Kopfzeile (+ 1 px Linie).
    Überschrift und Buttons behalten ihre Höhe, das Foto nimmt den Rest (zugeschnitten per object-fit: cover).
-   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 10rem hoch, dann darf der Hero länger werden. */
+   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 12rem hoch, dann darf der Hero länger werden. */
 @media (max-width: 559px) {
-  .hero { --hero-reserve: 5rem; display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l);
-          min-height: calc(100vh - var(--header-h) - var(--grow) - var(--hero-reserve)); min-height: calc(100svh - var(--header-h) - var(--grow) - var(--hero-reserve)); }
-  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(10rem, 1fr) auto; align-items: stretch; }
+  .hero { display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l);
+          min-height: calc(100vh - var(--header-h) - var(--grow) - 1px); min-height: calc(100svh - var(--header-h) - var(--grow) - 1px); }
+  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(12rem, 1fr) auto; align-items: stretch; }
   .hero__art { display: flex; flex-direction: column; }
   .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; }
   .hero__photo img { position: absolute; inset: 0; }
