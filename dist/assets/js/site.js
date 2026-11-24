@@ -430,5 +430,57 @@
     show();
   }
 
+  /* ------------------------------------------------------------------
+     Hero: Bilder langsam überblenden. Das Startbild wählt das kleine Skript
+     hinter der figure zufällig (is-shown); von dort geht es reihum durch alle
+     Bilder: je HOLD sichtbar, Überblendung über FADE (Dauer in site.css, .is-cross).
+     Das nächste Bild wird vorab geladen, die übrigen erst, wenn sie dran sind.
+     Maus auf dem Foto oder Tab im Hintergrund: Wechsel hält an.
+     prefers-reduced-motion: kein Wechsel, nur das Startbild.
+     ------------------------------------------------------------------ */
+  var HOLD = 6500, FADE = 3000;
+  if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    document.querySelectorAll(".hero__photo.is-random").forEach(function (f) {
+      var pics = Array.prototype.slice.call(f.querySelectorAll(".hero__pic"));
+      if (pics.length < 2) return;
+      var cur = 0, z = 1, paused = false;
+      pics.forEach(function (p, i) { if (p.classList.contains("is-shown")) cur = i; });
+      f.addEventListener("mouseenter", function () { paused = true; });
+      f.addEventListener("mouseleave", function () { paused = false; });
+      function nextIdx() {
+        for (var k = 1; k < pics.length; k++) { var n = (cur + k) % pics.length; if (!pics[n].hasAttribute("data-broken")) return n; }
+        return -1;
+      }
+      function schedule() {
+        var n = nextIdx(); if (n < 0) return;
+        pics[n].loading = "eager";                      /* vorab laden, bleibt bis zum Wechsel ausgeblendet */
+        setTimeout(step, HOLD);
+      }
+      function step() {
+        if (paused || document.hidden) { setTimeout(step, 1000); return; }
+        var n = nextIdx(); if (n < 0) return;
+        var a = pics[cur], b = pics[n], done = false;
+        function go() {
+          if (done) return; done = true;
+          b.style.zIndex = String(++z);                 /* neues Bild liegt oben und blendet ein */
+          b.classList.remove("is-loaded");
+          b.classList.add("is-shown", "is-cross");
+          setTimeout(function () {
+            a.classList.remove("is-shown", "is-loaded", "is-cross");
+            a.style.zIndex = "";
+            cur = n; schedule();
+          }, FADE + 150);
+        }
+        function fail() { if (done) return; done = true; b.setAttribute("data-broken", ""); schedule(); }
+        if (b.complete && b.naturalWidth > 1) go();
+        else { b.addEventListener("load", go); b.addEventListener("error", fail); }
+      }
+      var first = pics[cur];
+      if (first.classList.contains("is-loaded")) schedule();
+      else { var started = false, start = function () { if (!started) { started = true; schedule(); } };
+        first.addEventListener("load", start); first.addEventListener("error", start); }
+    });
+  }
+
   document.querySelectorAll("[data-year]").forEach(function (y) { y.textContent = String(new Date().getFullYear()); });
 })();

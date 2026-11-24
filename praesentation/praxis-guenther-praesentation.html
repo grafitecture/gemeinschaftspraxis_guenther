@@ -901,12 +901,22 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero__photo img { position: absolute; inset: 0; }
 }
 
-/* ---------- Hero: bei jedem Aufruf ein zufälliges Bild (Haus, Ärzte im Gespräch, Ehepaar, Vordach, Raum), ohne Animation ----------
-   Alle fünf Bilder stehen im HTML, ein kleines Skript direkt hinter der figure wählt eins aus (Klasse is-shown)
-   und lädt nur dieses sofort. Die anderen bleiben ausgeblendet und werden nicht geladen (loading="lazy").
-   Ohne JavaScript: das Hausfoto. Das G liegt über jedem Bild. */
+/* ---------- Hero: zufälliges Startbild, danach langsame Überblendung durch alle fünf Bilder ----------
+   Haus, Ärzte im Gespräch, Ehepaar, Vordach, Raum. Alle stehen im HTML; ein kleines Skript direkt hinter
+   der figure wählt das Startbild (is-shown) und lädt nur dieses sofort, es blendet dezent ein (is-loaded).
+   Den Wechsel steuert site.js: das nächste Bild legt sich darüber und blendet langsam ein (is-cross, 3 s).
+   Nicht gezeigte Bilder bleiben ausgeblendet und werden erst kurz vorher geladen.
+   Ohne JavaScript: das Hausfoto. prefers-reduced-motion: nur das Startbild, ohne Einblenden. Das G liegt über allem. */
 .hero__photo .hero__pic:not(.hero__pic--haus), .hero__photo.is-random .hero__pic { display: none; }
+.hero__photo.is-random { position: relative; isolation: isolate; }
+.hero__photo.is-random .hero__pic { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero__photo.is-random .hero__pic.is-shown { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero__photo.is-random .hero__pic.is-shown { opacity: 0; }
+  .hero__photo.is-random .hero__pic.is-loaded { animation: hero-in 1.1s cubic-bezier(.25,.1,.25,1) both; }
+  .hero__photo.is-random .hero__pic.is-cross { animation: hero-in 3s ease-in-out both; }
+}
+@keyframes hero-in { from { opacity: 0; } to { opacity: 1; } }
 .hero__photo .hero__pic--gespraech { object-position: 50% 60%; }
 .hero__photo .hero__pic--ehepaar { object-position: 50% 35%; }
 .hero__photo .hero__pic--vordach { object-position: 50% 50%; }
@@ -2261,7 +2271,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
     </div>
     <div class="hero__art">
       <div class="gsig" data-light aria-hidden="true"><svg class="gsig__svg" viewBox="17.5 20 82.5 117.75" aria-hidden="true" focusable="false"><g class="sg-x"><path d="M 0.00120822 0.00176418 C -6.468891 -2.379483 -17.517407 -5.712446 -27.308719 -5.712446 C -62.201039 -5.712446 -76.89584 20.943422 -76.89584 50.928337 C -76.89584 85.515167 -56.839317 107.25188 -28.103774 107.25188 C -18.6297 107.25188 -9.786187 105.982926 -2.203795 102.336642 L -2.203795 88.374231 C -10.577325 92.658909 -19.894738 95.1929 -27.93928 95.1929 C -45.947461 95.1929 -62.365533 80.75659 -62.365533 53.783483 C -62.365533 25.228101 -50.995862 6.346534 -26.995397 6.346534 C -22.573641 6.346534 -16.886847 7.458827 -13.256228 9.358342 L -13.256228 44.262411 L -31.734393 44.262411 L -31.734393 56.325308 L 0.00120822 56.325308 Z M 0.00120822 0.00176418 " transform="matrix(0.997377, 0, 0, -0.997377, 94.565201, 127.540822)"/></g><g class="sg-g"><path d="M -0.000757373 -0.000227603 C -6.46694 -2.377558 -17.519373 -5.714437 -27.310685 -5.714437 C -62.203005 -5.714437 -76.893889 20.945347 -76.893889 50.930261 C -76.893889 85.517092 -56.837366 107.253805 -28.10574 107.253805 C -18.627749 107.253805 -9.788153 105.980934 -2.205761 102.33465 L -2.205761 88.372239 C -10.575374 92.656917 -19.892787 95.194825 -27.941246 95.194825 C -45.94551 95.194825 -62.363582 80.758514 -62.363582 53.781491 C -62.363582 25.226109 -50.993911 6.348459 -26.993447 6.348459 C -22.575607 6.348459 -16.888812 7.456836 -13.258194 9.360267 L -13.258194 44.264336 L -31.732442 44.264336 L -31.732442 56.323316 L -0.000757373 56.323316 Z M -0.000757373 -0.000227603 " transform="matrix(0.997377, 0, 0, -0.997377, 99.586693, 131.437273)"/></g></svg><span class="gsig__glow"></span></div>
-      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="Die Praxis in der Abenddämmerung: graue Fassade mit dem leuchtenden blauen G und hell erleuchtetem Eingang" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther und Dr. Andreas Günther im Gespräch am Tisch in der Praxis" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Das Ehepaar Dr. Evelyne Günther und Dr. Andreas Günther in der Praxis" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Vordach mit Oberlicht über dem Eingang der Praxis, Glastür mit dem blauen G" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="Neuer Raum mit langer, hell beleuchteter Schrankzeile, Spiegelband und indirektem Licht" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),i=Math.floor(Math.random()*p.length);p[i].loading="eager";p[i].fetchPriority="high";p[i].classList.add("is-shown");f.classList.add("is-random");})();</script>
+      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="Die Praxis in der Abenddämmerung: graue Fassade mit dem leuchtenden blauen G und hell erleuchtetem Eingang" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther und Dr. Andreas Günther im Gespräch am Tisch in der Praxis" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Das Ehepaar Dr. Evelyne Günther und Dr. Andreas Günther in der Praxis" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Vordach mit Oberlicht über dem Eingang der Praxis, Glastür mit dem blauen G" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="Neuer Raum mit langer, hell beleuchteter Schrankzeile, Spiegelband und indirektem Licht" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),s=p[Math.floor(Math.random()*p.length)];s.loading="eager";s.fetchPriority="high";s.classList.add("is-shown");f.classList.add("is-random");function d(e){if(s.naturalWidth>1||(e&&e.type=="error"))s.classList.add("is-loaded");}s.addEventListener("load",d);s.addEventListener("error",d);if(s.complete)d();})();</script>
     </div>
   </div>
 </section>
@@ -2851,7 +2861,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
     </div>
     <div class="hero__art">
       <div class="gsig" data-light aria-hidden="true"><svg class="gsig__svg" viewBox="17.5 20 82.5 117.75" aria-hidden="true" focusable="false"><g class="sg-x"><path d="M 0.00120822 0.00176418 C -6.468891 -2.379483 -17.517407 -5.712446 -27.308719 -5.712446 C -62.201039 -5.712446 -76.89584 20.943422 -76.89584 50.928337 C -76.89584 85.515167 -56.839317 107.25188 -28.103774 107.25188 C -18.6297 107.25188 -9.786187 105.982926 -2.203795 102.336642 L -2.203795 88.374231 C -10.577325 92.658909 -19.894738 95.1929 -27.93928 95.1929 C -45.947461 95.1929 -62.365533 80.75659 -62.365533 53.783483 C -62.365533 25.228101 -50.995862 6.346534 -26.995397 6.346534 C -22.573641 6.346534 -16.886847 7.458827 -13.256228 9.358342 L -13.256228 44.262411 L -31.734393 44.262411 L -31.734393 56.325308 L 0.00120822 56.325308 Z M 0.00120822 0.00176418 " transform="matrix(0.997377, 0, 0, -0.997377, 94.565201, 127.540822)"/></g><g class="sg-g"><path d="M -0.000757373 -0.000227603 C -6.46694 -2.377558 -17.519373 -5.714437 -27.310685 -5.714437 C -62.203005 -5.714437 -76.893889 20.945347 -76.893889 50.930261 C -76.893889 85.517092 -56.837366 107.253805 -28.10574 107.253805 C -18.627749 107.253805 -9.788153 105.980934 -2.205761 102.33465 L -2.205761 88.372239 C -10.575374 92.656917 -19.892787 95.194825 -27.941246 95.194825 C -45.94551 95.194825 -62.363582 80.758514 -62.363582 53.781491 C -62.363582 25.226109 -50.993911 6.348459 -26.993447 6.348459 C -22.575607 6.348459 -16.888812 7.456836 -13.258194 9.360267 L -13.258194 44.264336 L -31.732442 44.264336 L -31.732442 56.323316 L -0.000757373 56.323316 Z M -0.000757373 -0.000227603 " transform="matrix(0.997377, 0, 0, -0.997377, 99.586693, 131.437273)"/></g></svg><span class="gsig__glow"></span></div>
-      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="The practice at dusk: grey façade with the illuminated blue G and a brightly lit entrance" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther and Dr. Andreas Günther in discussion at a table in the practice" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Husband and wife Dr. Evelyne Günther and Dr. Andreas Günther in the practice" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Canopy with skylight above the practice entrance, glass door with the blue G" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="New room with a long, softly lit row of cabinets, a mirror band and indirect lighting" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),i=Math.floor(Math.random()*p.length);p[i].loading="eager";p[i].fetchPriority="high";p[i].classList.add("is-shown");f.classList.add("is-random");})();</script>
+      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="The practice at dusk: grey façade with the illuminated blue G and a brightly lit entrance" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther and Dr. Andreas Günther in discussion at a table in the practice" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Husband and wife Dr. Evelyne Günther and Dr. Andreas Günther in the practice" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Canopy with skylight above the practice entrance, glass door with the blue G" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="New room with a long, softly lit row of cabinets, a mirror band and indirect lighting" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),s=p[Math.floor(Math.random()*p.length)];s.loading="eager";s.fetchPriority="high";s.classList.add("is-shown");f.classList.add("is-random");function d(e){if(s.naturalWidth>1||(e&&e.type=="error"))s.classList.add("is-loaded");}s.addEventListener("load",d);s.addEventListener("error",d);if(s.complete)d();})();</script>
     </div>
   </div>
 </section>
@@ -3441,7 +3451,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
     </div>
     <div class="hero__art">
       <div class="gsig" data-light aria-hidden="true"><svg class="gsig__svg" viewBox="17.5 20 82.5 117.75" aria-hidden="true" focusable="false"><g class="sg-x"><path d="M 0.00120822 0.00176418 C -6.468891 -2.379483 -17.517407 -5.712446 -27.308719 -5.712446 C -62.201039 -5.712446 -76.89584 20.943422 -76.89584 50.928337 C -76.89584 85.515167 -56.839317 107.25188 -28.103774 107.25188 C -18.6297 107.25188 -9.786187 105.982926 -2.203795 102.336642 L -2.203795 88.374231 C -10.577325 92.658909 -19.894738 95.1929 -27.93928 95.1929 C -45.947461 95.1929 -62.365533 80.75659 -62.365533 53.783483 C -62.365533 25.228101 -50.995862 6.346534 -26.995397 6.346534 C -22.573641 6.346534 -16.886847 7.458827 -13.256228 9.358342 L -13.256228 44.262411 L -31.734393 44.262411 L -31.734393 56.325308 L 0.00120822 56.325308 Z M 0.00120822 0.00176418 " transform="matrix(0.997377, 0, 0, -0.997377, 94.565201, 127.540822)"/></g><g class="sg-g"><path d="M -0.000757373 -0.000227603 C -6.46694 -2.377558 -17.519373 -5.714437 -27.310685 -5.714437 C -62.203005 -5.714437 -76.893889 20.945347 -76.893889 50.930261 C -76.893889 85.517092 -56.837366 107.253805 -28.10574 107.253805 C -18.627749 107.253805 -9.788153 105.980934 -2.205761 102.33465 L -2.205761 88.372239 C -10.575374 92.656917 -19.892787 95.194825 -27.941246 95.194825 C -45.94551 95.194825 -62.363582 80.758514 -62.363582 53.781491 C -62.363582 25.226109 -50.993911 6.348459 -26.993447 6.348459 C -22.575607 6.348459 -16.888812 7.456836 -13.258194 9.360267 L -13.258194 44.264336 L -31.732442 44.264336 L -31.732442 56.323316 L -0.000757373 56.323316 Z M -0.000757373 -0.000227603 " transform="matrix(0.997377, 0, 0, -0.997377, 99.586693, 131.437273)"/></g></svg><span class="gsig__glow"></span></div>
-      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="Akşam alacasında muayenehane: ışıklı mavi G harfli gri cephe ve aydınlık giriş" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther ve Dr. Andreas Günther muayenehanede bir masada görüşürken" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Evli çift Dr. Evelyne Günther ve Dr. Andreas Günther muayenehanede" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Muayenehane girişinin üzerinde tavan pencereli saçak, mavi G harfli cam kapı" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="Uzun, aydınlatılmış dolap sırası, ayna bandı ve dolaylı ışıklı yeni oda" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),i=Math.floor(Math.random()*p.length);p[i].loading="eager";p[i].fetchPriority="high";p[i].classList.add("is-shown");f.classList.add("is-random");})();</script>
+      <figure class="hero__photo"><img class="hero__pic hero__pic--haus" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero.webp" width="1200" height="1500" alt="Akşam alacasında muayenehane: ışıklı mavi G harfli gri cephe ve aydınlık giriş" loading="lazy" decoding="async"><img class="hero__pic hero__pic--gespraech" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-gespraech.webp" width="1200" height="1500" alt="Dr. Evelyne Günther ve Dr. Andreas Günther muayenehanede bir masada görüşürken" loading="lazy" decoding="async"><img class="hero__pic hero__pic--ehepaar" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-aerzte-ehepaar.webp" width="1200" height="1500" alt="Evli çift Dr. Evelyne Günther ve Dr. Andreas Günther muayenehanede" loading="lazy" decoding="async"><img class="hero__pic hero__pic--vordach" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-vordach.webp" width="1200" height="1500" alt="Muayenehane girişinin üzerinde tavan pencereli saçak, mavi G harfli cam kapı" loading="lazy" decoding="async"><img class="hero__pic hero__pic--raum" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="foto-hero-raum.webp" width="1200" height="1500" alt="Uzun, aydınlatılmış dolap sırası, ayna bandı ve dolaylı ışıklı yeni oda" loading="lazy" decoding="async"></figure><script>(function(){var f=document.currentScript.previousElementSibling,p=f.querySelectorAll(".hero__pic"),s=p[Math.floor(Math.random()*p.length)];s.loading="eager";s.fetchPriority="high";s.classList.add("is-shown");f.classList.add("is-random");function d(e){if(s.naturalWidth>1||(e&&e.type=="error"))s.classList.add("is-loaded");}s.addEventListener("load",d);s.addEventListener("error",d);if(s.complete)d();})();</script>
     </div>
   </div>
 </section>
@@ -5235,6 +5245,58 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
     };
     window.addEventListener("hashchange", show);
     show();
+  }
+
+  /* ------------------------------------------------------------------
+     Hero: Bilder langsam überblenden. Das Startbild wählt das kleine Skript
+     hinter der figure zufällig (is-shown); von dort geht es reihum durch alle
+     Bilder: je HOLD sichtbar, Überblendung über FADE (Dauer in site.css, .is-cross).
+     Das nächste Bild wird vorab geladen, die übrigen erst, wenn sie dran sind.
+     Maus auf dem Foto oder Tab im Hintergrund: Wechsel hält an.
+     prefers-reduced-motion: kein Wechsel, nur das Startbild.
+     ------------------------------------------------------------------ */
+  var HOLD = 6500, FADE = 3000;
+  if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    document.querySelectorAll(".hero__photo.is-random").forEach(function (f) {
+      var pics = Array.prototype.slice.call(f.querySelectorAll(".hero__pic"));
+      if (pics.length < 2) return;
+      var cur = 0, z = 1, paused = false;
+      pics.forEach(function (p, i) { if (p.classList.contains("is-shown")) cur = i; });
+      f.addEventListener("mouseenter", function () { paused = true; });
+      f.addEventListener("mouseleave", function () { paused = false; });
+      function nextIdx() {
+        for (var k = 1; k < pics.length; k++) { var n = (cur + k) % pics.length; if (!pics[n].hasAttribute("data-broken")) return n; }
+        return -1;
+      }
+      function schedule() {
+        var n = nextIdx(); if (n < 0) return;
+        pics[n].loading = "eager";                      /* vorab laden, bleibt bis zum Wechsel ausgeblendet */
+        setTimeout(step, HOLD);
+      }
+      function step() {
+        if (paused || document.hidden) { setTimeout(step, 1000); return; }
+        var n = nextIdx(); if (n < 0) return;
+        var a = pics[cur], b = pics[n], done = false;
+        function go() {
+          if (done) return; done = true;
+          b.style.zIndex = String(++z);                 /* neues Bild liegt oben und blendet ein */
+          b.classList.remove("is-loaded");
+          b.classList.add("is-shown", "is-cross");
+          setTimeout(function () {
+            a.classList.remove("is-shown", "is-loaded", "is-cross");
+            a.style.zIndex = "";
+            cur = n; schedule();
+          }, FADE + 150);
+        }
+        function fail() { if (done) return; done = true; b.setAttribute("data-broken", ""); schedule(); }
+        if (b.complete && b.naturalWidth > 1) go();
+        else { b.addEventListener("load", go); b.addEventListener("error", fail); }
+      }
+      var first = pics[cur];
+      if (first.classList.contains("is-loaded")) schedule();
+      else { var started = false, start = function () { if (!started) { started = true; schedule(); } };
+        first.addEventListener("load", start); first.addEventListener("error", start); }
+    });
   }
 
   document.querySelectorAll("[data-year]").forEach(function (y) { y.textContent = String(new Date().getFullYear()); });
