@@ -894,6 +894,19 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero__photo img { position: absolute; inset: 0; }
 }
 
+/* ---------- Hero auf dem Handy: Überschrift, Foto mit G, Telefon und E-Mail füllen genau den ersten Bildschirm ----------
+   Höhe = Bildschirm (svh: bei eingeblendeter Adressleiste, springt beim Scrollen nicht) minus Kopfzeile (+ 1 px Linie).
+   Überschrift und Buttons behalten ihre Höhe, das Foto nimmt den Rest (zugeschnitten per object-fit: cover).
+   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 12rem hoch, dann darf der Hero länger werden. */
+@media (max-width: 559px) {
+  .hero { display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l);
+          min-height: calc(100vh - var(--header-h) - var(--grow) - 1px); min-height: calc(100svh - var(--header-h) - var(--grow) - 1px); }
+  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(12rem, 1fr) auto; align-items: stretch; }
+  .hero__art { display: flex; flex-direction: column; }
+  .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; }
+  .hero__photo img { position: absolute; inset: 0; }
+}
+
 /* ---------- Kontakt: Angaben links, Formular rechts ---------- */
 .contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
 @media (min-width: 960px) { .contact { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: start; } }
