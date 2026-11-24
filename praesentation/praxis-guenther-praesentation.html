@@ -83,6 +83,10 @@
 [hidden] { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); }
+/* Seite seitlich fixieren: nichts darf rechts/links verschieben (Handy). „clip“ statt „hidden“ am body,
+   damit body kein eigener Scroll-Container wird – sonst bliebe die Kopfzeile nicht mehr oben stehen. */
+html { overflow-x: hidden; overflow-x: clip; }
+body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
@@ -193,6 +197,7 @@ ul, ol { margin: 0; padding: 0; }
 .btn--small { min-height: 2.5rem; padding: .45rem 1rem; font-size: var(--step-m1); }
 .btn svg { width: 1.15em; height: 1.15em; flex: none; }
 .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+@media (max-width: 559px) { .btn { white-space: normal; text-align: center; } } /* Handy: lange Button-Texte (EN/TR) umbrechen statt über den Rand zu laufen */
 .textlink { font-weight: 500; }
 
 /* ---------- Live-Status ---------- */
@@ -336,12 +341,14 @@ ul, ol { margin: 0; padding: 0; }
 .timeline li::after { content: ""; position: absolute; left: calc(6.85rem - 5px); top: calc(var(--space-s) + .45em); width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 1px solid var(--line); }
 .timeline li:last-child::after { background: var(--blue); }
 .timeline time { font-weight: 500; font-variant-numeric: tabular-nums; padding-top: .1rem; }
-.timeline p { padding-left: 0; }
+.timeline p { padding-left: 0; overflow-wrap: anywhere; hyphens: auto; } /* lange Wörter (z. B. „Theresienkrankenhaus’ta“) brechen in der schmalen Spalte um */
 .praxis-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); }
 @media (min-width: 1000px) { .praxis-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
 
 /* ---------- Instagram ---------- */
 .insta__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-m); margin-bottom: var(--space-l); }
+.insta__profile > div { min-width: 0; }
+.insta__profile .muted { overflow-wrap: anywhere; } /* @-Name bricht auf sehr schmalen Handys um */
 .insta__profile { display: flex; align-items: center; gap: var(--space-s); }
 .avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; background: #fff; }
 .avatar .lg { height: 2.1rem; width: auto; }
@@ -499,7 +506,7 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .kv { display: grid; gap: 0; margin: 0; }
 .kv div { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: var(--space-s); padding-block: .8rem; border-bottom: 1px solid var(--line); }
 .kv dt { color: var(--ink-soft); font-size: var(--step-m1); }
-.kv dd { margin: 0; }
+.kv dd { margin: 0; overflow-wrap: anywhere; hyphens: auto; } /* lange Wörter und die E-Mail-Adresse brechen um, statt die Seite seitlich zu verbreitern */
 .focus { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-m); }
 @media (min-width: 720px) { .focus { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .focus__item { border-top: 1px solid var(--line); padding-top: var(--space-s); display: grid; gap: .5rem; }
