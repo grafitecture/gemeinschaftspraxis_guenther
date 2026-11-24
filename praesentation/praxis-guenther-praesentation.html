@@ -849,10 +849,12 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 @media (max-width: 559px) {
   .hero__grid { container-type: inline-size; gap: var(--space-m); }
   .hero__text { display: contents; }
-  .hero h1 { order: 1; }
-  .hero__art { order: 2; padding: 0; }
-  .hero__panel { order: 3; padding-top: 0; }
-  .hero__lead, .hero__panel > p { display: none; }
+  .hero h1, .hero__art, .hero__panel, .hero__lead { grid-column: 1; }   /* feste Spalte: liegen über dem ::before (Hero-Höhe), nicht daneben */
+  .hero h1 { grid-row: 1; }
+  .hero__art { grid-row: 2; padding: 0; }
+  .hero__panel { grid-row: 3; padding-top: 0; }
+  .hero__lead { grid-row: 4; }          /* Einleitung unter den Buttons, auf der weißen Fläche – sichtbar beim Scrollen */
+  .hero__panel > p { display: none; }
   .hero .gsig { left: 5%; top: 4%; width: 22%; }
   .hero .btn-row { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-self: stretch; }
   .hero .btn[data-cta="book"] { display: none; }
@@ -898,11 +900,15 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 /* ---------- Hero auf dem Handy: Überschrift, Foto mit G, Telefon und E-Mail füllen genau den ersten Bildschirm ----------
    Höhe = Bildschirm (svh: bei eingeblendeter Adressleiste, springt beim Scrollen nicht) minus Kopfzeile (+ 1 px Linie).
    Überschrift und Buttons behalten ihre Höhe, das Foto nimmt den Rest (zugeschnitten per object-fit: cover).
-   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 12rem hoch, dann darf der Hero länger werden. */
+   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 12rem hoch, dann darf der Hero länger werden.
+   Die Einleitung steht als vierte Zeile darunter und erscheint erst beim Scrollen: Bildschirmhoch sind nur die Zeilen 1–3.
+   Das leere ::before liegt über diesen drei Zeilen und gibt ihnen die Mindesthöhe; den Rest bekommt das Foto (1fr). */
 @media (max-width: 559px) {
-  .hero { display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l);
-          min-height: calc(100vh - var(--header-h) - var(--grow) - 1px); min-height: calc(100svh - var(--header-h) - var(--grow) - 1px); }
-  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(12rem, 1fr) auto; align-items: stretch; }
+  .hero { display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l); }
+  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(12rem, 1fr) auto auto; align-items: stretch; }
+  .hero__grid::before { content: ""; grid-row: 1 / 4; grid-column: 1; pointer-events: none;
+          min-height: calc(100vh - var(--header-h) - var(--grow) - 1px - var(--space-m) - var(--space-l));
+          min-height: calc(100svh - var(--header-h) - var(--grow) - 1px - var(--space-m) - var(--space-l)); }
   .hero__art { display: flex; flex-direction: column; }
   .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; }
   .hero__photo img { position: absolute; inset: 0; }
