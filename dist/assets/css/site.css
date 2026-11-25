@@ -826,26 +826,6 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 /* Ist die Textspalte zu schmal für zwei gleich breite Buttons nebeneinander, stehen sie gleich breit untereinander */
 @container (max-width: 36.5rem) { .hero .btn-row { grid-auto-flow: row; } }
 
-/* Handy: Überschrift → Foto (volle Breite, G im Bild) → Telefon und E-Mail als Icons.
-   Einleitung und Hinweistext entfallen. */
-@media (max-width: 559px) {
-  .hero__grid { container-type: inline-size; gap: var(--space-m); }
-  .hero__text { display: contents; }
-  .hero h1, .hero__art, .hero__panel, .hero__lead { grid-column: 1; }   /* feste Spalte: liegen über dem ::before (Hero-Höhe), nicht daneben */
-  .hero h1 { grid-row: 1; }
-  .hero__art { grid-row: 2; padding: 0; }
-  .hero__panel { grid-row: 3; padding-top: 0; }
-  .hero__lead { grid-row: 4; }          /* Einleitung unter den Buttons, auf der weißen Fläche – sichtbar beim Scrollen */
-  .hero__panel > p { display: none; }
-  .hero .gsig { left: 5%; top: 4%; width: 22%; }
-  .hero .btn-row { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-self: stretch; }
-  .hero .btn[data-cta="book"] { display: none; }
-  .hero .btn[data-cta="mail"] { display: inline-flex; }
-  .hero .btn { min-height: 3.25rem; padding-inline: 0; }
-  .hero .btn svg { width: 1.6rem; height: 1.6rem; }
-  .hero .btn__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-}
-
 /* ---------- Aktuell: Meldungen als Kästen mit Icon (Desktop zwei nebeneinander) ---------- */
 @media (min-width: 1000px) { .now__grid { grid-template-columns: minmax(0, 1fr); } }
 .now .news { gap: .75rem; }
@@ -867,33 +847,76 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 .now .news .is-important time { background: none; padding: 0; color: #fff; font-weight: 600; }
 .now .news .is-important .news__icon { background: #fff; color: #c8102e; }
 
-/* ---------- Hero auf dem Desktop: füllt genau den ersten Bildschirm unter der Kopfzeile ---------- */
-@media (min-width: 1024px) {
-  .hero { display: grid; grid-template-rows: minmax(0, 1fr); padding-block: var(--space-l) var(--space-xl);
-          min-height: calc(100vh - var(--header-h) - var(--grow)); min-height: calc(100svh - var(--header-h) - var(--grow)); }
-  .hero__grid { align-items: stretch; }
-  .hero__text { align-self: center; }
-  .hero__art { display: flex; flex-direction: column; }
-  /* Foto füllt die Spaltenhöhe – trägt selbst nichts zur Höhe bei, damit der Hero nicht über den Bildschirm wächst */
-  .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; min-height: 22rem; }
-  .hero__photo img { position: absolute; inset: 0; }
+/* ---------- Erster Bildschirm (seit 25.11.2026): beim Öffnen auf jedem Gerät genau bildschirmhoch ----------
+   Kopfzeile (Logo, Navigation), Überschrift, Einleitung, Foto mit G und Bildwechsel sowie zwei Buttons füllen zusammen
+   genau den Bildschirm. Höhe des Hero = Bildschirm (svh: bei eingeblendeter Adressleiste, springt beim Scrollen nicht)
+   minus Kopfzeile in Startgröße (--header-h + --grow + 1 px Linie). Die Mindesthöhe sitzt am .hero__grid (ohne Innenabstand).
+   Das Foto nimmt den Platz, der übrig bleibt (object-fit: cover), und trägt selbst nichts zur Höhe bei.
+   Überschrift, Einleitung und Abstände werden auf niedrigen Bildschirmen kleiner (Grenzen in svh), damit alles passt.
+   Zwei Anordnungen:
+   – nebeneinander (Desktop ab 1024 px und alle Geräte quer): links Überschrift, Einleitung, Buttons (senkrecht mittig),
+     rechts das Foto in voller Höhe;
+   – untereinander (Handy und Tablet hochkant, auch iPad Pro hochkant): Überschrift → Einleitung → Foto → Buttons.
+   Handy hochkant und Handy quer (niedrig): zwei gleich breite Buttons nur mit Icon (Telefon, E-Mail).
+   G-Signet: auf dem Desktop (Maus) im Versatz am Foto, auf iPad und Handhelds im Foto oben links. */
+.hero { --hero-pt: clamp(.75rem, 3svh, var(--space-l)); --hero-pb: clamp(1rem, 4.5svh, var(--space-xl));
+        padding-block: var(--hero-pt) var(--hero-pb); }
+.hero__grid { min-height: calc(100vh - var(--header-h) - var(--grow) - 1px - var(--hero-pt) - var(--hero-pb));
+              min-height: calc(100svh - var(--header-h) - var(--grow) - 1px - var(--hero-pt) - var(--hero-pb)); }
+.hero h1 { font-size: min(var(--step-5), 10.2cqi, 9svh); }
+.hero__lead { font-size: min(var(--step-1), max(.8125rem, 3.4svh)); }
+.hero__art { display: flex; flex-direction: column; }
+.hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; min-height: 0; }
+.hero__photo img { position: absolute; inset: 0; }
+
+/* Nebeneinander: Desktop und alle Geräte quer */
+@media (min-width: 1024px), (orientation: landscape) {
+  .hero__grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: stretch; column-gap: clamp(1.25rem, 4vw, var(--space-xl)); }
+  .hero__text { align-self: center; gap: clamp(.5rem, 2.4svh, var(--space-m)); }
+  .hero__panel { gap: clamp(.5rem, 2svh, var(--space-m)); padding-top: clamp(0rem, 1svh, var(--space-s)); }
 }
 
-/* ---------- Hero auf dem Handy: Überschrift, Foto mit G, Telefon und E-Mail füllen genau den ersten Bildschirm ----------
-   Höhe = Bildschirm (svh: bei eingeblendeter Adressleiste, springt beim Scrollen nicht) minus Kopfzeile (+ 1 px Linie).
-   Überschrift und Buttons behalten ihre Höhe, das Foto nimmt den Rest (zugeschnitten per object-fit: cover).
-   Auf sehr niedrigen Bildschirmen bleibt das Foto mindestens 12rem hoch, dann darf der Hero länger werden.
-   Die Einleitung steht als vierte Zeile darunter und erscheint erst beim Scrollen: Bildschirmhoch sind nur die Zeilen 1–3.
-   Das leere ::before liegt über diesen drei Zeilen und gibt ihnen die Mindesthöhe; den Rest bekommt das Foto (1fr). */
-@media (max-width: 559px) {
-  .hero { display: flex; flex-direction: column; padding-block: var(--space-m) var(--space-l); }
-  .hero__grid { flex: 1 1 auto; grid-template-rows: auto minmax(12rem, 1fr) auto auto; align-items: stretch; }
-  .hero__grid::before { content: ""; grid-row: 1 / 4; grid-column: 1; pointer-events: none;
-          min-height: calc(100vh - var(--header-h) - var(--grow) - 1px - var(--space-m) - var(--space-l));
-          min-height: calc(100svh - var(--header-h) - var(--grow) - 1px - var(--space-m) - var(--space-l)); }
-  .hero__art { display: flex; flex-direction: column; }
-  .hero__photo { position: relative; flex: 1 1 auto; aspect-ratio: auto; }
-  .hero__photo img { position: absolute; inset: 0; }
+/* Untereinander: Handy und Tablet hochkant (auch iPad Pro hochkant).
+   .hero__text löst sich auf (display: contents), damit Überschrift, Einleitung, Foto und Buttons in einer Spalte stehen;
+   das Foto (Zeile 3) bekommt den Rest der Höhe, mindestens 6rem. */
+@media (orientation: portrait) and (max-width: 1023px), (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  .hero__grid { container-type: inline-size; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(6rem, 1fr) auto;
+                align-items: stretch; gap: clamp(.625rem, 2svh, var(--space-m)); }
+  .hero__text { display: contents; }
+  .hero h1, .hero__lead, .hero__art, .hero__panel { grid-column: 1; }
+  .hero h1 { grid-row: 1; }
+  .hero__lead { grid-row: 2; font-size: min(var(--step-1), max(.875rem, 2.5svh)); }
+  .hero__art { grid-row: 3; }
+  .hero__panel { grid-row: 4; padding-top: 0; }
+  .hero__panel > p { display: none; }
+}
+
+/* Handy hochkant und niedrige Bildschirme quer: Telefon und E-Mail als zwei gleich breite Icon-Buttons
+   (Beschriftung bleibt für Screenreader); der Sprachhinweis (EN/TR) entfällt */
+@media (max-width: 559px), (orientation: landscape) and (max-height: 520px) {
+  .hero .btn-row { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-self: stretch; }
+  .hero .btn[data-cta="book"] { display: none; }
+  .hero .btn[data-cta="mail"] { display: inline-flex; }
+  .hero .btn { min-height: 3.25rem; padding-inline: 0; }
+  .hero .btn svg { width: 1.6rem; height: 1.6rem; }
+  .hero .btn__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .hero__panel > p { display: none; }
+}
+@media (orientation: landscape) and (max-height: 520px) { .hero .btn { min-height: 2.75rem; padding-block: 0; } }
+/* Sprachhinweis (EN/TR) nur auf dem Desktop mit genug Höhe – sonst passt der erste Bildschirm nicht */
+@media (max-width: 1023px), (max-height: 600px) { .hero__panel > p { display: none; } }
+/* Sehr niedrige Bildschirme quer (z. B. Handy quer): Kopfzeile ohne Vergrößerung beim Öffnen, breitere Textspalte,
+   etwas engere Zeilen in der Einleitung – damit Überschrift, Text und Buttons neben dem Foto Platz finden */
+@media (orientation: landscape) and (max-height: 420px) {
+  :root { --grow: 0rem; }
+  .hero__grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .hero__lead { line-height: 1.35; }
+}
+
+/* G-Signet: auf iPad und Handhelds (bis 1023 px oder Touch ohne Maus) im Foto oben links, nur auf dem Desktop im Versatz */
+@media (max-width: 1023px), (hover: none) and (pointer: coarse) {
+  .hero__art { padding: 0; }
+  .hero .gsig { left: 4.5%; top: 4%; width: min(22%, 7.5rem); }
 }
 
 /* ---------- Hero: zufälliges Startbild, danach langsame Überblendung durch alle fünf Bilder ----------
