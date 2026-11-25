@@ -438,7 +438,7 @@
      Maus auf dem Foto oder Tab im Hintergrund: Wechsel hält an.
      prefers-reduced-motion: kein Wechsel, nur das Startbild.
      ------------------------------------------------------------------ */
-  var HOLD = 6500, FADE = 3000;
+  var HOLD = 4000, FADE = 1500;  /* seit 25.11.2026 schneller (vorher 6500 / 3000) */
   if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
     document.querySelectorAll(".hero__photo.is-random").forEach(function (f) {
       var pics = Array.prototype.slice.call(f.querySelectorAll(".hero__pic"));

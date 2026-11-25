@@ -917,7 +917,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 /* ---------- Hero: zufälliges Startbild, danach langsame Überblendung durch alle fünf Bilder ----------
    Haus, Ehepaar, Vordach, Empfang, Raum. Alle stehen im HTML; ein kleines Skript direkt hinter
    der figure wählt das Startbild (is-shown) und lädt nur dieses sofort, es blendet dezent ein (is-loaded).
-   Den Wechsel steuert site.js: das nächste Bild legt sich darüber und blendet langsam ein (is-cross, 3 s).
+   Den Wechsel steuert site.js: das nächste Bild legt sich darüber und blendet ein (is-cross, 1,5 s – gleich FADE in site.js).
    Nicht gezeigte Bilder bleiben ausgeblendet und werden erst kurz vorher geladen.
    Ohne JavaScript: das Hausfoto. prefers-reduced-motion: nur das Startbild, ohne Einblenden. Das G liegt über allem. */
 .hero__photo .hero__pic:not(.hero__pic--haus), .hero__photo.is-random .hero__pic { display: none; }
@@ -927,7 +927,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 @media (prefers-reduced-motion: no-preference) {
   .hero__photo.is-random .hero__pic.is-shown { opacity: 0; }
   .hero__photo.is-random .hero__pic.is-loaded { animation: hero-in 1.1s cubic-bezier(.25,.1,.25,1) both; }
-  .hero__photo.is-random .hero__pic.is-cross { animation: hero-in 3s ease-in-out both; }
+  .hero__photo.is-random .hero__pic.is-cross { animation: hero-in 1.5s ease-in-out both; }
 }
 @keyframes hero-in { from { opacity: 0; } to { opacity: 1; } }
 .hero__photo .hero__pic--ehepaar { object-position: 50% 35%; }
@@ -5268,7 +5268,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
      Maus auf dem Foto oder Tab im Hintergrund: Wechsel hält an.
      prefers-reduced-motion: kein Wechsel, nur das Startbild.
      ------------------------------------------------------------------ */
-  var HOLD = 6500, FADE = 3000;
+  var HOLD = 4000, FADE = 1500;  /* seit 25.11.2026 schneller (vorher 6500 / 3000) */
   if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
     document.querySelectorAll(".hero__photo.is-random").forEach(function (f) {
       var pics = Array.prototype.slice.call(f.querySelectorAll(".hero__pic"));
