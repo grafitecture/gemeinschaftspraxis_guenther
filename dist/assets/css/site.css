@@ -897,7 +897,7 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
 }
 
 /* ---------- Hero: zufälliges Startbild, danach langsame Überblendung durch alle fünf Bilder ----------
-   Haus, Ärzte im Gespräch, Ehepaar, Vordach, Raum. Alle stehen im HTML; ein kleines Skript direkt hinter
+   Haus, Ehepaar, Vordach, Empfang, Raum. Alle stehen im HTML; ein kleines Skript direkt hinter
    der figure wählt das Startbild (is-shown) und lädt nur dieses sofort, es blendet dezent ein (is-loaded).
    Den Wechsel steuert site.js: das nächste Bild legt sich darüber und blendet langsam ein (is-cross, 3 s).
    Nicht gezeigte Bilder bleiben ausgeblendet und werden erst kurz vorher geladen.
@@ -912,9 +912,9 @@ h1, h2, h3, h4, .post__big, .post__mid { font-weight: 600; }
   .hero__photo.is-random .hero__pic.is-cross { animation: hero-in 3s ease-in-out both; }
 }
 @keyframes hero-in { from { opacity: 0; } to { opacity: 1; } }
-.hero__photo .hero__pic--gespraech { object-position: 50% 60%; }
 .hero__photo .hero__pic--ehepaar { object-position: 50% 35%; }
 .hero__photo .hero__pic--vordach { object-position: 50% 50%; }
+.hero__photo .hero__pic--empfang { object-position: 55% 60%; }
 .hero__photo .hero__pic--raum { object-position: 45% 60%; }
 
 /* ---------- Kontakt: Angaben links, Formular rechts ---------- */

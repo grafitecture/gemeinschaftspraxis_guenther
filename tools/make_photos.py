@@ -8,8 +8,10 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "img")
 JOBS = [
     # Datei, Quelle, Zielgröße (B, H), Ausschnitt relativ oder None
     ("foto-hero.webp", "IMG_8285.jpeg", (1200, 1500), None),
-    # Weitere Hero-Bilder (Zufallswahl, seit 24.11.2026): Architektur – Vordach/Eingang und Raum mit Lichtleiste
+    # Weitere Hero-Bilder (Zufallswahl, seit 24.11.2026): Architektur – Vordach/Eingang, Empfang
+    # (seit 25.11.2026, ersetzt das KI-Bild „Ärzte im Gespräch“ am Tisch) und Raum mit Lichtleiste
     ("foto-hero-vordach.webp", "IMG_8258.jpeg", (1200, 1500), None),
+    ("foto-hero-empfang.webp", "IMG_0687.jpeg", (1200, 1500), None),
     ("foto-hero-raum.webp", "IMG_4830.jpeg", (1200, 1500), None),
     ("foto-empfang.webp", "IMG_0687.jpeg", (1200, 1600), None),
     ("foto-anmeldung.webp", "IMG_0689.jpeg", (1050, 1400), None),
